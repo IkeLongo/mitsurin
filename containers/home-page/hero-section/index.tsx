@@ -2,8 +2,8 @@ import {Button} from "@heroui/button";
 
 export default function HeroSection() {
   return (
-    <div className="font-sans min-h-screen flex items-center justify-center bg-gray-50">
-      <main className="flex flex-col items-center text-center max-w-4xl px-8">
+    <div className="font-sans min-h-screen flex items-center justify-center bg-red-300">
+      <main className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Placeholder Logo */}
         <div className="mb-8">
           <div className="w-24 h-24 bg-gray-300 rounded-lg flex items-center justify-center">
@@ -24,7 +24,7 @@ export default function HeroSection() {
           Join thousands of creators who are already building the future.
         </p>
 
-        <Button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition cursor-pointer">
+        <Button className="bg-gray-600 text-white px-6 py-3 rounded-md hover:bg-gray-700 transition cursor-pointer">
           Get Started
         </Button>
       </main>
