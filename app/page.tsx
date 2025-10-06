@@ -1,6 +1,6 @@
-import MainNavbar from "@/components/ui/navigation/MainNavbar";
 import HeroSection from "@/containers/home-page/hero-section";
 import AboutSection from "@/containers/home-page/about-section";
+import DiscoverSection from "@/containers/home-page/discover-section";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <main className="w-full mx-auto">
         <HeroSection />
         <AboutSection />
+        <DiscoverSection />
       </main>
     </div>
   );
