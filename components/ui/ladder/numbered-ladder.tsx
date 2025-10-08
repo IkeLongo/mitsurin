@@ -14,9 +14,9 @@ export const NumberedLadder = ({
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  let [activeIndex, setActiveIndex] = useState<number | null>(null);
-  let [isMobile, setIsMobile] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Check if mobile/tablet
   useEffect(() => {
