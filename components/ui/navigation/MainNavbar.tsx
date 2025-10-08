@@ -32,8 +32,8 @@ export default function MainNavbar({
           <NavbarLogo />
           <NavItems items={items} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
+            <NavbarButton variant="primary" href="/contact">Contact Us</NavbarButton>
           </div>
         </NavBody>
 
@@ -73,6 +73,7 @@ export default function MainNavbar({
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
+                href="/contact"
               >
                 Contact Us
               </NavbarButton>
