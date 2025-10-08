@@ -16,11 +16,11 @@ import {
 type NavItem = { name: string; link: string };
 
 export default function MainNavbar({
-  items = [
-    { name: "Our Story", link: "#features" },
-    { name: "Our Beef", link: "#pricing" },
-    { name: "FAQ's", link: "#contact" },
-  ],
+  // items = [
+  //   { name: "Our Story", link: "#features" },
+  //   { name: "Our Beef", link: "#pricing" },
+  //   { name: "FAQ's", link: "#contact" },
+  // ],
 }: { items?: NavItem[] }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -30,7 +30,7 @@ export default function MainNavbar({
         {/* Desktop */}
         <NavBody>
           <NavbarLogo />
-          <NavItems items={items} />
+          {/* <NavItems items={items} /> */}
           <div className="flex items-center gap-4">
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
             <NavbarButton variant="primary" href="/contact">Contact Us</NavbarButton>
@@ -51,7 +51,7 @@ export default function MainNavbar({
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
           >
-            {items.map((item, idx) => (
+            {/* {items.map((item, idx) => (
               <a
                 key={`mobile-link-${idx}`}
                 href={item.link}
@@ -60,7 +60,7 @@ export default function MainNavbar({
               >
                 <span className="block">{item.name}</span>
               </a>
-            ))}
+            ))} */}
             <div className="flex w-full flex-col gap-4">
               {/* <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
