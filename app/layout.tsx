@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mitsurin Wagyu — Premium Wagyu Beef in South Texas",
+    title: "Mitsurin Wagyu — Premium Wagyu in South Texas",
     description:
       "Artisan Wagyu from Hondo, Texas. Serving San Antonio and beyond with limited, premium cuts.",
     images: ["/og-image.webp"],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://mitsurinwagyu.com",
-    title: "Mitsurin Wagyu | Premium Wagyu Beef in South Texas",
+    title: "Mitsurin Wagyu | Premium Wagyu in South Texas",
     description:
       "Premium Wagyu beef from Mitsurin Wagyu in Hondo, Texas — serving San Antonio and South Texas.",
     siteName: "Mitsurin Wagyu",
