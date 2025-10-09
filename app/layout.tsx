@@ -3,6 +3,9 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://mitsurinwagyu.com"),
   title: {
@@ -141,6 +144,7 @@ export default function RootLayout({
         }}
       >
         <MainNavbar />
+        <ToastContainer limit={1} theme="dark" />
         {children}
       </body>
     </html>

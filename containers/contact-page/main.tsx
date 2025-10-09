@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input/input";
 import { Textarea } from "@/components/ui/input/textarea";
 import { cn } from "@/lib/utils";
 import { ContactSchema, type ContactInput } from "@/lib/contact-schema";
+import { toast } from "react-toastify";
 
 export default function SignupFormDemo() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -38,11 +39,19 @@ export default function SignupFormDemo() {
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error ?? "Failed");
 
-      setStatus("success");
+      // On success:
+      toast.success('Thanks! Your message has been sent.', {
+        position: "bottom-right",
+      });
       reset();
+      setStatus("idle");
     } catch (e) {
       console.error(e);
-      setStatus("error");
+      // On error:
+      toast.error('Something went wrong. Please try again.', {
+        position: "bottom-right",
+      });
+      setStatus("idle");
     } finally {
       // leave success/error visible; remove if you want it to auto-hide
     }
@@ -132,12 +141,6 @@ export default function SignupFormDemo() {
           <BottomGradient />
         </button>
 
-        {status === "success" && (
-          <p className="mt-3 text-sm text-green-600">Thanks! Your message has been sent.</p>
-        )}
-        {status === "error" && (
-          <p className="mt-3 text-sm text-red-600">Something went wrong. Please try again.</p>
-        )}
       </form>
     </div>
   );
