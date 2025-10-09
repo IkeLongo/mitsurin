@@ -133,7 +133,7 @@ export async function POST(req: Request) {
               This email was sent from your Mitsurin Wagyu Beef website contact form.
             </p>
             <p style="margin:5px 0 0 0; color:#666; font-size:12px;">
-              Received: ${new Date().toLocaleString()}
+              Received: ${new Date().toLocaleString("en-US", { timeZone: "America/Chicago" })}
             </p>
           </div>
         </div>
