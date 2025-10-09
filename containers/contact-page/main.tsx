@@ -4,11 +4,6 @@ import { Label } from "@/components/ui/input/label";
 import { Input } from "@/components/ui/input/input";
 import { Textarea } from "@/components/ui/input/textarea";
 import { cn } from "@/lib/utils";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
 
 export default function SignupFormDemo() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
