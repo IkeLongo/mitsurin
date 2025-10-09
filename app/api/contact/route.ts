@@ -70,9 +70,27 @@ export async function POST(req: Request) {
         <div style="max-width:600px; margin:0 auto; background-color:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
           
           <!-- Header -->
-          <div style="background: linear-gradient(135deg, #7f1d1d 0%, #ca8a04 100%); padding:32px 24px 24px 24px; text-align:center;">
-            <img src="https://mitsurinwagyu.com/mitsurin-stacked-logo-white.svg" alt="Mitsurin Wagyu Beef" style="display:block; margin:0 auto 10px auto; max-width:120px; height:auto;" />
-            <p style="margin:8px 0 0 0; color:#fff; opacity:0.92; font-size:16px;">
+          <div style="background: linear-gradient(135deg, #7f1d1d 0%, #ca8a04 100%);
+                      padding: 32px 24px 24px;
+                      text-align: center;">
+            <img
+              src="https://mitsurinwagyu.com/mitsurin-stacked-logo-white.png"
+              alt="Mitsurin Wagyu Beef"
+              width="120"
+              height="auto"
+              style="display: block;
+                    margin: 0 auto 10px auto;
+                    max-width: 120px;
+                    height: auto;
+                    border: 0;
+                    outline: none;
+                    text-decoration: none;"
+            />
+            <p style="margin: 8px 0 0;
+                      color: #ffffff;
+                      opacity: 0.92;
+                      font-size: 16px;
+                      font-family: Arial, sans-serif;">
               New Contact Form Submission
             </p>
           </div>
