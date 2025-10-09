@@ -75,7 +75,10 @@ export const BackgroundBeamsWithCollision = ({
         className
       )}
       style={{
-        paddingBottom: "env(safe-area-inset-bottom)",
+        // prefer dynamic viewport height where supported
+        height: "100dvh",
+        // safe area + iOS bottom toolbar (from the script you added in layout.tsx)
+        paddingBottom: "calc(env(safe-area-inset-bottom) + var(--ios-bottom-ui, 0px))",
       }}
     >
       {beams.map((beam) => (
@@ -92,9 +95,11 @@ export const BackgroundBeamsWithCollision = ({
         ref={containerRef}
         className="absolute bottom-0 bg-neutral-100 w-full inset-x-0 pointer-events-none"
         style={{
+          bottom: "calc(env(safe-area-inset-bottom) + var(--ios-bottom-ui, 0px))",
           boxShadow:
             "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset",
-          marginBottom: "env(safe-area-inset-bottom)",
+          // sit the floor ABOVE the bottom UI
+          height: 1, // optional: makes it a thin “collision line”
         }}
       ></div>
     </div>
@@ -143,16 +148,13 @@ const CollisionMechanism = React.forwardRef<
         const parentRect = parentRef.current.getBoundingClientRect();
 
         if (beamRect.bottom >= containerRect.top) {
-          const relativeX =
-            beamRect.left - parentRect.left + beamRect.width / 2;
-          const relativeY = beamRect.bottom - parentRect.top;
+          const relativeX = beamRect.left - parentRect.left + beamRect.width / 2;
+          // explode exactly at the floor line
+          const relativeY = containerRect.top - parentRect.top;
 
           setCollision({
             detected: true,
-            coordinates: {
-              x: relativeX,
-              y: relativeY,
-            },
+            coordinates: { x: relativeX, y: relativeY },
           });
           setCycleCollisionDetected(true);
         }

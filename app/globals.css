@@ -27,3 +27,11 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+.min-h-vvh {
+  min-height: var(--vvh, 100svh); /* visible viewport height */
+}
+
+.pb-ios {
+  padding-bottom: calc(env(safe-area-inset-bottom) + var(--ios-bottom-ui, 0px));
+}
