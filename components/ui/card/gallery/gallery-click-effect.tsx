@@ -31,16 +31,18 @@ export const GalleryCard = ({
   };
 
   return (
-    <div className={cn("w-full", className)}>
+    <div className={cn("w-full h-full min-h-96 flex flex-col", className)}>
       {/* Main Gallery Card */}
-      <GalleryMainCard>
-        <GalleryImage 
-          src={images[currentIndex]?.src}
-          alt={images[currentIndex]?.alt}
-        />
-        <GalleryArrowBack onClick={prevImage} />
-        <GalleryArrowForward onClick={nextImage} />
-      </GalleryMainCard>
+      <div className="flex-1 min-h-0 mb-4" style={{ minHeight: '450px' }}>
+        <GalleryMainCard>
+          <GalleryImage 
+            src={images[currentIndex]?.src}
+            alt={images[currentIndex]?.alt}
+          />
+          <GalleryArrowBack onClick={prevImage} />
+          <GalleryArrowForward onClick={nextImage} />
+        </GalleryMainCard>
+      </div>
 
       {/* Thumbnail Gallery */}
       <GalleryThumbnails>
@@ -68,7 +70,7 @@ export const GalleryMainCard = ({
   return (
     <div
       className={cn(
-        "relative w-full h-96 rounded-2xl overflow-hidden bg-gray-100 shadow-lg",
+        "relative w-full h-full rounded-2xl overflow-hidden bg-gray-100 shadow-lg",
         className
       )}
     >
@@ -119,7 +121,7 @@ export const GalleryArrowBack = ({
     <motion.button
       onClick={onClick}
       className={cn(
-        "absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-md transition-colors duration-200",
+        "absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-md transition-colors duration-200 cursor-pointer",
         className
       )}
       whileHover={{ scale: 1.05 }}
@@ -141,7 +143,7 @@ export const GalleryArrowForward = ({
     <motion.button
       onClick={onClick}
       className={cn(
-        "absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-md transition-colors duration-200",
+        "absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 rounded-full p-2 shadow-md transition-colors duration-200 cursor-pointer",
         className
       )}
       whileHover={{ scale: 1.05 }}
@@ -162,7 +164,7 @@ export const GalleryThumbnails = ({
   return (
     <div
       className={cn(
-        "flex gap-2 mt-4 overflow-x-auto pb-2",
+        "flex gap-2 overflow-x-auto p-2 flex-shrink-0",
         className
       )}
     >

@@ -22,9 +22,8 @@ const ladderItems = [
 
 const galleryImages = [
   { src: "/steak-gallery-1.webp", alt: "Wagyu beef cut 1" },
-  { src: "/gallery-2.jpg", alt: "Wagyu beef cut 2" },
-  { src: "/gallery-3.jpg", alt: "Wagyu beef cut 3" },
-  { src: "/gallery-4.jpg", alt: "Wagyu beef cut 4" },
+  { src: "/steak-gallery-2.webp", alt: "Wagyu beef cut 2" },
+  { src: "/steak-gallery-3.webp", alt: "Wagyu beef cut 3" },
 ];
 
 export default function AvailabilitySection() {
