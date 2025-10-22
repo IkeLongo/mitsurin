@@ -5,6 +5,7 @@ import PackagesSection from "@/containers/home-page/packages-section";
 import AvailabilitySection from "@/containers/home-page/availability-section";
 import HowItWorksSection from "@/containers/home-page/how-it-works-section";
 import RaisedWithPurposeSection from "@/containers/home-page/rasied-with-purpose-section";
+import WhyMitsurinSection from "@/containers/home-page/why-mitsurin-section";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <AvailabilitySection />
         <HowItWorksSection />
         <RaisedWithPurposeSection />
+        <WhyMitsurinSection />
       </main>
     </div>
   );
