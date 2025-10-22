@@ -4,6 +4,7 @@ import DiscoverSection from "@/containers/home-page/discover-section";
 import PackagesSection from "@/containers/home-page/packages-section";
 import AvailabilitySection from "@/containers/home-page/availability-section";
 import HowItWorksSection from "@/containers/home-page/how-it-works-section";
+import RaisedWithPurposeSection from "@/containers/home-page/rasied-with-purpose-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <PackagesSection />
         <AvailabilitySection />
         <HowItWorksSection />
+        <RaisedWithPurposeSection />
       </main>
     </div>
   );
