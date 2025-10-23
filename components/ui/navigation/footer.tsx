@@ -105,7 +105,7 @@ export default function Footer({
   className = "",
 }: FooterProps) {
   return (
-    <footer className={`bg-gray-100 ${className}`}>
+    <footer className={`bg-gray-100 mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 ${className}`}>
       {/* Main Footer Content */}
       <div className="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
         {/* Company Logo */}
