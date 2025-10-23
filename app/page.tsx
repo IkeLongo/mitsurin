@@ -7,6 +7,7 @@ import HowItWorksSection from "@/containers/home-page/how-it-works-section";
 import RaisedWithPurposeSection from "@/containers/home-page/rasied-with-purpose-section";
 import WhyMitsurinSection from "@/containers/home-page/why-mitsurin-section";
 import JapaneseGeneticsSection from "@/containers/home-page/japanese-genetics-section";
+import FAQSection from "@/containers/home-page/faq-section";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <RaisedWithPurposeSection />
         <WhyMitsurinSection />
         <JapaneseGeneticsSection />
+        <FAQSection />
       </main>
     </div>
   );

@@ -22,7 +22,15 @@ const faqs = [
   },
 ];
 
-const FAQs = () => {
+const FAQs = ({ 
+  heading = "Frequently Asked Questions",
+  eyebrowText,
+  className = ""
+}: {
+  heading?: string;
+  eyebrowText?: string;
+  className?: string;
+}) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -38,11 +46,21 @@ const FAQs = () => {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className="bg-gray-50 py-20"
+      className={`bg-gray-50 py-20 ${className}`}
       id="cau-hoi-thuong-gap"
     >
       <div className="mx-auto max-w-4xl px-3 lg:px-8">
-        <h4 className="text-2xl font-bold">Frequently Asked Questions</h4>
+        {/* Eyebrow text (optional) */}
+        {eyebrowText && (
+          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+            {eyebrowText.toUpperCase()}
+          </p>
+        )}
+
+        {/* Main heading - matching your existing section styles */}
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-center text-red-900 mb-12">
+          {heading}
+        </h3>
 
         <div className="mt-10 space-y-6">
           {faqs.map((faq, index) => {
@@ -52,7 +70,7 @@ const FAQs = () => {
                 {/* Question Button */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="flex w-full items-center justify-between py-4 text-left text-gray-900"
+                  className="flex w-full items-center justify-between py-4 text-left text-gray-900 cursor-pointer"
                   aria-expanded={isOpen}
                 >
                   <span className="text-lg font-semibold">{faq.question}</span>
@@ -61,7 +79,7 @@ const FAQs = () => {
                       isOpen ? "rotate-180" : "rotate-0"
                     }`}
                   >
-                    {isOpen ? <MinusIcon className="size-6" /> : <PlusIcon className="size-6" />}
+                    {isOpen ? <MinusIcon className="size-6 text-red-900" /> : <PlusIcon className="size-6 text-yellow-600" />}
                   </span>
                 </button>
 
