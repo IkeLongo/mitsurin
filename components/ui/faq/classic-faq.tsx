@@ -46,7 +46,7 @@ const FAQs = ({
         duration: 0.6,
         ease: "easeOut",
       }}
-      className={`bg-gray-50 ${className}`}
+      className={`${className}`}
       id="cau-hoi-thuong-gap"
     >
       <div className="mx-auto max-w-4xl px-3 lg:px-8">
