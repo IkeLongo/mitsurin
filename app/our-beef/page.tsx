@@ -1,5 +1,6 @@
 import HeadingSection from "@/containers/our-beef-page/heading-section";
 import WhatIsWagyuSection from "@/containers/our-beef-page/what-is-wagyu-section";
+import WagyuDifferenceSection from "@/containers/our-beef-page/wagyu-difference-section";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <main className="w-full mx-auto">
         <HeadingSection />
         <WhatIsWagyuSection />
+        <WagyuDifferenceSection />
       </main>
     </div>
   );
