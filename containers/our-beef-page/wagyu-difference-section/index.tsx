@@ -1,5 +1,66 @@
 import Image from "next/image";
 
+interface WagyuBulletPointProps {
+  title: string;
+  description: string;
+}
+
+function WagyuBulletPoint({ title, description }: WagyuBulletPointProps) {
+  return (
+    <li className="flex items-start gap-3 text-white">
+      {/* Custom bullet point */}
+      <div className="mt-1.5 flex-shrink-0">
+        <Image
+          src="/bullet-point.svg"
+          alt=""
+          width={16}
+          height={16}
+          className="w-4 h-4"
+        />
+      </div>
+      <span className="leading-relaxed">
+        <strong className="font-bold">{title}</strong> {description}
+      </span>
+    </li>
+  );
+}
+
+interface BulletPoint {
+  title: string;
+  description: string;
+}
+
+const bulletPoints: BulletPoint[] = [
+  {
+    title: "Exceptional Marbling:",
+    description: "Intricate fat distribution creates unparalleled tenderness and rich, buttery flavor that melts in your mouth."
+  },
+  {
+    title: "Pure Japanese Genetics:",
+    description: "Our cattle descend from authentic Japanese bloodlines, ensuring the highest quality and traditional characteristics."
+  },
+  {
+    title: "Premium Care & Feeding:",
+    description: "Stress-free environment with carefully crafted diet produces superior meat quality and optimal flavor development."
+  }
+];
+
+function WagyuBulletPointsList() {
+  return (
+    <div className="bg-red-950 rounded-lg p-8 mx-auto max-w-4xl">
+      <ul className="space-y-6">
+        {bulletPoints.map((point, index) => (
+          <WagyuBulletPoint
+            key={index}
+            title={point.title}
+            description={point.description}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function WagyuDifferenceSection() {
   return (
     <section
@@ -7,53 +68,21 @@ export default function WagyuDifferenceSection() {
       className="w-full bg-gray-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          {/* Left: Image */}
-          <div className="relative flex items-center justify-center">
-            <Image
-              src="/delicious-sliced-raw-wagyu.webp"
-              alt="Premium Wagyu beef cuts showcasing marbling"
-              width={600}
-              height={400}
-              className="object-cover rounded-2xl"
-              style={{ borderRadius: '1rem' }}
-              priority
-            />
-          </div>
+        {/* Eyebrow */}
+        <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+          THE WAGYU DIFFERENCE
+        </p>
 
-          {/* Right: Text Content */}
-          <div>
-            {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
-              WHAT IS WAGYU?
-            </p>
+        {/* Main Heading */}
+        <h3
+          id="wagyu-difference-heading"
+          className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
+        >
+          What Makes Wagyu Special?
+        </h3>
 
-            {/* Main Heading */}
-            <h3
-              id="what-is-wagyu-heading"
-              className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
-            >
-              <span className="text-red-900">The Pinnacle of </span><br />
-              <span className="text-yellow-600">Beef Quality</span>
-            </h3>
-
-            {/* Description */}
-            <p className="text-stone-950 text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <p className="mt-4 text-stone-950 text-lg leading-relaxed">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-              doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
-              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            </p>
-          </div>
-        </div>
+        {/* Bullet Points Component */}
+        <WagyuBulletPointsList />
       </div>
     </section>
   );
