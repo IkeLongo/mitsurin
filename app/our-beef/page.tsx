@@ -3,6 +3,7 @@ import WhatIsWagyuSection from "@/containers/our-beef-page/what-is-wagyu-section
 import WagyuDifferenceSection from "@/containers/our-beef-page/wagyu-difference-section";
 import HealthBenefitsSection from "@/containers/our-beef-page/health-benefits-section";
 import DrSelvaSection from "@/containers/our-beef-page/dr-selva-section";
+import USDAGradingSection from "@/containers/our-beef-page/usda-grading-section";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <WagyuDifferenceSection />
         <HealthBenefitsSection />
         <DrSelvaSection />
+        <USDAGradingSection />
       </main>
     </div>
   );
