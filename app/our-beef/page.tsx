@@ -2,6 +2,7 @@ import HeadingSection from "@/containers/our-beef-page/heading-section";
 import WhatIsWagyuSection from "@/containers/our-beef-page/what-is-wagyu-section";
 import WagyuDifferenceSection from "@/containers/our-beef-page/wagyu-difference-section";
 import HealthBenefitsSection from "@/containers/our-beef-page/health-benefits-section";
+import DrSelvaSection from "@/containers/our-beef-page/dr-selva-section";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <WhatIsWagyuSection />
         <WagyuDifferenceSection />
         <HealthBenefitsSection />
+        <DrSelvaSection />
       </main>
     </div>
   );
