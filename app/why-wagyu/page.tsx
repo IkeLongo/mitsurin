@@ -7,6 +7,7 @@ import USDAGradingSection from "@/containers/why-wagyu-page/usda-grading-section
 import WhyWagyuStandsApartSection from "@/containers/why-wagyu-page/why-wagyu-stands-apart-section";
 import IsItReallyWagyuSection from "@/containers/why-wagyu-page/is-it-really-wagyu-section";
 import WagyuExperienceSection from "@/containers/why-wagyu-page/wagyu-experience-section";
+import ExperienceTheDifferenceSection from "@/containers/why-wagyu-page/experience-the-difference-section";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <WhyWagyuStandsApartSection />
         <IsItReallyWagyuSection />
         <WagyuExperienceSection />
+        <ExperienceTheDifferenceSection />
       </main>
     </div>
   );

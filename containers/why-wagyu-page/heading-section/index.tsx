@@ -9,7 +9,9 @@ export default function HeadingSection() {
       }}
     >
       
-      <section className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
+      <section
+        aria-labelledby="discover-the-difference"
+        className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow */}
         <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4">
           DISCOVER THE DIFFERENCE
