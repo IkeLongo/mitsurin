@@ -39,22 +39,22 @@ export const InfoHoverEffect = ({
     <>
       <div
         className={cn(
-          "grid grid-cols-1 md:grid-cols-2 gap-4 py-6",
+          "relative grid grid-cols-1 md:grid-cols-2 gap-4 py-6",
           className
         )}
+        onMouseLeave={() => setHoveredIndex(null)}
       >
         {items.map((item, idx) => (
           <div
             key={idx}
             className="relative group flex p-2 h-full w-full cursor-pointer"
             onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
             onClick={() => handleCardClick(item)}
           >
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 h-full w-full bg-blue-100 block rounded-xl"
+                  className="absolute inset-0 h-full w-full bg-blue-100 block rounded-xl pointer-events-none"
                   layoutId="infoHoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{
