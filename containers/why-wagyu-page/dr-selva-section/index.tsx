@@ -9,8 +9,12 @@ export default function DrSelvaSection() {
         {/* Quote Box */}
         <div className="bg-red-900 border-2 border-yellow-600 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto flex justify-center flex-col items-center text-center">
           {/* Quotation Mark */}
-          <div className="text-yellow-600 text-6xl md:text-7xl font-serif leading-none">
-            "
+          <div className="mb-4">
+            <img 
+              src="/quotation.svg" 
+              alt="Quote"
+              className="w-10 h-10 md:w-12 md:h-12"
+            />
           </div>
 
           {/* Quote Text */}

@@ -8,7 +8,8 @@ export default function HealthBenefitsSection() {
       className="w-full bg-gray-100"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-10 items-center">
           {/* Left: Text Content */}
           <div>
             {/* Eyebrow */}
@@ -51,6 +52,50 @@ export default function HealthBenefitsSection() {
               style={{ borderRadius: '1rem' }}
               priority
             />
+          </div>
+        </div>
+
+        {/* Mobile/Tablet Layout */}
+        <div className="block lg:hidden">
+          {/* Eyebrow */}
+          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+            HEALTH BENEFITS
+          </p>
+
+          {/* Main Heading */}
+          <h3
+            id="health-benefits-heading"
+            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
+          >
+            <span className="text-red-900">Rich in </span>
+            <span className="text-yellow-600">Good Fats</span>
+          </h3>
+
+          {/* Image - Positioned after heading */}
+          <div className="relative w-full mb-6">
+            <Image
+              src="/fatty-juicy-wagyu.webp"
+              alt="Healthy Wagyu beef showcasing nutritional benefits"
+              width={500}
+              height={600}
+              className="w-full h-auto object-cover rounded-2xl"
+              style={{ borderRadius: '1rem' }}
+              priority
+            />
+          </div>
+
+          {/* Description */}
+          <p className="text-stone-950 text-lg leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident.
+          </p>
+
+          {/* Cards */}
+          <div className="flex flex-col gap-4">
+            <InfoHoverEffect items={infoData} />
           </div>
         </div>
       </div>

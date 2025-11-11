@@ -5,6 +5,7 @@ import HealthBenefitsSection from "@/containers/why-wagyu-page/health-benefits-s
 import DrSelvaSection from "@/containers/why-wagyu-page/dr-selva-section";
 import USDAGradingSection from "@/containers/why-wagyu-page/usda-grading-section";
 import WhyWagyuStandsApartSection from "@/containers/why-wagyu-page/why-wagyu-stands-apart-section";
+import IsItReallyWagyuSection from "@/containers/why-wagyu-page/is-it-really-wagyu-section";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <DrSelvaSection />
         <USDAGradingSection />
         <WhyWagyuStandsApartSection />
+        <IsItReallyWagyuSection />
       </main>
     </div>
   );
