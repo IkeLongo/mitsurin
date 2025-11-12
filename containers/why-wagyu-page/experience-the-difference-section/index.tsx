@@ -7,7 +7,7 @@ export default function ExperienceTheDifferenceSection() {
         backgroundImage: "url('/wagyu-steak-for-dinner.webp')",
       }}
     >
-      {/* Red overlay */}
+      {/* Black overlay */}
       <div className="absolute inset-0 bg-slate-900 opacity-50"></div>
       
       <section
