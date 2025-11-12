@@ -33,7 +33,7 @@ export default function HeadingSection() {
       </div>
 
       {/* Overlapping Cards Section */}
-      <div className="relative -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-32 z-20">
+      <div className="hidden lg:block -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-32 z-20">
         <div className="flex flex-col gap-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Cards that overlap the background */}
           <div className="w-full">

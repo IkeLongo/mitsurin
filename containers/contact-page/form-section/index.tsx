@@ -100,13 +100,15 @@ export default function SignupFormDemo() {
   // };
 
   return (
-    <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-white">
-      {/* <h2 className="text-xl font-bold text-neutral-800 dark:text-slate-950">
-        Let's get in touch
-      </h2>
-      <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-slate-950">
-        From our pastures to your plate, we&apos;re here to answer any questions or help with custom orders.
-      </p> */}
+    <div className="shadow-input mx-auto w-full max-w-md bg-white p-4 rounded-2xl md:p-8 dark:bg-white">
+      <div className="block lg:hidden">
+        <h2 className="text-xl font-bold text-neutral-800 dark:text-slate-950">
+          Let's get in touch
+        </h2>
+        <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-slate-950">
+          From our pastures to your plate, we&apos;re here to answer any questions or help with custom orders.
+        </p>
+      </div>
 
       <form className="my-8" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">

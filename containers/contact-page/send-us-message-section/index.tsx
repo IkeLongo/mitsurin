@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { InfoHoverEffect } from "@/components/ui/card/hover/info-card-hover-effect";
+import { HoverEffect } from "@/components/ui/card/hover/card-hover-effect";
+import { MapPin, Mail, Phone } from "lucide-react";
 import SignupFormDemo from "../form-section";
 
 export default function SendUsMessageSection() {
@@ -48,7 +49,7 @@ export default function SendUsMessageSection() {
 
           </div>
 
-          {/* Right: Image */}
+          {/* Right: SignUpForm */}
           <div className="relative flex items-center justify-center">
             <SignupFormDemo />
           </div>
@@ -56,45 +57,30 @@ export default function SendUsMessageSection() {
 
         {/* Mobile/Tablet Layout */}
         <div className="block lg:hidden">
-          {/* Eyebrow */}
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
-            HEALTH BENEFITS
-          </p>
-
-          {/* Main Heading */}
-          <h3
-            id="health-benefits-heading"
-            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
-          >
-            <span className="text-red-900">Rich in </span>
-            <span className="text-yellow-600">Good Fats</span>
-          </h3>
-
-          {/* Image - Positioned after heading */}
-          <div className="relative w-full mb-6">
-            <Image
-              src="/fatty-juicy-wagyu.webp"
-              alt="Healthy Wagyu beef showcasing nutritional benefits"
-              width={500}
-              height={600}
-              className="w-full h-auto object-cover rounded-2xl"
-              style={{ borderRadius: '1rem' }}
-              priority
-            />
+          {/* Top: SignUpForm */}
+          <div className="relative flex items-center justify-center">
+            <SignupFormDemo />
           </div>
 
-          {/* Description */}
-          <p className="text-stone-950 text-lg leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-            pariatur. Excepteur sint occaecat cupidatat non proident.
-          </p>
-
-          {/* Cards */}
-          <div className="flex flex-col gap-4">
-            <InfoHoverEffect items={infoData} />
+          {/* Overlapping Cards Section */}
+          <div className="block z-20">
+            <div className="flex flex-col gap-10">
+              {/* Cards that overlap the background */}
+              <div className="w-full flex justify-center">
+                <HoverEffect 
+                  items={cardData}
+                  showLearnMore={false}
+                  enableLinks={false}
+                  styles={{
+                    hover: "bg-yellow-600",
+                    card: "bg-white border-2 border-yellow-600",
+                    title: "text-red-900 text-center text-xl",
+                    description: "text-black text-center text-md",
+                  }}
+                  className="grid md:grid-cols-1 gap-4 sm:gap-6 max-w-md w-full"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -102,23 +88,38 @@ export default function SendUsMessageSection() {
   );
 }
 
-const infoData = [
+const cardData = [
   {
-    // Card Content
-    percentage: "40%",
-    description: "Higher in Monounsaturated Fats",
-    
-    // Modal Content (different from card)
-    modalTitle: "The Science Behind Monounsaturated Fats in Wagyu",
-    modalDescription: "Wagyu beef contains significantly higher levels of monounsaturated fats compared to regular beef. These healthy fats, including oleic acid, help reduce bad cholesterol (LDL) while maintaining good cholesterol (HDL) levels. The unique marbling pattern in Wagyu creates this exceptional nutritional profile through careful breeding and feeding practices that have been perfected over centuries in Japan."
+    title: "Location",
+    description: "1396 CR 646, Hondo, Tx 78861",
+    link: "#",
+    icon: (
+      <div className="w-16 h-16 bg-[#630710] rounded-full mx-auto mb-4 flex items-center justify-center">
+        <MapPin className="text-[#bf8136]" size={32} />
+      </div>
+    ),
+    alt: "Healthy Fats Benefits",
   },
   {
-    // Card Content
-    percentage: "30%",
-    description: "Lower in Saturated Fats",
-    
-    // Modal Content (completely different information)
-    modalTitle: "Understanding Saturated Fat Reduction in Premium Beef",
-    modalDescription: "Despite its rich appearance and intense marbling, Wagyu actually contains 30% less saturated fat than conventional beef. This remarkable characteristic comes from the specific genetics of Japanese cattle breeds and their specialized diet. The result is a healthier fat composition that doesn't compromise on taste or texture."
+    title: "Email",
+    description: "michael@mitsurinwagyu.com",
+    link: "#",
+    icon: (
+      <div className="w-16 h-16 bg-[#630710] rounded-full mx-auto mb-4 flex items-center justify-center">
+        <Mail className="text-[#bf8136]" size={32} />
+      </div>
+    ),
+    alt: "Lower Saturated Fat Content",
+  },
+  {
+    title: "Phone",
+    description: "210-827-0658",
+    link: "#",
+    icon: (
+      <div className="w-16 h-16 bg-[#630710] rounded-full mx-auto mb-4 flex items-center justify-center">
+        <Phone className="text-[#bf8136]" size={32} />
+      </div>
+    ),
+    alt: "Omega-3 Fatty Acids",
   }
 ];

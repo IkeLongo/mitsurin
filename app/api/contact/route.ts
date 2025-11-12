@@ -46,9 +46,10 @@ export async function POST(req: Request) {
     });
 
     const to = process.env.CONTACT_TO!;
-    const fromHeader = process.env.CONTACT_FROM || `Mitsurin Website <${process.env.SMTP_USER}>`;
+    // Use a different from address if available, otherwise fall back to current setup
+    const fromHeader = process.env.CONTACT_FROM || `Website Contact Form <noreply@${process.env.SMTP_USER?.split('@')[1] || 'yourdomain.com'}>`;
 
-    const subject = `New contact form: ${firstName} ${lastName}`;
+    const subject = `🥩 New Website Contact: ${firstName} ${lastName}`;
     const text = [
       `New contact form submission`,
       ``,
@@ -155,6 +156,11 @@ export async function POST(req: Request) {
       text,
       html,
       replyTo: email, // so you can reply directly to the sender
+      headers: {
+        'X-Mailer': 'Mitsurin Website Contact Form',
+        'X-Priority': '3',
+        'X-Source': 'Website Contact Form'
+      }
     });
 
     return NextResponse.json({ ok: true });
