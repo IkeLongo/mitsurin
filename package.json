@@ -18,15 +18,18 @@
     "@tabler/icons-react": "^3.35.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.0.0-alpha.1",
+    "is-disposable-email": "^0.0.1",
     "lucide-react": "^0.545.0",
     "next": "16.0.0",
     "next-sanity": "^11.4.2",
+    "nodemailer": "^7.0.9",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "recharts": "^3.3.0",
     "sanity": "^4.10.2",
     "styled-components": "^6.1.19",
-    "tailwind-merge": "^2.5.5"
+    "tailwind-merge": "^2.5.5",
+    "zod": "^3.23.8"
   },
   "overrides": {
     "framer-motion": {
@@ -39,6 +42,7 @@
     "@sanity/cli": "^4.10.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/nodemailer": "^7.0.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

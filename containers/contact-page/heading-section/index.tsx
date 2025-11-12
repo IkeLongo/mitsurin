@@ -52,11 +52,6 @@ export default function HeadingSection() {
           </div>
         </div>
       </div>
-
-      {/* White Background Section for Card Overhang */}
-      <div className="bg-white pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-12 md:pb-16 lg:pb-24">
-        {/* This creates the white space for cards to overhang into */}
-      </div>
     </div>
   );
 }

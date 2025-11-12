@@ -1,6 +1,5 @@
 import HeadingSection from "@/containers/contact-page/heading-section";
 import SendUsMessageSection from "@/containers/contact-page/send-us-message-section";
-import SignupFormDemo from "@/containers/contact-page/main";
 
 export default function Home() {
   return (
@@ -8,7 +7,6 @@ export default function Home() {
       <main className="w-full mx-auto">
         <HeadingSection />
         <SendUsMessageSection />
-        <SignupFormDemo />
       </main>
     </div>
   );
