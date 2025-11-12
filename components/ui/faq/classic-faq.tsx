@@ -4,32 +4,39 @@ import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const faqs = [
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+const defaultFaqs: FAQ[] = [
   {
     question: "Will I be able to get a job after completing the course?",
     answer:
-      "The knowledge I teach comes from my real work experience. I’ve also spent 3 years mentoring interns at my company, so after finishing the course, you'll feel confident to start working in a real business environment.",
+      "The knowledge I teach comes from my real work experience. I've also spent 3 years mentoring interns at my company, so after finishing the course, you'll feel confident to start working in a real business environment.",
   },
   {
     question: "Will you help me find a job after the course?",
     answer:
-      "If you study well and are hardworking, I can recommend you to my current company and my brother's company. I’ll also help you prepare for interviews and work with you on any questions you might face.",
+      "If you study well and are hardworking, I can recommend you to my current company and my brother's company. I'll also help you prepare for interviews and work with you on any questions you might face.",
   },
   {
     question: "Is the study schedule flexible?",
     answer:
-      "Yes, the schedule is very flexible since it’s an online course. You can book a session whenever you're free.",
+      "Yes, the schedule is very flexible since it's an online course. You can book a session whenever you're free.",
   },
 ];
 
 const FAQs = ({ 
   heading = "Frequently Asked Questions",
   eyebrowText,
-  className = ""
+  className = "",
+  faqs = defaultFaqs
 }: {
   heading?: string;
   eyebrowText?: string;
   className?: string;
+  faqs?: FAQ[];
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -66,7 +73,7 @@ const FAQs = ({
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div key={index} className="border-b border-gray-200">
+              <div key={index} className="border-b border-gray-200 mb-0">
                 {/* Question Button */}
                 <button
                   onClick={() => toggleFAQ(index)}

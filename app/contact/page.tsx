@@ -1,6 +1,7 @@
 import HeadingSection from "@/containers/contact-page/heading-section";
 import SendUsMessageSection from "@/containers/contact-page/send-us-message-section";
 import HowItWorksSection from "@/containers/contact-page/how-it-works-section";
+import FAQSection from "@/containers/contact-page/faq-section";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <HeadingSection />
         <SendUsMessageSection />
         <HowItWorksSection />
+        <FAQSection />
       </main>
     </div>
   );
