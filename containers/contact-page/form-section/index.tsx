@@ -1,13 +1,19 @@
 "use client";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from 'react-toastify';
+import { cn } from "@/lib/utils";
+
+import { ContactSchema, type ContactInput } from "@/lib/contact-schema";
 import { Label } from "@/components/ui/input/label";
 import { Input } from "@/components/ui/input/input";
 import { Textarea } from "@/components/ui/input/textarea";
-import { cn } from "@/lib/utils";
 
 export default function SignupFormDemo() {
   const [emailError, setEmailError] = useState<string>("");
   const [emailValue, setEmailValue] = useState<string>("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,18 +52,53 @@ export default function SignupFormDemo() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    // Validate email on submit
-    const emailValidationError = validateEmail(emailValue);
-    if (emailValidationError) {
-      setEmailError(emailValidationError);
-      return;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactInput>({
+    resolver: zodResolver(ContactSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+      company: "", // honeypot
+    },
+  });
+
+  const onSubmit = async (values: ContactInput) => {
+    setStatus("submitting");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const json = await res.json();
+      if (!res.ok || !json.ok) throw new Error(json.error ?? "Failed");
+
+      toast.success('Thanks! Your message has been sent.', {
+        position: "bottom-right",
+      });
+      reset();
+      setStatus("success");
+    } catch (e) {
+      console.error(e);
+      toast.error('Something went wrong. Please try again.', {
+        position: "bottom-right",
+      });
+      setStatus("error");
     }
-    
-    console.log("Form submitted");
   };
+
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log("Form submitted");
+  // };
+
   return (
     <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-white">
       {/* <h2 className="text-xl font-bold text-neutral-800 dark:text-slate-950">
@@ -67,91 +108,103 @@ export default function SignupFormDemo() {
         From our pastures to your plate, we&apos;re here to answer any questions or help with custom orders.
       </p> */}
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      <form className="my-8" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
           <LabelInputContainer>
-            <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="firstname">First name</Label>
-            <Input className="dark:bg-gray-100" id="firstname" placeholder="Ricky" type="text" />
+            <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="firstname">
+              First name
+            </Label>
+            <Input 
+              {...register("firstName")}
+              className="dark:bg-gray-100" 
+              id="firstname" 
+              placeholder="Ricky" 
+              type="text" 
+            />
+            {errors.firstName && (
+              <span className="text-red-500 text-xs mt-1">{errors.firstName.message}</span>
+            )}
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="lastname">Last name</Label>
-            <Input className="dark:bg-gray-100" id="lastname" placeholder="Bobby" type="text" />
+            <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="lastname">
+              Last name
+            </Label>
+            <Input 
+              {...register("lastName")}
+              className="dark:bg-gray-100" 
+              id="lastname" 
+              placeholder="Bobby" 
+              type="text" 
+            />
+            {errors.lastName && (
+              <span className="text-red-500 text-xs mt-1">{errors.lastName.message}</span>
+            )}
           </LabelInputContainer>
         </div>
+
         <LabelInputContainer className="mb-4">
-          <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="email">Email Address</Label>
+          <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="email">
+            Email Address
+          </Label>
           <Input 
+            {...register("email")}
             className={cn(
               "dark:bg-gray-100",
-              emailError ? "border-red-500 focus:border-red-500" : ""
+              errors.email ? "border-red-500 focus:border-red-500" : ""
             )}
             id="email" 
             placeholder="e.g. example@gmail.com" 
             type="email"
-            value={emailValue}
-            onChange={handleEmailChange}
-            onBlur={() => {
-              // Validate on blur if field has content
-              if (emailValue.length > 0) {
-                const error = validateEmail(emailValue);
-                setEmailError(error);
-              }
-            }}
           />
-          {emailError && (
-            <span className="text-red-500 text-xs mt-1">{emailError}</span>
+          {errors.email && (
+            <span className="text-red-500 text-xs mt-1">{errors.email.message}</span>
           )}
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="phone">Phone Number</Label>
+          <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="phone">
+            Phone Number
+          </Label>
           <Input 
+            {...register("phone")}
             className="dark:bg-gray-100" 
             id="phone" 
             placeholder="(123) 456-7890" 
             type="tel"
-            maxLength={14}
-            onKeyDown={(e) => {
-              // Allow: backspace, delete, tab, escape, enter, home, end, left, right arrows
-              if ([8, 9, 27, 13, 46, 35, 36, 37, 39].includes(e.keyCode) ||
-                  // Allow Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
-                  (e.ctrlKey && ['a', 'c', 'v', 'x'].includes(e.key.toLowerCase()))) {
-                return;
-              }
-              // Only allow numbers
-              if (!/[0-9]/.test(e.key)) {
-                e.preventDefault();
-              }
-            }}
-            onChange={(e) => {
-              // Remove all non-numeric characters
-              const numbers = e.target.value.replace(/\D/g, '');
-              
-              // Format the number as (123) 456-7890
-              let formattedValue = '';
-              if (numbers.length > 0) {
-                if (numbers.length <= 3) {
-                  formattedValue = `(${numbers}`;
-                } else if (numbers.length <= 6) {
-                  formattedValue = `(${numbers.slice(0, 3)}) ${numbers.slice(3)}`;
-                } else {
-                  formattedValue = `(${numbers.slice(0, 3)}) ${numbers.slice(3, 6)}-${numbers.slice(6, 10)}`;
-                }
-              }
-              
-              e.target.value = formattedValue;
-            }}
           />
+          {errors.phone && (
+            <span className="text-red-500 text-xs mt-1">{errors.phone.message}</span>
+          )}
         </LabelInputContainer>
         <LabelInputContainer className="mb-8">
-          <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="message">Message</Label>
-          <Textarea className="dark:bg-gray-100" id="message" placeholder="Let us know how we can help" />
+          <Label className="text-red-900 dark:text-red-900 font-bold" htmlFor="message">
+            Message
+          </Label>
+          <Textarea 
+            {...register("message")}
+            className="dark:bg-gray-100" 
+            id="message" 
+            placeholder="Let us know how we can help" 
+          />
+          {errors.message && (
+            <span className="text-red-500 text-xs mt-1">{errors.message.message}</span>
+          )}
         </LabelInputContainer>
 
+        {/* Hidden honeypot field */}
+        <input 
+          {...register("company")} 
+          type="text" 
+          style={{ display: 'none' }} 
+          tabIndex={-1} 
+          autoComplete="off"
+        />
+
         <button
-          className="group/btn relative block h-10 w-full rounded-md bg-red-900 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-red-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] cursor-pointer"
+          className="group/btn relative block h-10 w-full rounded-md bg-red-900 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-red-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] cursor-pointer disabled:opacity-50"
           type="submit"
+          disabled={status === "submitting"}
         >
-          Send Message &rarr;
+          {status === "submitting" ? "Sending..." : "Send Message →"}
           <BottomGradient />
         </button>
 
