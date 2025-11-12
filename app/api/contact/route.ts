@@ -46,8 +46,7 @@ export async function POST(req: Request) {
     });
 
     const to = process.env.CONTACT_TO!;
-    // Use a different from address if available, otherwise fall back to current setup
-    const fromHeader = process.env.CONTACT_FROM || `Website Contact Form <noreply@${process.env.SMTP_USER?.split('@')[1] || 'yourdomain.com'}>`;
+    const fromHeader = `Mitsurin Website Contact Form <${process.env.SMTP_USER}>`;
 
     const subject = `🥩 New Website Contact: ${firstName} ${lastName}`;
     const text = [
