@@ -27,13 +27,26 @@ export default function HealthBenefitsSection() {
             </h3>
 
             {/* Description */}
-            <p className="text-stone-950 text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-              pariatur. Excepteur sint occaecat cupidatat non proident.
-            </p>
+            <div className="space-y-4">
+              <p className="text-stone-950 text-lg leading-relaxed">
+                Wagyu beef isn't just rich in flavor—it's also rich in good fats. Thanks to its 
+                high oleic acid content, the same heart-healthy fat found in olive oil, Wagyu 
+                may be a smarter choice compared to other types of beef.
+              </p>
+              
+              <p className="text-stone-950 text-lg leading-relaxed">
+                The unique marbling pattern in Wagyu creates an exceptional nutritional profile. 
+                Studies show that Wagyu contains higher levels of conjugated linoleic acid (CLA), 
+                which has been linked to potential anti-inflammatory properties and improved 
+                immune function. Additionally, the meat is rich in omega-3 and omega-6 fatty 
+                acids in a more balanced ratio than conventional beef.
+              </p>
+              
+              <p className="text-stone-950 text-lg leading-relaxed">
+                When you choose Wagyu, you're not just indulging in extraordinary taste—you're 
+                making a choice that aligns with a more health-conscious approach to premium dining.
+              </p>
+            </div>
 
             {/* Cards */}
             <div className="flex flex-col gap-4">
@@ -85,13 +98,26 @@ export default function HealthBenefitsSection() {
           </div>
 
           {/* Description */}
-          <p className="text-stone-950 text-lg leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-            pariatur. Excepteur sint occaecat cupidatat non proident.
-          </p>
+          <div className="space-y-4 mb-6">
+            <p className="text-stone-950 text-lg leading-relaxed">
+              Wagyu beef isn't just rich in flavor—it's also rich in good fats. Thanks to its 
+              high oleic acid content, the same heart-healthy fat found in olive oil, Wagyu 
+              may be a smarter choice compared to other types of beef.
+            </p>
+            
+            <p className="text-stone-950 text-lg leading-relaxed">
+              The unique marbling pattern in Wagyu creates an exceptional nutritional profile. 
+              Studies show that Wagyu contains higher levels of conjugated linoleic acid (CLA), 
+              which has been linked to potential anti-inflammatory properties and improved 
+              immune function. Additionally, the meat is rich in omega-3 and omega-6 fatty 
+              acids in a more balanced ratio than conventional beef.
+            </p>
+            
+            <p className="text-stone-950 text-lg leading-relaxed">
+              When you choose Wagyu, you're not just indulging in extraordinary taste—you're 
+              making a choice that aligns with a more health-conscious approach to premium dining.
+            </p>
+          </div>
 
           {/* Cards */}
           <div className="flex flex-col gap-4">
