@@ -1,15 +1,28 @@
 import Image from "next/image";
+import { Award, Clock, Crown } from "lucide-react";
 
 type MeatCard = {
   title: string;
   description: string;
-  iconSrc?: string;
+  icon: React.ReactNode;
 };
 
 const meatCards: MeatCard[] = [
-  { title: "Beef Meat",  description: "Quisque purus purus feugiat quis nisi vel.", iconSrc: "https://placehold.co/62x62" },
-  { title: "Turkey Meat", description: "Quisque purus purus feugiat quis nisi vel.", iconSrc: "https://placehold.co/62x62" },
-  { title: "Lamb Meat",  description: "Quisque purus purus feugiat quis nisi vel.", iconSrc: "https://placehold.co/62x62" },
+  { 
+    title: "Premium Genetics", 
+    description: "100% Japanese bloodline ensures authentic marbling and exceptional flavor profiles.", 
+    icon: <Award className="w-10 h-10 text-yellow-600" />
+  },
+  { 
+    title: "Limited Availability", 
+    description: "Exclusive seasonal releases with only the finest cuts from our Texas ranch.", 
+    icon: <Clock className="w-10 h-10 text-yellow-600" />
+  },
+  { 
+    title: "Culinary Excellence", 
+    description: "Experience the world's most prized beef with unmatched tenderness and taste.", 
+    icon: <Crown className="w-10 h-10 text-yellow-600" />
+  },
 ];
 
 const bullets = [
@@ -29,8 +42,9 @@ export default function AboutSection() {
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Desktop */}
           {/* Left: Combined cards + image section */}
-          <div className="relative">
+          <div className="hidden lg:block">
             {/* Background: Framed image */}
             <div className="relative mx-auto lg:ml-auto">
               {/* Back frame - positioned down and left */}
@@ -42,7 +56,7 @@ export default function AboutSection() {
                   alt="Marbled Wagyu beef cut"
                   width={376}
                   height={528}
-                  className="object-cover border border-yellow-600 ml-auto"
+                  className="object-cover border border-yellow-600 ml-auto rounded-xl"
                   priority
                 />
               </div>
@@ -50,22 +64,17 @@ export default function AboutSection() {
 
             {/* Foreground: Meat cards positioned absolutely to hover over image */}
             <div className="absolute inset-0 flex flex-col justify-center space-y-4 xl:space-y-6 z-20">
-              {meatCards.map(({ title, description, iconSrc }) => (
+              {meatCards.map(({ title, description, icon }) => (
                 <article
                   key={title}
                   className="relative rounded-lg bg-red-900 text-stone-100 p-3 pl-16 min-h-24 shadow-lg xl:shadow-2xl max-w-xs"
                 >
                   {/* Icon */}
                   <div className="absolute left-3 top-1/2 -translate-y-1/2">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={iconSrc}
-                      alt=""
-                      className="w-12 h-12 object-contain"
-                    />
+                    {icon}
                   </div>
 
-                  <h3 className="text-yellow-200 text-lg font-semibold">{title}</h3>
+                  <h3 className="text-yellow-600 text-lg font-semibold">{title}</h3>
                   <p className="text-xs leading-relaxed">{description}</p>
                 </article>
               ))}
@@ -87,17 +96,63 @@ export default function AboutSection() {
               <span className="text-yellow-600">Legacy!</span>
             </h2>
 
+            {/* Mobile devices */}
+            <div className="relative py-6 lg:hidden">
+              {/* Background: Framed image */}
+              <div className="relative mx-auto lg:ml-auto">
+                {/* Back frame - positioned down and left */}
+                <div className="absolute right-4 top-4 w-full h-full border-[6px] border-yellow-600 rounded-sm z-10 max-w-[376px] max-h-[528px]" />
+                {/* Foreground image with a 1px border */}
+                <div className="">
+                  <Image
+                    src="/about-section-cow.webp"
+                    alt="Marbled Wagyu beef cut"
+                    width={376}
+                    height={528}
+                    className="object-cover border border-yellow-600 ml-auto rounded-xl"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Foreground: Meat cards positioned absolutely to hover over image */}
+              <div className="absolute inset-0 flex flex-col justify-center space-y-18 xl:space-y-6 z-20">
+                {meatCards.map(({ title, description, icon }) => (
+                  <article
+                    key={title}
+                    className="relative rounded-lg bg-red-900/80 md:bg-red-900 text-stone-100 p-3 pl-16 min-h-24 shadow-lg xl:shadow-2xl max-w-xs"
+                  >
+                    {/* Icon */}
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2">
+                      {icon}
+                    </div>
+
+                    <h3 className="text-yellow-600 text-lg font-semibold">{title}</h3>
+                    <p className="text-xs leading-relaxed">{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
             <p className="mt-6 text-stone-950 text-lg">
               Known for its superior marbling, velvety texture, and rich umami flavor.{" "}
               <strong>Wagyu beef is prized worldwide.</strong> At Mitsurin, we raise&nbsp;
               full-blooded Japanese Wagyu, ensuring purity, consistency, and distinction.
             </p>
 
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-8 space-y-3 grid grid-cols-2 gap-x-2 md:gap-x-8 gap-y-0 md:gap-y-3 space-y-0">
               {bullets.map((b) => (
                 <li key={b} className="flex items-start gap-3 text-stone-950">
-                  {/* Simple square bullet to avoid adding an icon package */}
-                  <span aria-hidden className="mt-1 inline-block w-2.5 h-2.5 bg-red-800 rounded-[2px]" />
+                  {/* Custom bullet point */}
+                  <div className="mt-1.5 flex-shrink-0">
+                    <Image
+                      src="/bullet-point.svg"
+                      alt=""
+                      width={16}
+                      height={16}
+                      className="w-4 h-4"
+                    />
+                  </div>
                   <span className="leading-relaxed">{b}</span>
                 </li>
               ))}
