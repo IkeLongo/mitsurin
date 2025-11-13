@@ -49,6 +49,8 @@ export default function PurchasingOptionsSection() {
               bulletPoint: "text-stone-600"              // Bullet point color
             }}
             className="max-w-5xl"
+            showLearnMore={false}
+            enableLinks={false}
           />
         </div>
 
@@ -74,7 +76,7 @@ export const packages = [
       "Freezer space required",
       "Perfect for large families"
     ],
-    link: "https://stripe.com",
+    link: "",
     icon: (
       <div className="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
         <Container className="text-yellow-600" size={32} />
@@ -95,7 +97,7 @@ export const packages = [
       "First-time buyer friendly",
       "Premium quality cuts"
     ],
-    link: "https://netflix.com",
+    link: "",
     icon: (
       <div className="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
         <Package className="text-yellow-600" size={32} />
