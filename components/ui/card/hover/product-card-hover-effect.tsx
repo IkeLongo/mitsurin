@@ -3,10 +3,9 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-
 import { useState } from "react";
 
-export const HoverEffect = ({
+export const ProductHoverEffect = ({
   items,
   className,
   showLearnMore = true,
@@ -18,6 +17,7 @@ export const HoverEffect = ({
     icon?: React.ReactNode;
     title: string;
     description: string;
+    bulletPoints?: string[];
     link: string;
     alt: string;
   }[];
@@ -30,6 +30,7 @@ export const HoverEffect = ({
     title?: string;
     description?: string;
     learnMore?: string;
+    bulletPoint?: string;
   };
 }) => {
   // Default styles
@@ -39,6 +40,7 @@ export const HoverEffect = ({
     title: "text-zinc-100",
     description: "text-zinc-300",
     learnMore: "text-yellow-600",
+    bulletPoint: "text-zinc-300",
   };
 
   // Merge provided styles with defaults
@@ -48,7 +50,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 py-10",
+        "grid grid-cols-1 md:grid-cols-2 pb-10",
         className
       )}
     >
@@ -83,19 +85,20 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
-            <Card bgColor={mergedStyles.card}>
-              <CardImage alt={item.alt} icon={item.icon}>
+            <ProductCard bgColor={mergedStyles.card}>
+              <ProductCardImage alt={item.alt} icon={item.icon}>
                 {item.image}
-              </CardImage>
-              <CardTitle textColor={mergedStyles.title}>{item.title}</CardTitle>
-              <CardDescription 
+              </ProductCardImage>
+              <ProductCardTitle textColor={mergedStyles.title}>{item.title}</ProductCardTitle>
+              <ProductCardDescription 
+                description={item.description}
+                bulletPoints={item.bulletPoints}
                 showLearnMore={showLearnMore}
                 descriptionColor={mergedStyles.description}
                 learnMoreColor={mergedStyles.learnMore}
-              >
-                {item.description}
-              </CardDescription>
-            </Card>
+                bulletPointColor={mergedStyles.bulletPoint}
+              />
+            </ProductCard>
           </CardWrapper>
         );
       })}
@@ -103,7 +106,7 @@ export const HoverEffect = ({
   );
 };
 
-export const Card = ({
+export const ProductCard = ({
   className,
   children,
   bgColor = "bg-slate-900",
@@ -119,13 +122,14 @@ export const Card = ({
         className
       )}
     >
-      <div className="relative z-50 flex-1 flex flex-col"> {/* Added flex classes */}
-        <div className="p-4 flex-1 flex flex-col">{children}</div> {/* Added flex classes */}
+      <div className="relative z-50 flex-1 flex flex-col">
+        <div className="p-4 flex-1 flex flex-col">{children}</div>
       </div>
     </div>
   );
 };
-export const CardImage = ({
+
+export const ProductCardImage = ({
   className,
   children,
   alt,
@@ -147,7 +151,7 @@ export const CardImage = ({
 
   // Otherwise render the image as before
   return (
-    <div className={cn("flex justify-start items-center mt-4", className)}>
+    <div className={cn("flex justify-center items-center mt-4", className)}>
       <Image
         src={children ? (children as string) : "/placeholder-image.png"}
         alt={alt}
@@ -158,7 +162,8 @@ export const CardImage = ({
     </div>
   );
 };
-export const CardTitle = ({
+
+export const ProductCardTitle = ({
   className,
   children,
   textColor = "text-zinc-100",
@@ -173,35 +178,63 @@ export const CardTitle = ({
     </h4>
   );
 };
-export const CardDescription = ({
+
+export const ProductCardDescription = ({
   className,
-  children,
+  description,
+  bulletPoints,
   showLearnMore = true,
   descriptionColor = "text-zinc-300",
   learnMoreColor = "text-yellow-600",
+  bulletPointColor = "text-zinc-300",
 }: {
   className?: string;
-  children: React.ReactNode;
+  description: string;
+  bulletPoints?: string[];
   showLearnMore?: boolean;
   descriptionColor?: string;
   learnMoreColor?: string;
+  bulletPointColor?: string;
 }) => {
   return (
     <div className="flex flex-col flex-1 justify-between">
-      <p
-        className={cn(
-          `mt-8 ${descriptionColor} tracking-wide leading-relaxed`,
-          className
+      <div>
+        {/* Main Description */}
+        <p
+          className={cn(
+            `mt-8 ${descriptionColor} tracking-wide leading-relaxed`,
+            className
+          )}
+        >
+          {description}
+        </p>
+
+        {/* Bullet Points - Two Column Layout */}
+        {bulletPoints && bulletPoints.length > 0 && (
+          <div className="mt-6">
+            <ul className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-3">
+              {bulletPoints.map((point, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  {/* Circular bullet point */}
+                  <div className="mt-2 flex-shrink-0">
+                    <div className="w-2 h-2 bg-red-900 rounded-full"></div>
+                  </div>
+                  <span className={`${bulletPointColor} text-sm leading-relaxed`}>
+                    {point}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
-      >
-        {children}
-      </p>
+      </div>
+
+      {/* Learn More */}
       {showLearnMore && (
-        <p className={`mt-4 ${learnMoreColor} font-bold tracking-wider`}>
+        <p className={`mt-8 ${learnMoreColor} font-bold tracking-wider`}>
           LEARN MORE
         </p>
       )}
     </div>
   );
 };
-

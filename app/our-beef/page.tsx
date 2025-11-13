@@ -1,5 +1,6 @@
 import HeadingSection from "@/containers/our-beef-page/heading-section";
 import ExceptionalQualitySection from "@/containers/our-beef-page/excepectional-quality-section";
+import PurchasingOptionsSection from "@/containers/our-beef-page/purchasing-options-section";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <main className="w-full mx-auto">
         <HeadingSection />
         <ExceptionalQualitySection />
+        <PurchasingOptionsSection />
       </main>
     </div>
   );
