@@ -1,3 +1,4 @@
+import { Container, Package } from "lucide-react";
 import { HoverEffect } from "@/components/ui/card/hover/card-hover-effect";
 
 export default function PackagesSection() {
@@ -46,17 +47,27 @@ export const packages = [
   {
     title: "Whole Cow",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
+      `A full share of premium, full-blooded Japanese Wagyu. Ideal for large families, 
+      group purchases, or long-term enjoyment.`,
     link: "https://stripe.com",
-    image: "/whole-cow-icon.webp",
+    icon: (
+          <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+            <Container className="text-yellow-600" size={64} />
+          </div>
+        ),
     alt: "Whole Cow Package",
   },
   {
     title: "Half Cow",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+      `Perfect for smaller households or first-time buyers looking to experience 
+      the unmatched tenderness of Wagyu.`,
     link: "https://netflix.com",
-    image: "/half-cow-icon.webp",
+    icon: (
+      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
+        <Package className="text-yellow-600" size={64} />
+      </div>
+    ),
     alt: "Half Cow Package",
   },
 ];
