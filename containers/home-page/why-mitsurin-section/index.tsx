@@ -4,9 +4,10 @@ type FeatureCard = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
-// Placeholder icons - you can replace with your preferred icons
-import { Award, Shield, Heart } from "lucide-react";
+// Feature-specific icons
+import { Dna, Leaf, ChefHat } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 // Import Aceternity UI 3D Card Components
 import {
@@ -19,17 +20,17 @@ const features: FeatureCard[] = [
   {
     title: "Premium Quality Genetics",
     description: "100% pure Japanese bloodlines ensure authentic Wagyu characteristics and superior marbling.",
-    icon: Award,
+    icon: Dna,
   },
   {
     title: "Sustainable Ranch Practices",
     description: "Ethical farming methods and stress-free environments produce healthier, better-tasting beef.",
-    icon: Shield,
+    icon: Leaf,
   },
   {
     title: "Unmatched Flavor Profile",
     description: "Rich umami taste and buttery texture that melts in your mouth - a true culinary experience.",
-    icon: Heart,
+    icon: ChefHat,
   },
 ];
 
@@ -126,7 +127,7 @@ export default function WhyMitsurinSection() {
                 id="why-mitsurin-heading"
                 className="text-3xl md:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-white"
               >
-                Choose The Best Wagyu, Choose Mitsurin Wagyu
+                Choose The Best Wagyu, Choose <span className="text-yellow-600">Mitsurin Wagyu</span>
               </h3>
             </div>
 
@@ -222,17 +223,19 @@ export default function WhyMitsurinSection() {
                 <div className="flex justify-between items-center mt-20">
                   <CardItem
                     translateZ={20}
-                    as="button"
-                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                   >
-                    Learn More →
+                    <Link href="/our-beef">
+                      Learn More →
+                    </Link>
                   </CardItem>
                   <CardItem
                     translateZ={20}
-                    as="button"
-                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold cursor-pointer hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
                   >
-                    Shop Now
+                    <Link href="/contact">
+                      Order Now
+                    </Link>
                   </CardItem>
                 </div>
               </CardBody>
