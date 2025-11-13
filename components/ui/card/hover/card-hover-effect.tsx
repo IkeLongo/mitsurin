@@ -139,7 +139,7 @@ export const CardImage = ({
   // If icon is provided, render it instead of an image
   if (icon) {
     return (
-      <div className={cn("flex justify-center items-center mt-4", className)}>
+      <div className={cn("flex justify-center items-center h-20", className)}>
         {icon}
       </div>
     );
@@ -147,7 +147,7 @@ export const CardImage = ({
 
   // Otherwise render the image as before
   return (
-    <div className={cn("flex justify-start items-center mt-4", className)}>
+    <div className={cn("flex justify-center items-center h-20", className)}>
       <Image
         src={children ? (children as string) : "/placeholder-image.png"}
         alt={alt}
@@ -168,9 +168,11 @@ export const CardTitle = ({
   textColor?: string;
 }) => {
   return (
-    <h4 className={cn(`${textColor} font-bold tracking-wide mt-4`, className)}>
-      {children}
-    </h4>
+    <div className="h-20 flex items-center justify-center">
+      <h4 className={cn(`${textColor} font-bold tracking-wide text-center`, className)}>
+        {children}
+      </h4>
+    </div>
   );
 };
 export const CardDescription = ({
@@ -187,19 +189,26 @@ export const CardDescription = ({
   learnMoreColor?: string;
 }) => {
   return (
-    <div className="flex flex-col flex-1 justify-between">
-      <p
-        className={cn(
-          `mt-8 ${descriptionColor} tracking-wide leading-relaxed`,
-          className
-        )}
-      >
-        {children}
-      </p>
-      {showLearnMore && (
-        <p className={`mt-4 ${learnMoreColor} font-bold tracking-wider`}>
-          LEARN MORE
+    <div className="flex flex-col flex-1">
+      {/* Fixed spacing for description */}
+      <div className="mb-6">
+        <p
+          className={cn(
+            `${descriptionColor} tracking-wide leading-relaxed text-center`,
+            className
+          )}
+        >
+          {children}
         </p>
+      </div>
+      
+      {/* Learn More - Fixed at bottom */}
+      {showLearnMore && (
+        <div className="mt-auto pt-4">
+          <p className={`${learnMoreColor} font-bold tracking-wider text-center`}>
+            LEARN MORE
+          </p>
+        </div>
       )}
     </div>
   );

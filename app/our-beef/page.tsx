@@ -1,6 +1,7 @@
 import HeadingSection from "@/containers/our-beef-page/heading-section";
 import ExceptionalQualitySection from "@/containers/our-beef-page/excepectional-quality-section";
 import PurchasingOptionsSection from "@/containers/our-beef-page/purchasing-options-section";
+import TheProcessSection from "@/containers/our-beef-page/the-process-section";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <HeadingSection />
         <ExceptionalQualitySection />
         <PurchasingOptionsSection />
+        <TheProcessSection />
       </main>
     </div>
   );
