@@ -1,4 +1,5 @@
-import { Package, Truck, ChefHat } from "lucide-react";
+import { Truck, ChefHat, Beef } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const steps = [
   {
@@ -6,7 +7,7 @@ const steps = [
     title: "Select Your Cut",
     description:
       "Choose from our premium selection of Wagyu cuts, each carefully curated for exceptional quality and marbling.",
-    icon: Package,
+    icon: Beef,
     iconBgColor: "bg-red-900",
   },
   {
@@ -34,7 +35,7 @@ export default function HowItWorksSection() {
         <div className="bg-white p-8 lg:p-12">
           <h3
             id="how-it-works-heading"
-            className="mb-12 text-center font-[Montserrat] text-3xl font-bold leading-tight text-stone-900 sm:text-4xl lg:text-5xl"
+            className="mb-12 text-center font-[Montserrat] text-3xl font-bold leading-tight text-red-900 sm:text-4xl lg:text-5xl"
           >
             How it Works?
           </h3>
@@ -84,7 +85,14 @@ export default function HowItWorksSection() {
             <div className="mt-8 grid grid-cols-[minmax(80px,1fr)_minmax(100px,2fr)_minmax(80px,1fr)_minmax(100px,2fr)_minmax(80px,1fr)] xl:grid-cols-[100px_250px_100px_250px_100px] justify-center gap-x-4 xl:gap-x-8 px-16 xl:px-20">
               <CardContent {...steps[0]} stepNumber={1} className="col-start-1" />
               <div className="col-start-2"></div> {/* Empty space for dots alignment */}
-              <CardContent {...steps[1]} stepNumber={2} className="col-start-3" />
+              <CardContent
+                {...steps[1]}
+                stepNumber={2}
+                className="col-start-3"
+                styles={{
+                  stepNumber: "bg-yellow-600"
+                }}
+              />
               <div className="col-start-4"></div> {/* Empty space for dots alignment */}
               <CardContent {...steps[2]} stepNumber={3} className="col-start-5" />
             </div>
@@ -110,7 +118,13 @@ export default function HowItWorksSection() {
             <div className="flex flex-col items-center">
               <IconBox {...steps[1]} />
               <div className="mt-6">
-                <CardContent {...steps[1]} stepNumber={2} />
+                <CardContent
+                {...steps[1]}
+                stepNumber={2}
+                styles={{
+                  stepNumber: "bg-yellow-600"
+                }}
+              />
               </div>
             </div>
 
@@ -161,29 +175,61 @@ function CardContent({
   description,
   stepNumber,
   className,
+  styles = {},
 }: {
   title: string;
   description: string;
   stepNumber: number;
   className?: string;
+  styles?: {
+    stepNumber?: string;
+    title?: string;
+    description?: string;
+  };
 }) {
+  // Base styles that should always be present
+  const baseStyles = {
+    stepNumber: "flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white",
+    title: "min-w-[200px] font-[Montserrat] text-xl font-bold text-stone-900 text-center",
+    description: "min-w-[200px] leading-relaxed text-gray-600 text-center max-w-xs",
+  };
+
+  // Default colors/additional styles
+  const defaultStyles = {
+    stepNumber: "bg-red-900",
+    title: "",
+    description: "",
+  };
+
   return (
     <div className={`flex flex-col items-center text-center ${className}`}>
       {/* Step number indicator */}
       <div className="mb-4 flex justify-center">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-900 text-sm font-bold text-white">
+        <div className={cn(
+          baseStyles.stepNumber,
+          defaultStyles.stepNumber,
+          styles.stepNumber
+        )}>
           {stepNumber}
         </div>
       </div>
 
       {/* Title - wrapped in flex container to maintain centering */}
       <div className="mb-4 flex justify-center">
-        <h4 className="min-w-[200px] font-[Montserrat] text-xl font-bold text-stone-900 text-center">{title}</h4>
+        <h4 className={cn(
+          baseStyles.title,
+          defaultStyles.title,
+          styles.title
+        )}>{title}</h4>
       </div>
 
       {/* Description - also wrapped to maintain centering */}
       <div className="flex justify-center">
-        <p className="min-w-[200px] leading-relaxed text-gray-600 text-center max-w-xs">{description}</p>
+        <p className={cn(
+          baseStyles.description,
+          defaultStyles.description,
+          styles.description
+        )}>{description}</p>
       </div>
     </div>
   );
