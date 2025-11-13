@@ -3,6 +3,7 @@ import ExceptionalQualitySection from "@/containers/our-beef-page/excepectional-
 import PurchasingOptionsSection from "@/containers/our-beef-page/purchasing-options-section";
 import TheProcessSection from "@/containers/our-beef-page/the-process-section";
 import CutSelectionSection from "@/containers/our-beef-page/cut-selection-section";
+import ReadyToReserveSection from "@/containers/our-beef-page/ready-to-reserve-section";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <PurchasingOptionsSection />
         <TheProcessSection />
         <CutSelectionSection />
+        <ReadyToReserveSection />
       </main>
     </div>
   );
