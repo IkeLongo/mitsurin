@@ -44,7 +44,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Desktop */}
           {/* Left: Combined cards + image section */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block lg:relative">
             {/* Background: Framed image */}
             <div className="relative mx-auto lg:ml-auto">
               {/* Back frame - positioned down and left */}
