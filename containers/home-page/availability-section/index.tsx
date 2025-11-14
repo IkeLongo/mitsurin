@@ -1,5 +1,6 @@
 import { NumberedLadder } from "@/components/ui/ladder/numbered-ladder";
 import { GalleryCard } from "@/components/ui/card/gallery/gallery-click-effect";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 const ladderItems = [
   { 
@@ -41,17 +42,24 @@ export default function AvailabilitySection() {
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column: Product Availability */}
-          <div>
-            <h3
-              id="availability-mitsurin-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-red-900 mb-8"
-            >
-              Product Availability
-            </h3>
-            
-            {/* Ladder Component Placeholder */}
-            <NumberedLadder items={ladderItems} />
-          </div>
+          <ScrollAnimationWrapper
+            animationType="slideUp"
+            duration={0.8}
+            delay={0.1}
+            initialY={60}
+          >
+            <div>
+              <h3
+                id="availability-mitsurin-heading"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-red-900 mb-8"
+              >
+                Product Availability
+              </h3>
+              
+              {/* Ladder Component Placeholder */}
+              <NumberedLadder items={ladderItems} />
+            </div>
+          </ScrollAnimationWrapper>
 
           {/* Right Column: Additional Content */}
           <GalleryCard images={galleryImages} />
