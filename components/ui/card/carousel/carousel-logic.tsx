@@ -115,12 +115,12 @@ export const Carousel = ({
           </AnimatePresence>
         </div>
 
-        {/* Navigation Arrows */}
+        {/* Navigation Arrows - Hidden on sm and smaller screens */}
         {cards.length > 1 && (
           <>
             <button
               onClick={handlePrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white/90 transition-all duration-200 hover:scale-110"
+              className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/50 backdrop-blur-sm shadow-lg hover:bg-white/90 transition-all duration-200 hover:scale-110"
               aria-label="Previous card"
             >
               <ChevronLeft className="w-6 h-6 text-gray-700" />
@@ -128,7 +128,7 @@ export const Carousel = ({
             
             <button
               onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white/90 transition-all duration-200 hover:scale-110"
+              className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/50 backdrop-blur-sm shadow-lg hover:bg-white/90 transition-all duration-200 hover:scale-110"
               aria-label="Next card"
             >
               <ChevronRight className="w-6 h-6 text-gray-700" />
@@ -150,9 +150,19 @@ export const Carousel = ({
         )}
       </div>
 
-      {/* Dot Indicators */}
+      {/* Dot Indicators with Inline Arrows on Small Screens */}
       {cards.length > 1 && (
         <div className="flex justify-center items-center gap-3 mt-6">
+          {/* Left Arrow - Only visible on sm and smaller */}
+          <button
+            onClick={handlePrev}
+            className="md:hidden p-2 rounded-full backdrop-blur-sm shadow-lg hover:bg-white/90 transition-all duration-200 hover:scale-110"
+            aria-label="Previous card"
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-700 z-20" />
+          </button>
+
+          {/* Dot Indicators */}
           {cards.map((_, index) => (
             <motion.button
               key={index}
@@ -166,6 +176,15 @@ export const Carousel = ({
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
+
+          {/* Right Arrow - Only visible on sm and smaller */}
+          <button
+            onClick={handleNext}
+            className="md:hidden p-2 rounded-full backdrop-blur-sm shadow-lg hover:bg-white/90 transition-all duration-200 hover:scale-110"
+            aria-label="Next card"
+          >
+            <ChevronRight className="w-5 h-5 text-gray-700" />
+          </button>
         </div>
       )}
 
