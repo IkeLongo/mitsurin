@@ -73,6 +73,36 @@ export default function MarblingQualityComparison() {
   // Hover state for column highlighting
   const [hoveredColumn, setHoveredColumn] = useState<string | null>(null);
 
+  // Function to check if chart is still in viewport (more sensitive detection)
+  const isChartInViewport = () => {
+    if (!chartRef.current) return false;
+    
+    const rect = chartRef.current.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+    
+    // Calculate how much of the chart is visible
+    const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+    const visibleWidth = Math.min(rect.right, windowWidth) - Math.max(rect.left, 0);
+    const totalHeight = rect.height;
+    const totalWidth = rect.width;
+    
+    // Hide modal if less than 30% of the chart is visible (adjust this percentage as needed)
+    const visibilityThreshold = 0.9;
+    const heightVisibility = visibleHeight / totalHeight;
+    const widthVisibility = visibleWidth / totalWidth;
+    
+    return heightVisibility >= visibilityThreshold && widthVisibility >= visibilityThreshold;
+  };
+
+  // Hide modal when chart leaves viewport
+  const hideModalIfOutOfView = () => {
+    if (!isChartInViewport()) {
+      setModalState(prev => ({ ...prev, isVisible: false }));
+      setHoveredColumn(null);
+    }
+  };
+
   useEffect(() => {
     if (isInView) {
       // Animate each bar with a staggered delay
@@ -89,6 +119,31 @@ export default function MarblingQualityComparison() {
       });
     }
   }, [isInView]);
+
+  // Add scroll and resize event listeners to check viewport
+  useEffect(() => {
+    const handleScroll = () => {
+      if (modalState.isVisible) {
+        hideModalIfOutOfView();
+      }
+    };
+
+    const handleResize = () => {
+      if (modalState.isVisible) {
+        hideModalIfOutOfView();
+      }
+    };
+
+    // Add event listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [modalState.isVisible]); // Depend on modal visibility to optimize listener attachment
 
   // Custom bar component to handle hover events
   const CustomBar = (props: any) => {
