@@ -1,8 +1,8 @@
 "use client";
 
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
 import { useState } from "react";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 interface FAQ {
   question: string;
@@ -45,16 +45,12 @@ const FAQs = ({
   };
 
   return (
-    <motion.div
-      initial={{ y: 60, opacity: 0 }} // Start below with 0 opacity
-      whileInView={{ y: 0, opacity: 1 }} // Move to the normal position and become visible
-      viewport={{ once: true }} // Trigger animation when 30% of the card is visible
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-      }}
-      className={`${className}`}
+    <ScrollAnimationWrapper
+      className={className}
       id="cau-hoi-thuong-gap"
+      animationType="slideUp"
+      duration={0.6}
+      initialY={60}
     >
       <div className="mx-auto max-w-4xl px-3 lg:px-8">
         {/* Eyebrow text (optional) */}
@@ -105,7 +101,7 @@ const FAQs = ({
           })}
         </div>
       </div>
-    </motion.div>
+    </ScrollAnimationWrapper>
   );
 }
 
