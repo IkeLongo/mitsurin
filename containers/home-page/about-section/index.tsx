@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Award, Clock, Crown } from "lucide-react";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 type MeatCard = {
   title: string;
@@ -46,59 +47,12 @@ export default function AboutSection() {
           {/* Left: Combined cards + image section */}
           <div className="hidden lg:block lg:relative">
             {/* Background: Framed image */}
-            <div className="relative mx-auto lg:ml-auto">
-              {/* Back frame - positioned down and left */}
-              <div className="absolute right-4 top-4 w-full h-full border-[6px] border-yellow-600 rounded-sm z-10 max-w-[376px] max-h-[528px]" />
-              {/* Foreground image with a 1px border */}
-              <div className="">
-                <Image
-                  src="/about-section-cow.webp"
-                  alt="Marbled Wagyu beef cut"
-                  width={376}
-                  height={528}
-                  className="object-cover border border-yellow-600 ml-auto rounded-xl"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Foreground: Meat cards positioned absolutely to hover over image */}
-            <div className="absolute inset-0 flex flex-col justify-center space-y-4 xl:space-y-6 z-20">
-              {meatCards.map(({ title, description, icon }) => (
-                <article
-                  key={title}
-                  className="relative rounded-lg bg-red-900 text-stone-100 p-3 pl-16 min-h-24 shadow-lg xl:shadow-2xl max-w-xs"
-                >
-                  {/* Icon */}
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2">
-                    {icon}
-                  </div>
-
-                  <h3 className="text-yellow-600 text-lg font-semibold">{title}</h3>
-                  <p className="text-xs leading-relaxed">{description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Copy + bullets */}
-          <div>
-            {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
-              ABOUT MITSURIN WAGYU BEEF
-            </p>
-
-            <h2
-              id="about-mitsurin-heading"
-              className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight"
+            <ScrollAnimationWrapper
+              animationType="slideRight"
+              duration={0.8}
+              delay={0.1}
+              initialY={60}
             >
-              <span className="text-red-900">Wagyu is More than a Breed — It's a </span>
-              <span className="text-yellow-600">Legacy!</span>
-            </h2>
-
-            {/* Mobile devices */}
-            <div className="relative py-6 lg:hidden">
-              {/* Background: Framed image */}
               <div className="relative mx-auto lg:ml-auto">
                 {/* Back frame - positioned down and left */}
                 <div className="absolute right-4 top-4 w-full h-full border-[6px] border-yellow-600 rounded-sm z-10 max-w-[376px] max-h-[528px]" />
@@ -114,9 +68,89 @@ export default function AboutSection() {
                   />
                 </div>
               </div>
+            </ScrollAnimationWrapper>
+
+            {/* Foreground: Meat cards positioned absolutely to hover over image */}
+            <ScrollAnimationWrapper
+              animationType="slideLeft"
+              duration={0.8}
+              delay={0.3}
+              initialY={40}
+              className="absolute inset-0 flex flex-col justify-center space-y-4 xl:space-y-6 z-20"
+            >
+              {meatCards.map(({ title, description, icon }) => (
+                <article
+                  key={title}
+                  className="relative rounded-lg bg-red-900 text-stone-100 p-3 pl-16 min-h-24 shadow-lg xl:shadow-2xl max-w-xs"
+                >
+                  {/* Icon */}
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2">
+                    {icon}
+                  </div>
+
+                  <h3 className="text-yellow-600 text-lg font-semibold">{title}</h3>
+                  <p className="text-xs leading-relaxed">{description}</p>
+                </article>
+              ))}
+            </ScrollAnimationWrapper>
+          </div>
+
+          {/* Right: Copy + bullets */}
+          <div>
+            <ScrollAnimationWrapper
+              animationType="slideUp"
+              duration={0.8}
+              delay={0.2}
+              initialY={50}
+            >
+              {/* Eyebrow */}
+              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+                ABOUT MITSURIN WAGYU BEEF
+              </p>
+
+              <h2
+                id="about-mitsurin-heading"
+                className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight"
+              >
+                <span className="text-red-900">Wagyu is More than a Breed — It's a </span>
+                <span className="text-yellow-600">Legacy!</span>
+              </h2>
+            </ScrollAnimationWrapper>
+
+            {/* Mobile devices */}
+            <div className="relative py-6 lg:hidden">
+              {/* Background: Framed image */}
+              <ScrollAnimationWrapper
+                animationType="slideLeft"
+                duration={0.8}
+                delay={0.1}
+                initialY={60}
+              >
+                <div className="relative mx-auto lg:ml-auto">
+                  {/* Back frame - positioned down and left */}
+                  <div className="absolute right-4 top-4 w-full h-full border-[6px] border-yellow-600 rounded-sm z-10 max-w-[376px] max-h-[528px]" />
+                  {/* Foreground image with a 1px border */}
+                  <div className="">
+                    <Image
+                      src="/about-section-cow.webp"
+                      alt="Marbled Wagyu beef cut"
+                      width={376}
+                      height={528}
+                      className="object-cover border border-yellow-600 ml-auto rounded-xl"
+                      priority
+                    />
+                  </div>
+                </div>
+              </ScrollAnimationWrapper>
 
               {/* Foreground: Meat cards positioned absolutely to hover over image */}
-              <div className="absolute inset-0 flex flex-col justify-center space-y-18 xl:space-y-6 z-20">
+              <ScrollAnimationWrapper
+                animationType="slideRight"
+                duration={0.8}
+                delay={0.3}
+                initialY={40}
+                className="absolute inset-0 flex flex-col justify-center space-y-18 xl:space-y-6 z-20"
+              >
                 {meatCards.map(({ title, description, icon }) => (
                   <article
                     key={title}
@@ -131,32 +165,39 @@ export default function AboutSection() {
                     <p className="text-xs leading-relaxed">{description}</p>
                   </article>
                 ))}
-              </div>
+              </ScrollAnimationWrapper>
             </div>
 
-            <p className="mt-6 text-stone-950 text-lg">
-              Known for its superior marbling, velvety texture, and rich umami flavor.{" "}
-              <strong>Wagyu beef is prized worldwide.</strong> At Mitsurin, we raise&nbsp;
-              full-blooded Japanese Wagyu, ensuring purity, consistency, and distinction.
-            </p>
+            <ScrollAnimationWrapper
+              animationType="slideUp"
+              duration={0.8}
+              delay={0.2}
+              initialY={40}
+            >
+              <p className="mt-6 text-stone-950 text-lg">
+                Known for its superior marbling, velvety texture, and rich umami flavor.{" "}
+                <strong>Wagyu beef is prized worldwide.</strong> At Mitsurin, we raise&nbsp;
+                full-blooded Japanese Wagyu, ensuring purity, consistency, and distinction.
+              </p>
 
-            <ul className="mt-8 space-y-3 grid grid-cols-2 gap-x-2 md:gap-x-8 gap-y-0 md:gap-y-3 space-y-0">
-              {bullets.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-stone-950">
-                  {/* Custom bullet point */}
-                  <div className="mt-1.5 flex-shrink-0">
-                    <Image
-                      src="/bullet-point.svg"
-                      alt=""
-                      width={16}
-                      height={16}
-                      className="w-4 h-4"
-                    />
-                  </div>
-                  <span className="leading-relaxed">{b}</span>
-                </li>
-              ))}
-            </ul>
+              <ul className="mt-8 space-y-3 grid grid-cols-2 gap-x-2 md:gap-x-8 gap-y-0 md:gap-y-3 space-y-0">
+                {bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-3 text-stone-950">
+                    {/* Custom bullet point */}
+                    <div className="mt-1.5 flex-shrink-0">
+                      <Image
+                        src="/bullet-point.svg"
+                        alt=""
+                        width={16}
+                        height={16}
+                        className="w-4 h-4"
+                      />
+                    </div>
+                    <span className="leading-relaxed">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollAnimationWrapper>
           </div>
         </div>
       </div>
