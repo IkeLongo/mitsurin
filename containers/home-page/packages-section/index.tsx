@@ -17,19 +17,30 @@ export default function PackagesSection() {
           {/* Title */}
           <h3
             id="packages-section-heading"
-            className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight text-stone-900 mb-8"
+            className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight text-red-900 mb-8"
           >
-            Premium Beef Packages
+            <span className="text-yellow-600">Premium</span> Beef Packages
           </h3>
 
           {/* Description */}
-          <p className="text-lg text-stone-700 leading-relaxed max-w-3xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-            pariatur.
-          </p>
+          <div className="text-lg text-stone-700 leading-relaxed max-w-3xl mx-auto space-y-4">
+            <p>
+              Two options. One promise: the best beef you can buy. Hand-selected, 
+              full-blooded Wagyu raised with precision and care on our Texas ranch.
+            </p>
+            
+            <p>
+              Each package represents months of dedication to traditional Japanese breeding 
+              methods combined with modern ranch management. Our cattle enjoy stress-free 
+              environments, premium feed, and humane treatment that directly translates to 
+              the exceptional marbling and flavor you'll taste in every bite.
+            </p>
+            
+            <p className="font-semibold text-stone-800">
+              Ready to experience the difference? Choose the package that fits your family's 
+              appetite for excellence.
+            </p>
+          </div>
         </div>
 
         {/* Cards */}
