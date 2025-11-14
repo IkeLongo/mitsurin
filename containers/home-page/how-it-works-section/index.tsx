@@ -1,5 +1,6 @@
 import { Truck, ChefHat, Beef } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 const steps = [
   {
@@ -33,12 +34,14 @@ export default function HowItWorksSection() {
     <section aria-labelledby="how-it-works-heading" className="w-full bg-red-900">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-[1400px] lg:px-8">
         <div className="bg-white p-8 lg:p-12">
-          <h3
-            id="how-it-works-heading"
-            className="mb-12 text-center font-[Montserrat] text-3xl font-bold leading-tight text-red-900 sm:text-4xl lg:text-5xl"
-          >
-            How it Works?
-          </h3>
+          <ScrollAnimationWrapper animationType="slideUp">
+            <h3
+              id="how-it-works-heading"
+              className="mb-12 text-center font-[Montserrat] text-3xl font-bold leading-tight text-red-900 sm:text-4xl lg:text-5xl"
+            >
+              How it Works?
+            </h3>
+          </ScrollAnimationWrapper>
 
           {/* 
             Two different layouts:
@@ -62,7 +65,9 @@ export default function HowItWorksSection() {
               "
             >
               {/* Row 1: icon #1 */}
-              <IconBox {...steps[0]} className="col-start-1" />
+              <ScrollAnimationWrapper animationType="slideUp" delay={0.3}>
+                <IconBox {...steps[0]} className="col-start-1" />
+              </ScrollAnimationWrapper>
               {/* Horizontal connector between 1 and 2 */}
               <ConnectorDotsHorizontal 
                 className="col-start-2" 
@@ -70,7 +75,9 @@ export default function HowItWorksSection() {
                 lastDotColor="#ca8a04"
               />
               {/* Row 1: icon #2 */}
-              <IconBox {...steps[1]} className="col-start-3" />
+              <ScrollAnimationWrapper animationType="slideUp" delay={0.6}>
+                <IconBox {...steps[1]} className="col-start-3" />
+              </ScrollAnimationWrapper>
               {/* Horizontal connector between 2 and 3 */}
               <ConnectorDotsHorizontal 
                 className="col-start-4"
@@ -78,35 +85,45 @@ export default function HowItWorksSection() {
                 lastDotColor="#991b1b"
               />
               {/* Row 1: icon #3 */}
-              <IconBox {...steps[2]} className="col-start-5" />
+              <ScrollAnimationWrapper animationType="slideUp" delay={0.9}>
+                <IconBox {...steps[2]} className="col-start-5" />
+              </ScrollAnimationWrapper>
             </div>
 
             {/* Card content section - below the icon flow */}
             <div className="mt-8 grid grid-cols-[minmax(80px,1fr)_minmax(100px,2fr)_minmax(80px,1fr)_minmax(100px,2fr)_minmax(80px,1fr)] xl:grid-cols-[100px_250px_100px_250px_100px] justify-center gap-x-4 xl:gap-x-8 px-16 xl:px-20">
-              <CardContent {...steps[0]} stepNumber={1} className="col-start-1" />
+              <ScrollAnimationWrapper animationType="slideUp" delay={0.3}>
+                <CardContent {...steps[0]} stepNumber={1} className="col-start-1" />
+              </ScrollAnimationWrapper>
               <div className="col-start-2"></div> {/* Empty space for dots alignment */}
-              <CardContent
-                {...steps[1]}
-                stepNumber={2}
-                className="col-start-3"
-                styles={{
-                  stepNumber: "bg-yellow-600"
-                }}
-              />
+              <ScrollAnimationWrapper animationType="slideUp" delay={0.6}>
+                <CardContent
+                  {...steps[1]}
+                  stepNumber={2}
+                  className="col-start-3"
+                  styles={{
+                    stepNumber: "bg-yellow-600"
+                  }}
+                />
+              </ScrollAnimationWrapper>
               <div className="col-start-4"></div> {/* Empty space for dots alignment */}
-              <CardContent {...steps[2]} stepNumber={3} className="col-start-5" />
+              <ScrollAnimationWrapper animationType="slideUp" delay={0.9}>
+                <CardContent {...steps[2]} stepNumber={3} className="col-start-5" />
+              </ScrollAnimationWrapper>
             </div>
           </div>
 
           {/* sm- screens: Simple stacked layout (icon + content pairs) */}
           <div className="lg:hidden space-y-8">
             {/* Step 1: Icon + Content */}
-            <div className="flex flex-col items-center">
-              <IconBox {...steps[0]} />
-              <div className="mt-6">
-                <CardContent {...steps[0]} stepNumber={1} />
+            <ScrollAnimationWrapper animationType="slideRight" delay={0.3}>
+              <div className="flex flex-col items-center">
+                <IconBox {...steps[0]} />
+                <div className="mt-6">
+                  <CardContent {...steps[0]} stepNumber={1} />
+                </div>
               </div>
-            </div>
+            </ScrollAnimationWrapper>
 
             {/* Vertical connector */}
             <ConnectorDotsVertical 
@@ -115,18 +132,20 @@ export default function HowItWorksSection() {
             />
 
             {/* Step 2: Icon + Content */}
-            <div className="flex flex-col items-center">
-              <IconBox {...steps[1]} />
-              <div className="mt-6">
-                <CardContent
-                {...steps[1]}
-                stepNumber={2}
-                styles={{
-                  stepNumber: "bg-yellow-600"
-                }}
-              />
+            <ScrollAnimationWrapper animationType="slideLeft" delay={0.6}>
+              <div className="flex flex-col items-center">
+                <IconBox {...steps[1]} />
+                <div className="mt-6">
+                  <CardContent
+                  {...steps[1]}
+                  stepNumber={2}
+                  styles={{
+                    stepNumber: "bg-yellow-600"
+                  }}
+                />
+                </div>
               </div>
-            </div>
+            </ScrollAnimationWrapper>
 
             {/* Vertical connector */}
             <ConnectorDotsVertical 
@@ -135,12 +154,14 @@ export default function HowItWorksSection() {
             />
 
             {/* Step 3: Icon + Content */}
-            <div className="flex flex-col items-center">
-              <IconBox {...steps[2]} />
-              <div className="mt-6">
-                <CardContent {...steps[2]} stepNumber={3} />
+            <ScrollAnimationWrapper animationType="slideRight" delay={0.9}>
+              <div className="flex flex-col items-center">
+                <IconBox {...steps[2]} />
+                <div className="mt-6">
+                  <CardContent {...steps[2]} stepNumber={3} />
+                </div>
               </div>
-            </div>
+            </ScrollAnimationWrapper>
           </div>
         </div>
       </div>
