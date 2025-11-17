@@ -1,5 +1,6 @@
 import Carousel from '@/components/ui/card/carousel/carousel-logic';
 import CarouselCard from "@/components/ui/card/carousel/carousel-card";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 export default function WagyuExperienceSection() {
   return (
@@ -8,18 +9,20 @@ export default function WagyuExperienceSection() {
       className="w-full bg-gray-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
-        {/* Eyebrow */}
-        <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
-          THE WAGYU EXPERIENCE
-        </p>
+        <ScrollAnimationWrapper animationType="slideUp">
+          {/* Eyebrow */}
+          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+            THE WAGYU EXPERIENCE
+          </p>
 
-        {/* Main Heading */}
-        <h3
-          id="wagyu-experience-heading"
-          className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
-        >
-          What to Expect with Every Bite
-        </h3>
+          {/* Main Heading */}
+          <h3
+            id="wagyu-experience-heading"
+            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
+          >
+            What to Expect with Every Bite
+          </h3>
+        </ScrollAnimationWrapper>
 
         {/* Carousel Cards */}
         <Carousel 
