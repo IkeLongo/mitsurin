@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { InfoHoverEffect } from "@/components/ui/card/hover/info-card-hover-effect";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 interface WagyuBulletPointProps {
   title: string;
@@ -89,6 +90,42 @@ export default function ExceptionalQualitySection() {
 
           {/* Right: Text Content */}
           <div>
+            <ScrollAnimationWrapper animationType="slideUp">
+              {/* Eyebrow */}
+              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+                EXCEPTIONAL QUALITY
+              </p>
+
+              {/* Main Heading */}
+              <h3
+                id="health-benefits-heading"
+                className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
+              >
+                <span className="text-red-900">Crafted Over Years. </span>
+                <br />
+                <span className="text-yellow-600">Savored in Moments.</span>
+              </h3>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper animationType="slideUp" delay={0.3}>
+              <p className="text-stone-950 text-lg leading-relaxed">
+                Mitsurin Wagyu is full-blooded Japanese beef raised with care, science, 
+                and tradition. Every animal is pasture-raised in Hondo, Texas, grain-finished 
+                for optimal marbling, and nurtured over three years to deliver the finest beef 
+                available.     
+              </p>
+            </ScrollAnimationWrapper>
+
+            {/* Bullet Points Component */}
+            <ScrollAnimationWrapper animationType="slideUp" delay={0.3}>
+              <WagyuBulletPointsList />
+            </ScrollAnimationWrapper>
+          </div>
+        </div>
+
+        {/* Mobile/Tablet Layout */}
+        <div className="block lg:hidden">
+          <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
             <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
               EXCEPTIONAL QUALITY
@@ -103,51 +140,36 @@ export default function ExceptionalQualitySection() {
               <br />
               <span className="text-yellow-600">Savored in Moments.</span>
             </h3>
-
-            {/* Bullet Points Component */}
-            <WagyuBulletPointsList />
-          </div>
-        </div>
-
-        {/* Mobile/Tablet Layout */}
-        <div className="block lg:hidden">
-          {/* Eyebrow */}
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
-            EXCEPTIONAL QUALITY
-          </p>
-
-          {/* Main Heading */}
-          <h3
-            id="health-benefits-heading"
-            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
-          >
-            <span className="text-red-900">Crafted Over Years. </span>
-            <br />
-            <span className="text-yellow-600">Savored in Moments.</span>
-          </h3>
+          </ScrollAnimationWrapper>
 
           {/* Image: Positioned after title */}
-          <div className="relative w-full h-64 sm:h-80 mb-8">
-            <Image
-              src="/wagyu-rib-meal.webp"
-              alt="Healthy Wagyu beef showcasing nutritional benefits"
-              fill
-              className="object-cover rounded-2xl"
-              style={{ borderRadius: '1rem' }}
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <ScrollAnimationWrapper animationType="slideUp" delay={0.2}>
+            <div className="relative w-full h-64 sm:h-80 mb-8">
+              <Image
+                src="/wagyu-rib-meal.webp"
+                alt="Healthy Wagyu beef showcasing nutritional benefits"
+                fill
+                className="object-cover rounded-2xl"
+                style={{ borderRadius: '1rem' }}
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </ScrollAnimationWrapper>
 
-          <p className="text-stone-950 text-lg leading-relaxed">
-            Mitsurin Wagyu is full-blooded Japanese beef raised with care, science, 
-            and tradition. Every animal is pasture-raised in Hondo, Texas, grain-finished 
-            for optimal marbling, and nurtured over three years to deliver the finest beef 
-            available.     
-          </p>
+          <ScrollAnimationWrapper animationType="fade" delay={0.4}>
+            <p className="text-stone-950 text-lg leading-relaxed">
+              Mitsurin Wagyu is full-blooded Japanese beef raised with care, science, 
+              and tradition. Every animal is pasture-raised in Hondo, Texas, grain-finished 
+              for optimal marbling, and nurtured over three years to deliver the finest beef 
+              available.     
+            </p>
+          </ScrollAnimationWrapper>
 
           {/* Bullet Points Component */}
-          <WagyuBulletPointsList />
+          <ScrollAnimationWrapper animationType="slideUp" delay={0.6}>
+            <WagyuBulletPointsList />
+          </ScrollAnimationWrapper>
         </div>
       </div>
     </section>
