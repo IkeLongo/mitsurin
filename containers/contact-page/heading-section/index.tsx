@@ -1,5 +1,6 @@
 import { HoverEffect } from "@/components/ui/card/hover/card-hover-effect";
 import { MapPin, Mail, Phone } from "lucide-react";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 export default function HeadingSection() {
   return (
@@ -14,21 +15,25 @@ export default function HeadingSection() {
         <section
           aria-labelledby="get-in-touch-heading"
           className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Eyebrow */}
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4">
-            GET IN TOUCH
-          </p>
+          <ScrollAnimationWrapper animationType="slideUp">
+            {/* Eyebrow */}
+            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4">
+              GET IN TOUCH
+            </p>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
-            <span className="text-white">Contact </span>
-            <span className="text-yellow-600">Mitsurin Wagyu</span>
-          </h1>
+            {/* Main Heading */}
+            <h1 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
+              <span className="text-white">Contact </span>
+              <span className="text-yellow-600">Mitsurin Wagyu</span>
+            </h1>
+          </ScrollAnimationWrapper>
 
           {/* Description */}
-          <p className="mt-6 text-stone-100 text-lg max-w-3xl">
-            Ready to experience the finest Wagyu beef in Texas? We're here to answer your questions.
-          </p>
+          <ScrollAnimationWrapper animationType="fade" delay={0.2}>
+            <p className="mt-6 text-stone-100 text-lg max-w-3xl">
+              Ready to experience the finest Wagyu beef in Texas? We're here to answer your questions.
+            </p>
+          </ScrollAnimationWrapper>
         </section>
       </div>
 
@@ -37,18 +42,27 @@ export default function HeadingSection() {
         <div className="flex flex-col gap-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Cards that overlap the background */}
           <div className="w-full">
-            <HoverEffect 
-              items={cardData}
-              showLearnMore={false}
-              enableLinks={false}
-              styles={{
-                hover: "bg-yellow-600",
-                card: "bg-white border-2 border-yellow-600",
-                title: "text-red-900 text-center text-xl",
-                description: "text-black text-center text-md",
-              }}
-              className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 py-6"
-            />
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 py-6">
+              {cardData.map((item, index) => (
+                <ScrollAnimationWrapper 
+                  key={item.title}
+                  animationType="slideUp" 
+                  delay={0.4 + (index * 0.15)}
+                >
+                  <div className="relative group block p-2 h-full w-full">
+                    <div className="relative h-full w-full p-6 bg-white border-2 border-yellow-600 rounded-2xl group-hover:bg-yellow-600 transition duration-200">
+                      {item.icon}
+                      <h4 className="text-red-900 text-center text-xl font-bold mb-4">
+                        {item.title}
+                      </h4>
+                      <p className="text-black text-center text-md leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </ScrollAnimationWrapper>
+              ))}
+            </div>
           </div>
         </div>
       </div>
