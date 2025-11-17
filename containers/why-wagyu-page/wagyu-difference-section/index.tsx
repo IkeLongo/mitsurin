@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 interface WagyuBulletPointProps {
   title: string;
@@ -68,21 +69,25 @@ export default function WagyuDifferenceSection() {
       className="w-full bg-gray-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
-        {/* Eyebrow */}
-        <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
-          THE WAGYU DIFFERENCE
-        </p>
+        <ScrollAnimationWrapper animationType="slideUp">
+          {/* Eyebrow */}
+          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+            THE WAGYU DIFFERENCE
+          </p>
 
-        {/* Main Heading */}
-        <h3
-          id="wagyu-difference-heading"
-          className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
-        >
-          What Makes Wagyu Special?
-        </h3>
+          {/* Main Heading */}
+          <h3
+            id="wagyu-difference-heading"
+            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
+          >
+            What Makes Wagyu Special?
+          </h3>
+        </ScrollAnimationWrapper>
 
         {/* Bullet Points Component */}
-        <WagyuBulletPointsList />
+        <ScrollAnimationWrapper animationType="slideUp" delay={0.3}>
+          <WagyuBulletPointsList />
+        </ScrollAnimationWrapper>
       </div>
     </section>
   );
