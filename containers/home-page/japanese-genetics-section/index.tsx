@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 export default function JapaneseGeneticsSection() {
   return (
@@ -14,12 +15,14 @@ export default function JapaneseGeneticsSection() {
         <div className="lg:hidden">
           {/* Title Section */}
           <div className="text-center mb-8">
-            <h4 
-              id="japanese-genetics-heading"
-              className="text-2xl md:text-3xl font-bold leading-tight text-red-900 font-[Montserrat] mb-4"
-            >
-              At Mitsurin Wagyu Beef, we bring the excellence of Japanese genetics to Texas soil.
-            </h4>
+            <ScrollAnimationWrapper animationType="slideUp">
+              <h4 
+                id="japanese-genetics-heading"
+                className="text-2xl md:text-3xl font-bold leading-tight text-red-900 font-[Montserrat] mb-4"
+              >
+                At Mitsurin Wagyu Beef, we bring the excellence of Japanese genetics to Texas soil.
+              </h4>
+            </ScrollAnimationWrapper>
             <div className="w-24 h-1 bg-yellow-600 rounded-full mx-auto"></div>
           </div>
 
@@ -54,19 +57,27 @@ export default function JapaneseGeneticsSection() {
 
           {/* Text Content */}
           <div className="space-y-6 text-center">
-            <p className="text-lg leading-relaxed text-black">
-              Owned and operated by Dr. Michael Selva. Our ranch is dedicated to raising 
-              full-blooded Wagyu cattle using time-honored, humane, and science-backed practices.
-            </p>
-            <p className="text-lg font-semibold text-black">The result?</p>
-            <p className="text-lg italic text-red-900 leading-relaxed">
-              Beef with exceptional tenderness, marbling, and flavor that redefines luxury.
-            </p>
-            <div className="pt-4">
-              <Link href="/our-story" className="inline-block bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
-                Learn Our Story
-              </Link>
-            </div>
+            <ScrollAnimationWrapper animationType="fade" delay={0.3}>
+              <p className="text-lg leading-relaxed text-black">
+                Owned and operated by Dr. Michael Selva. Our ranch is dedicated to raising 
+                full-blooded Wagyu cattle using time-honored, humane, and science-backed practices.
+              </p>
+            </ScrollAnimationWrapper>
+            <ScrollAnimationWrapper animationType="fade" delay={0.5}>
+              <p className="text-lg font-semibold text-black">The result?</p>
+            </ScrollAnimationWrapper>
+            <ScrollAnimationWrapper animationType="fade" delay={0.7}>
+              <p className="text-lg italic text-red-900 leading-relaxed">
+                Beef with exceptional tenderness, marbling, and flavor that redefines luxury.
+              </p>
+            </ScrollAnimationWrapper>
+            <ScrollAnimationWrapper animationType="fade" delay={0.9}>
+              <div className="pt-4">
+                <Link href="/our-story" className="inline-block bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                  Learn Our Story
+                </Link>
+              </div>
+            </ScrollAnimationWrapper>
           </div>
         </div>
 
@@ -115,12 +126,14 @@ export default function JapaneseGeneticsSection() {
           {/* Right Column: Text Content */}
           <div className="space-y-6 lg:pl-24">
             {/* Main Heading */}
-            <h4 
-              id="japanese-genetics-heading"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-red-900 font-[Montserrat]"
-            >
-              At Mitsurin Wagyu Beef, we bring the excellence of Japanese genetics to Texas soil.
-            </h4>
+            <ScrollAnimationWrapper animationType="slideUp">
+              <h4 
+                id="japanese-genetics-heading"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-red-900 font-[Montserrat]"
+              >
+                At Mitsurin Wagyu Beef, we bring the excellence of Japanese genetics to Texas soil.
+              </h4>
+            </ScrollAnimationWrapper>
 
             {/* Yellow horizontal line */}
             <div className="w-24 h-1 bg-yellow-600 rounded-full"></div>
@@ -128,28 +141,36 @@ export default function JapaneseGeneticsSection() {
             {/* Text Content - 3 rows */}
             <div className="space-y-6">
               {/* First text block */}
-              <p className="text-lg leading-relaxed text-black">
-                Owned and operated by Dr. Michael Selva. Our ranch is dedicated to raising 
-                full-blooded Wagyu cattle using time-honored, humane, and science-backed practices.
-              </p>
+              <ScrollAnimationWrapper animationType="fade" delay={0.3}>
+                <p className="text-lg leading-relaxed text-black">
+                  Owned and operated by Dr. Michael Selva. Our ranch is dedicated to raising 
+                  full-blooded Wagyu cattle using time-honored, humane, and science-backed practices.
+                </p>
+              </ScrollAnimationWrapper>
 
               {/* Second text block */}
-              <p className="text-lg font-semibold text-black">
-                The result?
-              </p>
+              <ScrollAnimationWrapper animationType="fade" delay={0.5}>
+                <p className="text-lg font-semibold text-black">
+                  The result?
+                </p>
+              </ScrollAnimationWrapper>
 
               {/* Third text block - italics and red */}
-              <p className="text-lg italic text-red-900 leading-relaxed">
-                Beef with exceptional tenderness, marbling, and flavor that redefines luxury.
-              </p>
+              <ScrollAnimationWrapper animationType="fade" delay={0.7}>
+                <p className="text-lg italic text-red-900 leading-relaxed">
+                  Beef with exceptional tenderness, marbling, and flavor that redefines luxury.
+                </p>
+              </ScrollAnimationWrapper>
             </div>
 
             {/* Button */}
-            <div className="pt-4">
-              <Link href="/our-story" className="inline-block bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
-                Learn Our Story
-              </Link>
-            </div>
+            <ScrollAnimationWrapper animationType="fade" delay={0.9}>
+              <div className="pt-4">
+                <Link href="/our-story" className="inline-block bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                  Learn Our Story
+                </Link>
+              </div>
+            </ScrollAnimationWrapper>
           </div>
         </div>
       </div>
