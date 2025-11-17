@@ -1,4 +1,6 @@
 
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+
 export default function ReadyToReserveSection() {
   return (
     <div 
@@ -15,30 +17,43 @@ export default function ReadyToReserveSection() {
         className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24"
       >
         {/* Main Heading */}
-        <h4 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
-          Ready to Reserve?
-        </h4>
+        <ScrollAnimationWrapper animationType="slideUp">
+          <h4 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
+            Ready to Reserve?
+          </h4>
+        </ScrollAnimationWrapper>
 
         {/* Description */}
-        <p className="mt-10 text-stone-100 text-lg max-w-3xl">
-          This isn't just beef. It's an investment in quality, tradition, and taste.
-        </p>
+        <ScrollAnimationWrapper animationType="fade" delay={0.2}>
+          <p className="mt-10 text-stone-100 text-lg max-w-3xl">
+            This isn't just beef. It's an investment in quality, tradition, and taste.
+          </p>
+        </ScrollAnimationWrapper>
 
         {/* Button */}
-        <button className="border-2 bg-white border-white hover:bg-gray-200 text-red-900 font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-          Contact Us to Reserve Your Share
-        </button>
+        <ScrollAnimationWrapper animationType="slideUp" delay={0.4}>
+          <button className="border-2 bg-white border-white hover:bg-gray-200 text-red-900 font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
+            Contact Us to Reserve Your Share
+          </button>
+        </ScrollAnimationWrapper>
 
         {/* Description */}
-        <p className="mt-10 text-stone-100 text-md max-w-3xl italic">
-          Due to high demand and seasonal availability, early reservations are encouraged.
-        </p>
+        <ScrollAnimationWrapper animationType="fade" delay={0.6}>
+          <p className="mt-10 text-stone-100 text-md max-w-3xl italic">
+            Due to high demand and seasonal availability, early reservations are encouraged.
+          </p>
+        </ScrollAnimationWrapper>
 
         {/* Yellow Horizontal Line */}
         <div className="w-full h-0.5 bg-yellow-600 my-20" />
 
-        <p>Learn More About Wagyu</p>
-        <p className="text-yellow-600 mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
+        <ScrollAnimationWrapper animationType="fade" delay={1.0}>
+          <p>Learn More About Wagyu</p>
+        </ScrollAnimationWrapper>
+        
+        <ScrollAnimationWrapper animationType="fade" delay={1.2}>
+          <p className="text-yellow-600 mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
+        </ScrollAnimationWrapper>
 
       </section>
     </div>
