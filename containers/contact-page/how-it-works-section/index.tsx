@@ -1,5 +1,6 @@
 import Carousel from '@/components/ui/card/carousel/carousel-logic';
 import CarouselCard from "@/components/ui/card/carousel/carousel-card";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 export default function HowItWorksSection() {
   return (
@@ -8,38 +9,45 @@ export default function HowItWorksSection() {
       className="w-full bg-gray-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
-        {/* Eyebrow */}
-        <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
-          HOW IT WORKS
-        </p>
+        <ScrollAnimationWrapper animationType="slideUp">
+          {/* Eyebrow */}
+          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+            HOW IT WORKS
+          </p>
 
-        {/* Main Heading */}
-        <h3
-          id="wagyu-experience-heading"
-          className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
-        >
-          Our
-          <span className="text-yellow-600"> Ordering Process</span>
-        </h3>
+          {/* Main Heading */}
+          <h3
+            id="wagyu-experience-heading"
+            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
+          >
+            Our
+            <span className="text-yellow-600"> Ordering Process</span>
+          </h3>
+        </ScrollAnimationWrapper>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {cardInfo.map((card, index) => (
-            <CarouselCard
+            <ScrollAnimationWrapper 
               key={index}
-              number={card.number}
-              title={card.title}
-              description={card.description}
-              styles={{
-                border: "border-none",
-                background: "bg-transparent",
-                paddingY: "py-6",
-                circle: "bg-red-900",
-                titleText: "text-red-900",
-                numberText: "text-yellow-600",
-                descriptionText: "text-stone-950",
-              }}
-            />
+              animationType="slideUp" 
+              delay={0.2 + (index * 0.15)}
+            >
+              <CarouselCard
+                number={card.number}
+                title={card.title}
+                description={card.description}
+                styles={{
+                  border: "border-none",
+                  background: "bg-transparent",
+                  paddingY: "py-6",
+                  circle: "bg-red-900",
+                  titleText: "text-red-900",
+                  numberText: "text-yellow-600",
+                  descriptionText: "text-stone-950",
+                }}
+              />
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>
