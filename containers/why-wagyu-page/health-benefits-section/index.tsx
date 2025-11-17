@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { InfoHoverEffect } from "@/components/ui/card/hover/info-card-hover-effect";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 export default function HealthBenefitsSection() {
   return (
@@ -12,6 +13,73 @@ export default function HealthBenefitsSection() {
         <div className="hidden lg:grid lg:grid-cols-2 gap-10 items-center">
           {/* Left: Text Content */}
           <div>
+            <ScrollAnimationWrapper animationType="slideUp">
+              {/* Eyebrow */}
+              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+                HEALTH BENEFITS
+              </p>
+
+              {/* Main Heading */}
+              <h3
+                id="health-benefits-heading"
+                className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
+              >
+                <span className="text-red-900">Rich in </span>
+                <span className="text-yellow-600">Good Fats</span>
+              </h3>
+            </ScrollAnimationWrapper>
+
+            {/* Description */}
+            <ScrollAnimationWrapper animationType="fade" delay={0.2}>
+              <div className="space-y-4">
+                <p className="text-stone-950 text-lg leading-relaxed">
+                  Wagyu beef isn't just rich in flavor—it's also rich in good fats. Thanks to its 
+                  high oleic acid content, the same heart-healthy fat found in olive oil, Wagyu 
+                  may be a smarter choice compared to other types of beef.
+                </p>
+                
+                <p className="text-stone-950 text-lg leading-relaxed">
+                  The unique marbling pattern in Wagyu creates an exceptional nutritional profile. 
+                  Studies show that Wagyu contains higher levels of conjugated linoleic acid (CLA), 
+                  which has been linked to potential anti-inflammatory properties and improved 
+                  immune function. Additionally, the meat is rich in omega-3 and omega-6 fatty 
+                  acids in a more balanced ratio than conventional beef.
+                </p>
+                
+                <p className="text-stone-950 text-lg leading-relaxed">
+                  When you choose Wagyu, you're not just indulging in extraordinary taste—you're 
+                  making a choice that aligns with a more health-conscious approach to premium dining.
+                </p>
+              </div>
+            </ScrollAnimationWrapper>
+
+            {/* Cards */}
+            <ScrollAnimationWrapper animationType="slideUp" delay={0.4}>
+              <div className="flex flex-col gap-4">
+                <InfoHoverEffect items={infoData} />
+              </div>
+            </ScrollAnimationWrapper>
+          </div>
+
+          {/* Right: Image */}
+          <ScrollAnimationWrapper animationType="slideLeft" delay={0.2}>
+            <div className="relative flex items-center justify-center">
+              <Image
+                src="/fatty-juicy-wagyu.webp"
+                alt="Healthy Wagyu beef showcasing nutritional benefits"
+                width={500}
+                height={600}
+                className="object-cover rounded-2xl"
+                style={{ borderRadius: '1rem' }}
+                priority
+              />
+            </div>
+          </ScrollAnimationWrapper>
+        </div>
+
+        {/* Mobile/Tablet Layout */}
+        <div className="block lg:hidden">
+          <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
             <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
               HEALTH BENEFITS
@@ -25,9 +93,26 @@ export default function HealthBenefitsSection() {
               <span className="text-red-900">Rich in </span>
               <span className="text-yellow-600">Good Fats</span>
             </h3>
+          </ScrollAnimationWrapper>
 
-            {/* Description */}
-            <div className="space-y-4">
+          {/* Image - Positioned after heading */}
+          <ScrollAnimationWrapper animationType="slideUp" delay={0.2}>
+            <div className="relative w-full mb-6">
+              <Image
+                src="/fatty-juicy-wagyu.webp"
+                alt="Healthy Wagyu beef showcasing nutritional benefits"
+                width={500}
+                height={600}
+                className="w-full h-auto object-cover rounded-2xl"
+                style={{ borderRadius: '1rem' }}
+                priority
+              />
+            </div>
+          </ScrollAnimationWrapper>
+
+          {/* Description */}
+          <ScrollAnimationWrapper animationType="fade" delay={0.4}>
+            <div className="space-y-4 mb-6">
               <p className="text-stone-950 text-lg leading-relaxed">
                 Wagyu beef isn't just rich in flavor—it's also rich in good fats. Thanks to its 
                 high oleic acid content, the same heart-healthy fat found in olive oil, Wagyu 
@@ -47,82 +132,14 @@ export default function HealthBenefitsSection() {
                 making a choice that aligns with a more health-conscious approach to premium dining.
               </p>
             </div>
+          </ScrollAnimationWrapper>
 
-            {/* Cards */}
+          {/* Cards */}
+          <ScrollAnimationWrapper animationType="slideUp" delay={0.6}>
             <div className="flex flex-col gap-4">
               <InfoHoverEffect items={infoData} />
             </div>
-          </div>
-
-          {/* Right: Image */}
-          <div className="relative flex items-center justify-center">
-            <Image
-              src="/fatty-juicy-wagyu.webp"
-              alt="Healthy Wagyu beef showcasing nutritional benefits"
-              width={500}
-              height={600}
-              className="object-cover rounded-2xl"
-              style={{ borderRadius: '1rem' }}
-              priority
-            />
-          </div>
-        </div>
-
-        {/* Mobile/Tablet Layout */}
-        <div className="block lg:hidden">
-          {/* Eyebrow */}
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
-            HEALTH BENEFITS
-          </p>
-
-          {/* Main Heading */}
-          <h3
-            id="health-benefits-heading"
-            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
-          >
-            <span className="text-red-900">Rich in </span>
-            <span className="text-yellow-600">Good Fats</span>
-          </h3>
-
-          {/* Image - Positioned after heading */}
-          <div className="relative w-full mb-6">
-            <Image
-              src="/fatty-juicy-wagyu.webp"
-              alt="Healthy Wagyu beef showcasing nutritional benefits"
-              width={500}
-              height={600}
-              className="w-full h-auto object-cover rounded-2xl"
-              style={{ borderRadius: '1rem' }}
-              priority
-            />
-          </div>
-
-          {/* Description */}
-          <div className="space-y-4 mb-6">
-            <p className="text-stone-950 text-lg leading-relaxed">
-              Wagyu beef isn't just rich in flavor—it's also rich in good fats. Thanks to its 
-              high oleic acid content, the same heart-healthy fat found in olive oil, Wagyu 
-              may be a smarter choice compared to other types of beef.
-            </p>
-            
-            <p className="text-stone-950 text-lg leading-relaxed">
-              The unique marbling pattern in Wagyu creates an exceptional nutritional profile. 
-              Studies show that Wagyu contains higher levels of conjugated linoleic acid (CLA), 
-              which has been linked to potential anti-inflammatory properties and improved 
-              immune function. Additionally, the meat is rich in omega-3 and omega-6 fatty 
-              acids in a more balanced ratio than conventional beef.
-            </p>
-            
-            <p className="text-stone-950 text-lg leading-relaxed">
-              When you choose Wagyu, you're not just indulging in extraordinary taste—you're 
-              making a choice that aligns with a more health-conscious approach to premium dining.
-            </p>
-          </div>
-
-          {/* Cards */}
-          <div className="flex flex-col gap-4">
-            <InfoHoverEffect items={infoData} />
-          </div>
+          </ScrollAnimationWrapper>
         </div>
       </div>
     </section>
