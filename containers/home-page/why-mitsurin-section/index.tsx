@@ -8,6 +8,7 @@ type FeatureCard = {
 import { Dna, Leaf, ChefHat } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 // Import Aceternity UI 3D Card Components
 import {
@@ -116,30 +117,37 @@ export default function WhyMitsurinSection() {
           
           {/* Left Column: Text + Feature Cards */}
           <div className="flex flex-col h-full">
-            <div className="space-y-8">
-              {/* Eyebrow text */}
-              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
-                WHY CHOOSE WAGYU
-              </p>
+            <ScrollAnimationWrapper animationType="slideUp">
+              <div className="space-y-8">
+                {/* Eyebrow text */}
+                <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+                  WHY CHOOSE WAGYU
+                </p>
 
-              {/* Main heading */}
-              <h3
-                id="why-mitsurin-heading"
-                className="text-3xl md:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-white"
-              >
-                Choose The Best Wagyu, Choose <span className="text-yellow-600">Mitsurin Wagyu</span>
-              </h3>
-            </div>
+                {/* Main heading */}
+                <h3
+                  id="why-mitsurin-heading"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-white"
+                >
+                  Choose The Best Wagyu, Choose <span className="text-yellow-600">Mitsurin Wagyu</span>
+                </h3>
+              </div>
+            </ScrollAnimationWrapper>
 
             {/* Feature cards stack - fills remaining space */}
             <div className="flex flex-col justify-around flex-1 mt-8 space-y-4 lg:space-y-0">
-              {features.map((feature) => (
-                <FeatureCard
+              {features.map((feature, index) => (
+                <ScrollAnimationWrapper 
                   key={feature.title}
-                  title={feature.title}
-                  description={feature.description}
-                  icon={feature.icon}
-                />
+                  animationType="slideRight" 
+                  delay={0.3 + (index * 0.2)}
+                >
+                  <FeatureCard
+                    title={feature.title}
+                    description={feature.description}
+                    icon={feature.icon}
+                  />
+                </ScrollAnimationWrapper>
               ))}
             </div>
           </div>
