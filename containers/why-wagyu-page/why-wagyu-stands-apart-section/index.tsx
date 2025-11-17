@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { HoverEffect } from "@/components/ui/card/hover/card-hover-effect";
 import { Crown, Star, Award } from "lucide-react";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 export default function WhyWagyuStandsApartSection() {
   return (
@@ -10,45 +11,58 @@ export default function WhyWagyuStandsApartSection() {
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         {/* Centered Main Heading */}
-        <div className="flex justify-center items-center mb-10">
-          <h3
-            id="why-wagyu-stands-apart-heading"
-            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight text-center"
-          >
-            <span className="text-red-900">Why </span>
-            <span className="text-yellow-600">Wagyu </span>
-            <span className="text-red-900">Stands Apart</span>
-          </h3>
-        </div>
+        <ScrollAnimationWrapper animationType="slideUp">
+          <div className="flex justify-center items-center mb-10">
+            <h3
+              id="why-wagyu-stands-apart-heading"
+              className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight text-center"
+            >
+              <span className="text-red-900">Why </span>
+              <span className="text-yellow-600">Wagyu </span>
+              <span className="text-red-900">Stands Apart</span>
+            </h3>
+          </div>
+        </ScrollAnimationWrapper>
         {/* Desktop Layout: One column, two rows */}
         <div className="flex flex-col gap-10">
-          {/* Top Row: Three cards evenly spaced */}
+          {/* Top Row: Three cards with sequential animations */}
           <div className="w-full">
-            <HoverEffect 
-              items={cardData}
-              showLearnMore={false}
-              enableLinks={false}
-              styles={{
-                hover: "bg-slate-900",
-                card: "bg-red-900",
-                title: "text-yellow-600 text-center text-xl",
-                description: "text-white text-center text-md",
-              }}
-              className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 py-6"
-            />
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 py-6">
+              {cardData.map((item, index) => (
+                <ScrollAnimationWrapper 
+                  key={item.title}
+                  animationType="slideUp" 
+                  delay={0.2 + (index * 0.15)}
+                >
+                  <div className="relative group block p-2 h-full w-full">
+                    <div className="relative h-full w-full p-6 bg-red-900 rounded-2xl border border-transparent group-hover:bg-slate-900 transition duration-200">
+                      {item.icon}
+                      <h4 className="text-yellow-600 text-center text-xl font-bold mb-4">
+                        {item.title}
+                      </h4>
+                      <p className="text-white text-center text-md leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </ScrollAnimationWrapper>
+              ))}
+            </div>
           </div>
           
           {/* Bottom Row: Long rectangle with title and description */}
-          <div className="w-full">
-            <div className="bg-yellow-600 rounded-2xl p-8 text-center">
-              <h4 className="text-black text-2xl sm:text-3xl font-bold font-[Montserrat] mb-4">
-                THE FINEST BEEF IN THE WORLD
-              </h4>
-              <p className="text-black text-lg leading-relaxed max-w-4xl mx-auto">
-                Experience the difference that centuries of breeding excellence makes
-              </p>
+          <ScrollAnimationWrapper animationType="slideUp" delay={0.65}>
+            <div className="w-full">
+              <div className="bg-yellow-600 rounded-2xl p-8 text-center">
+                <h4 className="text-black text-2xl sm:text-3xl font-bold font-[Montserrat] mb-4">
+                  THE FINEST BEEF IN THE WORLD
+                </h4>
+                <p className="text-black text-lg leading-relaxed max-w-4xl mx-auto">
+                  Experience the difference that centuries of breeding excellence makes
+                </p>
+              </div>
             </div>
-          </div>
+          </ScrollAnimationWrapper>
         </div>
       </div>
     </section>
