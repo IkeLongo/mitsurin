@@ -1,6 +1,7 @@
 import { ProductHoverEffect } from "@/components/ui/card/hover/product-card-hover-effect";
-import { Award, Container, Package, Package2 } from "lucide-react";
+import { Container, Package } from "lucide-react";
 import Image from "next/image";
+import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 function InfoModal() {
   return (
@@ -22,40 +23,46 @@ export default function PurchasingOptionsSection() {
       className="w-full bg-gray-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
-        {/* Eyebrow */}
-        <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
-          PURCHASING OPTIONS
-        </p>
+        <ScrollAnimationWrapper animationType="slideUp">
+          {/* Eyebrow */}
+          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+            PURCHASING OPTIONS
+          </p>
 
-        {/* Main Heading */}
-        <h3
-          id="purchasing-options-heading"
-          className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
-        >
-          <span className="text-red-900">Choose Your Share </span>
-          <span className="text-yellow-600">of the Herd</span>
-        </h3>
+          {/* Main Heading */}
+          <h3
+            id="purchasing-options-heading"
+            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
+          >
+            <span className="text-red-900">Choose Your Share </span>
+            <span className="text-yellow-600">of the Herd</span>
+          </h3>
+        </ScrollAnimationWrapper>
 
         {/* Cards */}
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
-          <ProductHoverEffect 
-            items={packages} 
-            styles={{
-              hover: "bg-red-900",            // Brand red hover
-              card: "bg-gray-50 border-2 border-yellow-600",               // Transparent card background
-              title: "text-red-900 text-center text-2xl font-bold",          // Brand red titles
-              description: "text-stone-600 text-center",  // Stone gray description
-              learnMore: "text-center text-yellow-600",    // Brand yellow accent
-              bulletPoint: "text-stone-600"              // Bullet point color
-            }}
-            className="max-w-5xl"
-            showLearnMore={false}
-            enableLinks={false}
-          />
-        </div>
+        <ScrollAnimationWrapper animationType="slideUp" delay={0.3}>
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
+            <ProductHoverEffect 
+              items={packages} 
+              styles={{
+                hover: "bg-red-900",            // Brand red hover
+                card: "bg-gray-50 border-2 border-yellow-600",               // Transparent card background
+                title: "text-red-900 text-center text-2xl font-bold",          // Brand red titles
+                description: "text-stone-600 text-center",  // Stone gray description
+                learnMore: "text-center text-yellow-600",    // Brand yellow accent
+                bulletPoint: "text-stone-600"              // Bullet point color
+              }}
+              className="max-w-5xl"
+              showLearnMore={false}
+              enableLinks={false}
+            />
+          </div>
+        </ScrollAnimationWrapper>
 
         {/* Bullet Points Component */}
-        <InfoModal />
+        <ScrollAnimationWrapper animationType="fade" delay={0.6}>
+          <InfoModal />
+        </ScrollAnimationWrapper>
       </div>
     </section>
   );
