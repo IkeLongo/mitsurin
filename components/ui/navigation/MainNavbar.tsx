@@ -17,7 +17,7 @@ type NavItem = { name: string; link: string };
 
 export default function MainNavbar({
   items = [
-    { name: "Our Story", link: "#features" },
+    { name: "Our Story", link: "/our-story" },
     { name: "Our Beef", link: "/our-beef" },
     { name: "Why Wagyu", link: "/why-wagyu" },
   ],
