@@ -61,7 +61,6 @@ export default function FramedImage({
   const getContainerClasses = () => {
     const baseClasses = "relative w-full";
     const marginLeftClass = `ml-${offsetRight}`; // Add right margin to compensate for frame offset
-    const marginTopClass = `mt-${offsetTop}`; // Add top margin to compensate for frame offset
     
     if (containerMargin) {
       return `${baseClasses} ${containerMargin}`;
@@ -69,16 +68,16 @@ export default function FramedImage({
     
     switch (containerAlignment) {
       case 'left':
-        return `${baseClasses} ${marginLeftClass} ${marginTopClass}`;
+        return `${baseClasses} ${marginLeftClass}`;
       case 'right':
-        return `${baseClasses} ${marginLeftClass} ${marginTopClass}`;
+        return `${baseClasses} ${marginLeftClass}`;
       case 'ml-auto':
-        return `${baseClasses} ${marginLeftClass} ${marginTopClass}`;
+        return `${baseClasses} ${marginLeftClass}`;
       case 'mr-auto':
-        return `${baseClasses} ${marginLeftClass} ${marginTopClass}`;
+        return `${baseClasses} ${marginLeftClass}`;
       case 'center':
       default:
-        return `${baseClasses} ${marginLeftClass} ${marginTopClass}`;
+        return `${baseClasses} ${marginLeftClass}`;
     }
   };
   
