@@ -3,10 +3,10 @@ import { InfoHoverEffect } from "@/components/ui/card/hover/info-card-hover-effe
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 import { FramedImage } from "@/components/ui/card/framed-image";
 
-export default function SparkedMissionSection() {
+export default function OurOriginStorySection() {
   return (
     <section
-      aria-labelledby="sparked-mission-heading"
+      aria-labelledby="our-origin-story-heading"
       className="w-full bg-gray-100"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
@@ -22,7 +22,7 @@ export default function SparkedMissionSection() {
 
               {/* Main Heading */}
               <h3
-                id="sparked-mission-heading"
+                id="our-origin-story-heading"
                 className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
               >
                 <span className="text-red-900">A Moment That Sparked a Mission</span>
@@ -90,7 +90,7 @@ export default function SparkedMissionSection() {
 
             {/* Main Heading */}
             <h3
-              id="sparked-mission-heading-mobile"
+              id="our-origin-story-heading-mobile"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
             >
               <span className="text-red-900">A Moment That Sparked a Mission</span>
