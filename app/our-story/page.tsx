@@ -2,7 +2,8 @@ import HeadingSection from "@/containers/our-story-page/heading-section";
 import OurOriginStorySection from "@/containers/our-story-page/our-origin-story-section";
 import BreedingExcellenceSection from "@/containers/our-story-page/understanding-our-heard";
 import WhyMitsurinSection from "@/containers/our-story-page/why-mitsurin-section";
-import BreedingandRaisingSection from "@/containers/home-page/discover-section";
+import BreedingandRaisingSection from "@/containers/our-story-page/breeding-and-raising-section";
+import HowItWorksSection from "@/containers/our-story-page/how-it-works-section";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <BreedingExcellenceSection />
         <WhyMitsurinSection />
         <BreedingandRaisingSection />
+        <HowItWorksSection />
       </main>
     </div>
   );
