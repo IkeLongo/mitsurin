@@ -1,6 +1,7 @@
 import HeadingSection from "@/containers/our-story-page/heading-section";
 import OurOriginStorySection from "@/containers/our-story-page/our-origin-story-section";
 import BreedingExcellenceSection from "@/containers/our-story-page/understanding-our-heard";
+import WhyMitsurinSection from "@/containers/our-story-page/why-mitsurin-section";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <HeadingSection />
         <OurOriginStorySection />
         <BreedingExcellenceSection />
+        <WhyMitsurinSection />
       </main>
     </div>
   );

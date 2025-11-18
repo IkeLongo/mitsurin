@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="250" viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mitsurinGradientSelvaLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <!-- Lighter red on the left side -->
+      <stop offset="0%" stop-color="#a33a3a"/>
+      <stop offset="50%" stop-color="#b85a14"/>
+      <stop offset="100%" stop-color="#d7b34a"/>
+    </linearGradient>
+  </defs>
+
+  <text 
+        x="50%" 
+        y="58%" 
+        dominant-baseline="middle" 
+        text-anchor="middle"
+        font-family="serif"
+        font-size="160"
+        font-weight="700"
+        letter-spacing="4"
+        fill="url(#mitsurinGradientSelvaLight)">
+    Selva
+  </text>
+</svg>
