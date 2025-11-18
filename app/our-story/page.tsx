@@ -4,6 +4,7 @@ import BreedingExcellenceSection from "@/containers/our-story-page/understanding
 import WhyMitsurinSection from "@/containers/our-story-page/why-mitsurin-section";
 import BreedingandRaisingSection from "@/containers/our-story-page/breeding-and-raising-section";
 import HowItWorksSection from "@/containers/our-story-page/how-it-works-section";
+import ThirtyMonthsSection from "@/containers/our-story-page/30-months-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <WhyMitsurinSection />
         <BreedingandRaisingSection />
         <HowItWorksSection />
+        <ThirtyMonthsSection />
       </main>
     </div>
   );
