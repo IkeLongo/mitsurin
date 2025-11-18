@@ -9,7 +9,7 @@ import IsItReallyWagyuSection from "@/containers/why-wagyu-page/is-it-really-wag
 import WagyuExperienceSection from "@/containers/why-wagyu-page/wagyu-experience-section";
 import ExperienceTheDifferenceSection from "@/containers/why-wagyu-page/experience-the-difference-section";
 
-export default function Home() {
+export default function WhyWagyu() {
   return (
     <div className="font-sans min-h-screen flex items-center justify-center bg-gray-50">
       <main className="w-full mx-auto">

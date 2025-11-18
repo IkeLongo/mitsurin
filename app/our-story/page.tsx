@@ -7,8 +7,9 @@ import HowItWorksSection from "@/containers/our-story-page/how-it-works-section"
 import ThirtyMonthsSection from "@/containers/our-story-page/30-months-section";
 import GrowingTheDreamSection from "@/containers/our-story-page/dream-to-reality-section";
 import OurMissionSection from "@/containers/our-story-page/our-mission-section";
+import TheMitsurinDifferenceSection from "@/containers/our-story-page/the-mitsurin-difference-section";
 
-export default function Home() {
+export default function OurStory() {
   return (
     <div className="font-sans min-h-screen flex items-center justify-center bg-gray-50">
       <main className="w-full mx-auto">
@@ -21,6 +22,7 @@ export default function Home() {
         <ThirtyMonthsSection />
         <GrowingTheDreamSection />
         <OurMissionSection />
+        <TheMitsurinDifferenceSection />
       </main>
     </div>
   );
