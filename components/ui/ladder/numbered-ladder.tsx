@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, useInView } from "motion/react";
+import { motion, useInView } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
 export const NumberedLadder = ({

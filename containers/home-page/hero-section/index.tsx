@@ -18,14 +18,14 @@ export default function HeroSection() {
           loop
           muted
           playsInline
+          preload="metadata"
           style={{ 
-            width: "120%", 
-            height: "120%", 
+            width: "110%", 
+            height: "110%", 
             objectFit: "cover",
             position: "absolute",
             top: "50%",
             left: "50%",
-            opacity: 0.5,
             transform: "translate(-50%, -50%)"
           }}
           metadata={{
