@@ -28,6 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="dns-prefetch" href="https://stream.mux.com" />
+        <link rel="preconnect" href="https://stream.mux.com" crossOrigin="anonymous" />
+        <link rel="preload" as="video" href="https://stream.mux.com/cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps.m3u8" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >

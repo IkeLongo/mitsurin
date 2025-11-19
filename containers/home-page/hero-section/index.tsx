@@ -4,29 +4,42 @@ import Link from "next/link";
 import Image from "next/image";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 import BackgroundVideo from 'next-video/background-video';
+import VideoPreloader from '@/components/ui/video/video-preloader';
+import { VideoOptimizer } from '@/lib/video-optimizer';
 
 export default function HeroSection() {
+  // Preload video resources early
+  if (typeof window !== 'undefined') {
+    VideoOptimizer.preloadVideo('cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps');
+  }
 
   return (
     <div className="font-sans min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Preload video for faster loading */}
+      <VideoPreloader 
+        playbackId="cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps" 
+        priority 
+      />
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <BackgroundVideo
           playbackId="cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps"
           thumbnailTime={0}
+          poster={`https://image.mux.com/cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps/thumbnail.png?time=0&width=1920`}
           autoPlay="muted"
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           style={{ 
-            width: "110%", 
-            height: "110%", 
+            width: "105%", 
+            height: "105%", 
             objectFit: "cover",
             position: "absolute",
             top: "50%",
             left: "50%",
-            transform: "translate(-50%, -50%)"
+            transform: "translate(-50%, -50%)",
+            willChange: "transform"
           }}
           metadata={{
             videoTitle: "Mitsurin Wagyu Hero Video",
