@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import BackgroundVideo from 'next-video/background-video';
 
 export default function JapaneseGeneticsSection() {
   return (
@@ -30,15 +31,23 @@ export default function JapaneseGeneticsSection() {
           <div className="flex flex-col-reverse sm:flex-row justify-center items-center mb-8">
             {/* Video Container - Smaller for mobile */}
             <div className="border-4 border-yellow-600 rounded-2xl overflow-hidden shadow-2xl w-80 h-[480px] mr-0 sm:-mr-16">
-              <div className="w-full h-full relative">
-                <Image
-                  src="/wagyu-grazing-over-field.webp"
-                  alt="Wagyu cattle grazing peacefully over field at Mitsurin ranch"
-                  fill
-                  className="object-cover"
-                  sizes="320px"
-                />
-              </div>
+              <BackgroundVideo
+                playbackId="YNxcB1JE7B7Dy1WYoCJYwCp1k800JOl011u00EJRS01Y4TI"
+                thumbnailTime={0}
+                autoPlay="muted"
+                loop
+                muted
+                playsInline
+                style={{ 
+                  width: "100%", 
+                  height: "100%", 
+                  objectFit: "cover"
+                }}
+                metadata={{
+                  videoTitle: "Wagyu cattle grazing at Mitsurin ranch",
+                  ViewerUserId: "user-id-007",
+                }}
+              />
             </div>
 
             {/* Image - Side by side on tablet, stacked on mobile */}
@@ -95,12 +104,22 @@ export default function JapaneseGeneticsSection() {
                   height: '650px'
                 }}
               >
-                <Image
-                  src="/wagyu-grazing-over-field.webp"
-                  alt="Wagyu cattle grazing peacefully over field at Mitsurin ranch"
-                  fill
-                  className="object-cover"
-                  sizes="500px"
+                <BackgroundVideo
+                  playbackId="YNxcB1JE7B7Dy1WYoCJYwCp1k800JOl011u00EJRS01Y4TI"
+                  thumbnailTime={0}
+                  autoPlay="muted"
+                  loop
+                  muted
+                  playsInline
+                  style={{ 
+                    width: "100%", 
+                    height: "100%", 
+                    objectFit: "cover"
+                  }}
+                  metadata={{
+                    videoTitle: "Wagyu cattle grazing at Mitsurin ranch",
+                    ViewerUserId: "user-id-007",
+                  }}
                 />
               </div>
 

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
-import MuxPlayer from '@mux/mux-player-react/lazy';
 import BackgroundVideo from 'next-video/background-video';
 
 export default function HeroSection() {
