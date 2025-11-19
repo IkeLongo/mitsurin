@@ -11,8 +11,8 @@ import FAQSection from "@/containers/home-page/faq-section";
 
 export default function Home() {
   return (
-    <div className="font-sans min-h-screen flex items-center justify-center bg-gray-50">
-      <main className="w-full mx-auto">
+    <div className="font-sans min-h-screen flex items-center justify-center bg-gray-50 overflow-x-hidden">
+      <main className="w-full mx-auto overflow-x-hidden">
         <HeroSection />
         <AboutSection />
         <DiscoverSection />

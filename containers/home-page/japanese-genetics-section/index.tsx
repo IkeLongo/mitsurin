@@ -8,7 +8,7 @@ export default function JapaneseGeneticsSection() {
   return (
     <section
       aria-labelledby="japanese-genetics-heading"
-      className="w-full bg-gray-50"
+      className="w-full bg-gray-50 overflow-x-hidden"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         
@@ -125,10 +125,10 @@ export default function JapaneseGeneticsSection() {
 
               {/* Overlapping Image - positioned to overlap 1/3 of video width */}
               <div 
-                className="absolute -right-24 lg:-right-32 min-[1152px]:-right-40 xl:-right-52 top-1/2 transform -translate-y-2/3 z-10"
+                className="absolute -right-2 sm:-right-8 md:-right-16 lg:-right-32 min-[1152px]:-right-40 xl:-right-52 top-1/2 transform -translate-y-2/3 z-10"
               >
                 <div className="border-4 border-yellow-600 rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="w-64 h-80 lg:w-72 lg:h-96 xl:w-80 xl:h-[400px] relative">
+                  <div className="w-48 h-60 sm:w-56 sm:h-70 md:w-64 md:h-80 lg:w-72 lg:h-96 xl:w-80 xl:h-[400px] relative">
                     <Image
                       src="/wagyu-cow-eating-organic-hay.webp"
                       alt="Wagyu cattle eating organic hay at Mitsurin ranch"
