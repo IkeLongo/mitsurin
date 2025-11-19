@@ -70,6 +70,7 @@ export default function PackagesSection() {
           <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
             <HoverEffect 
               items={packages}
+              className="pt-0"
             />
           </div>
         </ScrollAnimationWrapper>

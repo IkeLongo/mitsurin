@@ -25,10 +25,19 @@ export default function RaisedWithPurposeSection() {
           <div className="relative pt-10 z-10 flex flex-col items-center">
             
             <ScrollAnimationWrapper animationType="slideUp">
-              {/* Split heading */}
-              <div className="text-left mb-4 lg:mb-8 ml-10 md:ml-10 lg:ml-32 xl:ml-60 w-full">
+              {/* Mobile heading - simple one line */}
+              <div className="text-left mb-4 md:hidden">
                 <h3 
                   id="raised-with-purpose-heading"
+                  className="font-[Montserrat] text-2xl font-bold text-yellow-600 leading-tight px-4"
+                >
+                  About Mitsurin Wagyu Beef Raised with Purpose in Hondo, Texas
+                </h3>
+              </div>
+
+              {/* Split heading for md and larger screens */}
+              <div className="text-left mb-4 lg:mb-8 ml-10 md:ml-10 lg:ml-32 xl:ml-60 w-full hidden md:block">
+                <h3 
                   className="font-[Montserrat] text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-600 leading-tight pr-10 md:pr-0"
                 >
                   About Mitsurin Wagyu Beef

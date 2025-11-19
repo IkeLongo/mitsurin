@@ -1,9 +1,8 @@
-"use client";
-
+// Alternative implementation using scroll progress
 import { NumberedLadder } from "@/components/ui/ladder/numbered-ladder";
 import { GalleryCard } from "@/components/ui/card/gallery/gallery-click-effect";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
-import { useImagePreloader } from "@/hooks/use-image-preloader";
+import { useScrollBasedPreloader } from "@/hooks/use-scroll-based-preloader";
 
 const ladderItems = [
   { 
@@ -36,17 +35,15 @@ const galleryImages = [
   { src: "/steak-gallery-3.webp", alt: "Wagyu beef cut 3", className: "rounded-xl" },
 ];
 
-export default function AvailabilitySection() {
-  // Preload gallery images when user approaches this section
-  const preloaderRef = useImagePreloader({
+export default function AvailabilitySectionScrollBased() {
+  // Alternative: Preload images when user has scrolled 50% through the page
+  const hasPreloaded = useScrollBasedPreloader({
     images: galleryImages.map(img => img.src),
-    rootMargin: '300px', // Start loading 300px before section is visible
-    threshold: 0.1
+    triggerPercent: 0.5 // Load when user is 50% through the page
   });
 
   return (
     <section
-      ref={preloaderRef}
       aria-labelledby="availability-mitsurin-heading"
       className="w-full bg-gray-50"
     >

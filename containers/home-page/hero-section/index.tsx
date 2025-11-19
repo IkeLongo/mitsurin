@@ -32,8 +32,8 @@ export default function HeroSection() {
           playsInline
           preload="auto"
           style={{ 
-            width: "105%", 
-            height: "105%", 
+            width: "110%", 
+            height: "110%", 
             objectFit: "cover",
             position: "absolute",
             top: "50%",

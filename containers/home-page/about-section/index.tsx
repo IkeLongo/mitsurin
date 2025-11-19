@@ -118,54 +118,48 @@ export default function AboutSection() {
             </ScrollAnimationWrapper>
 
             {/* Mobile devices */}
-            <div className="relative py-6 lg:hidden">
-              {/* Background: Framed image */}
+            <div className="py-6 lg:hidden">
+              {/* Image */}
               <ScrollAnimationWrapper
                 animationType="slideLeft"
                 duration={0.8}
                 delay={0.1}
                 initialY={60}
               >
-                <div className="relative mx-auto lg:ml-auto">
-                  {/* Back frame - positioned down and left */}
-                  <div className="absolute right-4 top-4 w-full h-full border-[6px] border-yellow-600 rounded-sm z-10 max-w-[376px] max-h-[528px]" />
-                  {/* Foreground image with a 1px border */}
-                  <div className="">
-                    <Image
-                      src="/about-section-cow.webp"
-                      alt="Marbled Wagyu beef cut"
-                      width={376}
-                      height={528}
-                      className="object-cover border border-yellow-600 ml-auto rounded-xl"
-                      priority
-                    />
-                  </div>
+                <div className="flex justify-center mb-6">
+                  <Image
+                    src="/about-section-cow.webp"
+                    alt="Marbled Wagyu beef cut"
+                    width={376}
+                    height={528}
+                    className="object-cover border border-yellow-600 rounded-xl max-w-full h-auto"
+                    priority
+                  />
                 </div>
               </ScrollAnimationWrapper>
 
-              {/* Foreground: Meat cards positioned absolutely to hover over image */}
-              <ScrollAnimationWrapper
-                animationType="slideRight"
-                duration={0.8}
-                delay={0.3}
-                initialY={40}
-                className="absolute inset-0 flex flex-col justify-center space-y-18 xl:space-y-6 z-20"
-              >
-                {meatCards.map(({ title, description, icon }) => (
-                  <article
+              {/* Meat cards positioned below image */}
+              <div className="flex flex-col items-center space-y-4">
+                {meatCards.map(({ title, description, icon }, index) => (
+                  <ScrollAnimationWrapper
                     key={title}
-                    className="relative rounded-lg bg-red-900/80 md:bg-red-900 text-stone-100 p-3 pl-16 min-h-24 shadow-lg xl:shadow-2xl max-w-xs"
+                    animationType="slideUp"
+                    duration={0.8}
+                    delay={0.3 + (index * 0.2)}
+                    initialY={40}
                   >
-                    {/* Icon */}
-                    <div className="absolute left-3 top-1/2 -translate-y-1/2">
-                      {icon}
-                    </div>
+                    <article className="relative rounded-lg bg-red-900 text-stone-100 p-3 pl-16 min-h-24 shadow-lg w-full max-w-sm">
+                      {/* Icon */}
+                      <div className="absolute left-3 top-1/2 -translate-y-1/2">
+                        {icon}
+                      </div>
 
-                    <h3 className="text-yellow-600 text-lg font-semibold">{title}</h3>
-                    <p className="text-xs leading-relaxed">{description}</p>
-                  </article>
+                      <h3 className="text-yellow-600 text-lg font-semibold">{title}</h3>
+                      <p className="text-xs leading-relaxed">{description}</p>
+                    </article>
+                  </ScrollAnimationWrapper>
                 ))}
-              </ScrollAnimationWrapper>
+              </div>
             </div>
 
             <ScrollAnimationWrapper
