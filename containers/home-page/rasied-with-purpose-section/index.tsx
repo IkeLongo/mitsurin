@@ -1,5 +1,5 @@
 
-
+import MuxPlayer from '@mux/mux-player-react/lazy';
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 export default function RaisedWithPurposeSection() {
@@ -54,33 +54,34 @@ export default function RaisedWithPurposeSection() {
               </div>
             </ScrollAnimationWrapper>
 
-            {/* Video placeholder - centered-ish, overlapping rectangle */}
+            {/* Video - centered-ish, overlapping rectangle */}
             <div className="relative">
               <div 
-                className="bg-gray-800 rounded-xl shadow-2xl flex items-center justify-center
+                className="rounded-xl shadow-2xl overflow-hidden
                            w-[400px] h-[225px]     /* sm: 400x225 (16:9) */
                            sm:w-[500px] sm:h-[281px]     /* sm: 500x281 (16:9) */
                            md:w-[640px] md:h-[360px]  /* md: 640x360 (16:9) */
                            lg:w-[800px] lg:h-[450px]  /* lg: 800x450 (16:9) */
                            xl:w-[1000px] xl:h-[562px]" /* xl: 1000x562 (16:9) */
               >
-                {/* Video placeholder content */}
-                <div className="text-center text-white">
-                  <div className="w-12 h-12 md:w-16 md:h-16 xl:w-20 xl:h-20 mx-auto mb-2 md:mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                    <svg 
-                      className="w-6 h-6 md:w-7 md:h-7 xl:w-8 xl:h-8" 
-                      fill="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                  <p className="text-sm md:text-base xl:text-lg font-medium">Video Placeholder</p>
-                  <p className="text-xs md:text-sm opacity-75 mt-1">
-                    <span className="inline xl:hidden">Responsive Video</span>
-                    <span className="hidden xl:inline">1000 x 562</span>
-                  </p>
-                </div>
+                <MuxPlayer
+                  playbackId="B1J8wfsLQ1BojMUlwxDzzKdQY1OFeSkdRG22bBfxrAU"
+                  accentColor="#7f1d1d"
+                  thumbnailTime={0}
+                  autoPlay="muted"
+                  loop
+                  muted
+                  playsInline
+                  style={{ 
+                    width: "100%", 
+                    height: "100%", 
+                    objectFit: "cover"
+                  }}
+                  metadata={{
+                    videoTitle: "About Mitsurin Wagyu Beef",
+                    ViewerUserId: "user-id-007",
+                  }}
+                />
               </div>
             </div>
 

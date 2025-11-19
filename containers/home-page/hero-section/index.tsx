@@ -1,6 +1,6 @@
 "use client";
 
-import {Button} from "@heroui/button";
+import Link from "next/link";
 import Image from "next/image";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 import MuxPlayer from '@mux/mux-player-react/lazy';
@@ -26,6 +26,7 @@ export default function HeroSection() {
             position: "absolute",
             top: "50%",
             left: "50%",
+            opacity: 0.5,
             transform: "translate(-50%, -50%)"
           }}
           metadata={{
@@ -34,7 +35,7 @@ export default function HeroSection() {
           }}
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
 
       <section className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
@@ -99,9 +100,11 @@ export default function HeroSection() {
           delay={0.9}
           initialY={30}
         >
-          <Button className="bg-red-900 text-white px-6 py-3 rounded-md hover:bg-red-950 transition cursor-pointer">
-            About Mitsurin
-          </Button>
+          <div className="pt-4">
+              <Link href="/our-story" className="inline-block bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                About Mitsurin
+              </Link>
+            </div>
         </ScrollAnimationWrapper>
       </section>
     </div>
