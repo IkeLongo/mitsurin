@@ -1,11 +1,43 @@
+"use client";
+
 import {Button} from "@heroui/button";
 import Image from "next/image";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import MuxPlayer from '@mux/mux-player-react/lazy';
+import BackgroundVideo from 'next-video/background-video';
 
 export default function HeroSection() {
+
   return (
-    <div className="font-sans min-h-screen flex items-center justify-center bg-red-400">
-      <section className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8">
+    <div className="font-sans min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <BackgroundVideo
+          playbackId="cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps"
+          thumbnailTime={0}
+          autoPlay="muted"
+          loop
+          muted
+          playsInline
+          style={{ 
+            width: "120%", 
+            height: "120%", 
+            objectFit: "cover",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)"
+          }}
+          metadata={{
+            videoTitle: "Mitsurin Wagyu Hero Video",
+            ViewerUserId: "user-id-007",
+          }}
+        />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+      </div>
+
+      <section className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Mitsurin Logo */}
         <ScrollAnimationWrapper 
           animationType="fade"
