@@ -3,6 +3,7 @@ import FooterSection from "@/components/ui/navigation/footer";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ToastContainer, toast } from 'react-toastify';
+import CookieBanner from "@/containers/cookies/cookies-banner";
 import "./globals.css";
 import "@mux/mux-player";
 
@@ -108,6 +109,7 @@ export default function RootLayout({
         {children}
         <FooterSection />
         <ToastContainer />
+        <CookieBanner />
       </body>
     </html>
   );
