@@ -121,7 +121,7 @@ export default function AboutSection() {
             <div className="py-6 lg:hidden">
               {/* Image */}
               <ScrollAnimationWrapper
-                animationType="slideLeft"
+                animationType="slideUp"
                 duration={0.8}
                 delay={0.1}
                 initialY={60}
@@ -132,7 +132,7 @@ export default function AboutSection() {
                     alt="Marbled Wagyu beef cut"
                     width={376}
                     height={528}
-                    className="object-cover border border-yellow-600 rounded-xl max-w-full h-auto"
+                    className="object-cover object-[25%_20%] border border-yellow-600 rounded-xl w-full max-w-full h-64 sm:h-80 md:h-auto"
                     priority
                   />
                 </div>
