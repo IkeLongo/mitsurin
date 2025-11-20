@@ -39,14 +39,14 @@ const defaultSections: FooterSection[] = [
     title: "Support",
     links: [
       { href: "/contact", label: "Contact Us" },
-      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/privacy-policy", label: "Privacy Policy & Cookie Consent" },
       { href: "/terms", label: "Terms & Conditions" },
     ],
   },
   {
     title: "Contact",
     links: [
-      { href: "tel:+1234567890", label: "Hondo, Texas Ranch" },
+      { href: "tel:+12108270658", label: "Hondo, Texas Ranch" },
       { href: "mailto:info@mitsurinwagyu.com", label: "info@mitsurinwagyu.com" },
     ],
   },
