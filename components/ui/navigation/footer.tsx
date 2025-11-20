@@ -166,7 +166,18 @@ export default function Footer({
           </div>
 
           {/* Copyright Row */}
-          <div className="my-2 text-gray-600 text-center">{copyright}</div>
+          <div className="my-2 text-gray-600 text-center">
+            © Copyright 2025.{' '}
+            <Link 
+              href="https://rivercitycreatives.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-red-900 hover:text-yellow-600 transition-colors duration-200"
+            >
+              Rivercity Creatives
+            </Link>
+            , All Rights Reserved.
+          </div>
         </div>
       </div>
     </footer>
