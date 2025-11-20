@@ -16,6 +16,7 @@ import {
   CardBody,
   CardItem,
 } from "@/components/ui/card/3d/3d-card";
+import { AnimatedProgressBar } from "@/components/ui/progress/animated-progress-bar";
 
 const features: FeatureCard[] = [
   {
@@ -180,52 +181,36 @@ export default function WhyMitsurinSection() {
                   />
                 </CardItem>
 
-                {/* Quality Score Rows */}
+                {/* Quality Score Rows - Animated */}
                 <CardItem translateZ="80" className="w-full mt-6">
                   <div className="space-y-4">
-                    {/* Marbling Score */}
-                    <div className="space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-neutral-600 dark:text-neutral-300">Marbling</span>
-                        <span className="text-neutral-600 dark:text-neutral-300 font-semibold">A5</span>
-                      </div>
-                      <div className="w-full bg-white rounded-full h-2">
-                        <div className="bg-yellow-600 h-2 rounded-full" style={{ width: '95%' }}></div>
-                      </div>
-                    </div>
-
-                    {/* Tenderness Score */}
-                    <div className="space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-neutral-600 dark:text-neutral-300">Tenderness</span>
-                        <span className="text-neutral-600 dark:text-neutral-300 font-semibold">Exceptional</span>
-                      </div>
-                      <div className="w-full bg-white rounded-full h-2">
-                        <div className="bg-yellow-600 h-2 rounded-full" style={{ width: '92%' }}></div>
-                      </div>
-                    </div>
-
-                    {/* Flavor Score */}
-                    <div className="space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-neutral-600 dark:text-neutral-300">Flavor Intensity</span>
-                        <span className="text-neutral-600 dark:text-neutral-300 font-semibold">Rich</span>
-                      </div>
-                      <div className="w-full bg-white rounded-full h-2">
-                        <div className="bg-yellow-600 h-2 rounded-full" style={{ width: '88%' }}></div>
-                      </div>
-                    </div>
-
-                    {/* Overall Quality Score */}
-                    <div className="space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-neutral-600 dark:text-neutral-300">Overall Quality</span>
-                        <span className="text-neutral-600 dark:text-neutral-300 font-semibold">Premium+</span>
-                      </div>
-                      <div className="w-full bg-white rounded-full h-2">
-                        <div className="bg-yellow-600 h-2 rounded-full" style={{ width: '94%' }}></div>
-                      </div>
-                    </div>
+                    <AnimatedProgressBar
+                      label="Marbling"
+                      value="A5"
+                      percentage={95}
+                      delay={200}
+                    />
+                    
+                    <AnimatedProgressBar
+                      label="Tenderness"
+                      value="Exceptional"
+                      percentage={92}
+                      delay={400}
+                    />
+                    
+                    <AnimatedProgressBar
+                      label="Flavor Intensity"
+                      value="Rich"
+                      percentage={88}
+                      delay={600}
+                    />
+                    
+                    <AnimatedProgressBar
+                      label="Overall Quality"
+                      value="Premium+"
+                      percentage={94}
+                      delay={800}
+                    />
                   </div>
                 </CardItem>
                 <div className="flex justify-between items-center mt-20">
