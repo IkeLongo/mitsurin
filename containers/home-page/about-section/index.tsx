@@ -45,7 +45,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Desktop */}
           {/* Left: Combined cards + image section */}
-          <div className="hidden lg:block lg:relative">
+          <div className="hidden md:block md:relative">
             {/* Background: Framed image */}
             <ScrollAnimationWrapper
               animationType="slideRight"
@@ -117,8 +117,8 @@ export default function AboutSection() {
               </h2>
             </ScrollAnimationWrapper>
 
-            {/* Mobile devices */}
-            <div className="py-6 lg:hidden">
+            {/* Mobile/tablet devices */}
+            <div className="py-6 md:hidden">
               {/* Image */}
               <ScrollAnimationWrapper
                 animationType="slideUp"
@@ -132,7 +132,7 @@ export default function AboutSection() {
                     alt="Marbled Wagyu beef cut"
                     width={376}
                     height={528}
-                    className="object-cover object-[25%_20%] border border-yellow-600 rounded-xl w-full max-w-full h-64 sm:h-80 md:h-auto"
+                    className="object-cover object-[25%_20%] border border-yellow-600 rounded-xl w-full max-w-sm h-64 sm:h-80 md:h-auto"
                     priority
                   />
                 </div>
