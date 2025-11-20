@@ -167,7 +167,7 @@ export default function Footer({
 
           {/* Copyright Row */}
           <div className="my-2 text-gray-600 text-center">
-            © Copyright 2025.{' '}
+            © Copyright {new Date().getFullYear()}.{' '}
             <Link 
               href="https://rivercitycreatives.com" 
               target="_blank" 
