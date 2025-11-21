@@ -40,7 +40,7 @@ const defaultSections: FooterSection[] = [
     links: [
       { href: "/contact", label: "Contact Us" },
       { href: "/privacy-policy", label: "Privacy Policy & Cookie Consent" },
-      { href: "/terms", label: "Terms & Conditions" },
+      { href: "/terms-and-conditions", label: "Terms & Conditions" },
     ],
   },
   {
