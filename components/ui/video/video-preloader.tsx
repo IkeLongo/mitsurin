@@ -63,24 +63,29 @@ export default function VideoPreloader({ playbackId, priority = false, onVideoLo
       }`}
       style={{ zIndex: 5 }}
     >
-      <Image
-        src={`https://image.mux.com/${playbackId}/thumbnail.png?time=0&width=1920`}
-        alt="Video loading..."
-        width={1920}
-        height={1080}
-        style={{ 
-          width: "!115%", 
-          height: "!115%", 
-          objectFit: "cover",
+      <div 
+        style={{
           position: "absolute",
           top: "50%",
           left: "50%",
+          width: "110%",
+          height: "110%",
           transform: "translate(-50%, -50%)",
           willChange: "transform"
         }}
-        priority
-        onLoad={() => setThumbnailLoaded(true)}
-      />
+      >
+        <Image
+          src={`https://image.mux.com/${playbackId}/thumbnail.png?time=0&width=1920`}
+          alt="Video loading..."
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          style={{ 
+            objectFit: "cover"
+          }}
+          priority
+          onLoad={() => setThumbnailLoaded(true)}
+        />
+      </div>
     </div>
   );
 }
