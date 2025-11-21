@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
@@ -8,29 +9,48 @@ import VideoPreloader from '@/components/ui/video/video-preloader';
 import { VideoOptimizer } from '@/lib/video-optimizer';
 
 export default function HeroSection() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   // Preload video resources early
   if (typeof window !== 'undefined') {
     VideoOptimizer.preloadVideo('cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps');
   }
 
   return (
-    <div className="font-sans min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Preload video for faster loading */}
+    <div className="font-sans min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
+      {/* Preload video thumbnail with proper sizing */}
       <VideoPreloader 
         playbackId="cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps" 
         priority 
+        onVideoLoaded={() => setVideoLoaded(true)}
       />
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div 
+        className={`absolute inset-0 w-full h-full overflow-hidden transition-opacity duration-500 ${
+          videoLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={{ zIndex: 10 }}
+      >
         <BackgroundVideo
           playbackId="cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps"
           thumbnailTime={0}
-          poster={`https://image.mux.com/cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps/thumbnail.png?time=0&width=1920`}
-          autoPlay="muted"
+          autoPlay={true}
           loop
           muted
           playsInline
           preload="auto"
+          onCanPlay={(e) => {
+            const video = e.currentTarget;
+            setVideoLoaded(true);
+            video.play().catch(console.error);
+          }}
+          onLoadedData={(e) => {
+            const video = e.currentTarget;
+            video.play().catch(console.error);
+          }}
+          onPlay={() => {
+            setVideoLoaded(true);
+          }}
           style={{ 
             width: "110%", 
             height: "110%", 
@@ -50,7 +70,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
 
-      <section className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-20">
         {/* Mitsurin Logo */}
         <ScrollAnimationWrapper 
           animationType="fade"
