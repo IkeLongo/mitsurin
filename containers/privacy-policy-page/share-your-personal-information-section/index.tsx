@@ -8,22 +8,22 @@ export async function SharePersonalInfo() {
       <p className="mt-4 text-navy-975 text-left"><strong>Vendors, Consultants, and Other Third-Party Service Providers. </strong>We may share your data with third-party vendors, service providers, contractors, or agents (“<strong>third parties</strong>”) who perform services for us or on our behalf and require access to such information to do that work. We have contracts in place with our third parties, which are designed to help safeguard your personal information. This means that they cannot do anything with your personal information unless we have instructed them to do it. They will also not share your personal information with any organization apart from us. They also commit to protect the data they hold on our behalf and to retain it for the period we instruct. The categories of third parties we may share personal information with are as follows:</p>
 
       <ul className="list-disc pl-6 mt-4 flex flex-col gap-2">
-        <li>Ad Networks</li>
-        <li>Affiliate Marketing Programs</li>
+        <li>Shipping and Logistics Carriers</li>
+        <li>Cold Chain Storage Facilities</li>
         <li>Cloud Computing Services</li>
-        <li>Communication & Collaboration Tools</li>
+        <li>Communication & Customer Support Tools</li>
         <li>Data Analytics Services</li>
         <li>Data Storage Service Providers</li>
         <li>Finance & Accounting Tools</li>
-        <li>Government Entities</li>
+        <li>Government Entities (USDA, Food Safety)</li>
         <li>Order Fulfillment Service Providers</li>
         <li>Payment Processors</li>
         <li>Performance Monitoring Tools</li>
-        <li>Product Engineering & Design Tools</li>
-        <li>Retargeting Platforms</li>
-        <li>Sales & Marketing Tools</li>
+        <li>Ranch Operations & Livestock Management</li>
+        <li>Marketing Platforms</li>
+        <li>Sales & Customer Management Tools</li>
         <li>Social Networks</li>
-        <li>Testing Tools</li>
+        <li>Quality Assurance & Testing Services</li>
         <li>User Account Registration & Authentication Services</li>
         <li>Website Hosting Service Providers</li>
       </ul>
@@ -37,7 +37,7 @@ export async function SharePersonalInfo() {
         
         <li><strong>Affiliates. </strong>We may share your information with our affiliates, in which case we will require those affiliates to honor this privacy notice. Affiliates include our parent company and any subsidiaries, joint venture partners, or other companies that we control or that are under common control with us.</li>
         
-        <li><strong>Business Partners. </strong>We may share your information with our business partners to offer you certain products, services, or promotions.</li>
+        <li><strong>Business Partners. </strong>We may share your information with our ranch partners, processing facilities, and shipping partners to fulfill orders and offer you Wagyu beef products and related services.</li>
         
         <li><strong>Other Users. </strong>When you share personal information by posting comments, contributions, or other content to our website or otherwise interact with public areas of the Services, such personal information may be viewed by all users and may be publicly made available outside the Services in perpetuity. If you interact with other users of our Services and register for our Services through a social network (such as Facebook), your contacts on the social network will see your name, profile photo, and descriptions of your activity. Similarly, other users will be able to view descriptions of your activity, communicate with you within our Services, and view your profile.</li>
         <li><strong>Offer Wall. </strong>Our application(s) may display a third-party hosted “offer wall.” Such an offer wall allows third-party advertisers to offer virtual currency, gifts, or other items to users in return for the acceptance and completion of an advertisement offer. Such an offer wall may appear in our application(s) and be displayed to you based on certain data, such as your geographic area or demographic information. When you click on an offer wall, you will be brought to an external website belonging to other persons and will leave our application(s). A unique identifier, such as your user ID, will be shared with the offer wall provider in order to prevent fraud and properly credit your account with the relevant reward.</li>

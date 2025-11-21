@@ -2,20 +2,20 @@ export async function ProcessYourInfo() {
   return (
     <section id="how-do-we-process-your-information" className="mt-8">
       <h4 className="text-navy-975">2. How Do We Process Your Information?</h4>
-      <p className="mt-6 text-navy-975 text-left"><strong>In Short:</strong> <span className="italic">We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.</span></p>
+      <p className="mt-6 text-navy-975 text-left"><strong>In Short:</strong> <span className="italic">We process your information to provide, improve, and administer our Wagyu beef products and ranch services, communicate with you about orders and deliveries, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.</span></p>
       
       <p className="mt-4 text-navy-975 text-left"><strong>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</strong></p>
       
       <ul className="list-disc pl-6 mt-4 flex flex-col gap-2">
         <li><strong>To facilitate account creation and authentication and otherwise manage user accounts.</strong> We may process your information so you can create and log in to your account, as well as keep your account in working order.</li>
         
-        <li><strong>To deliver and facilitate delivery of services to the user.</strong> We may process your information to provide you with the requested service.</li>
+        <li><strong>To deliver and facilitate delivery of products to the user.</strong> We may process your information to provide you with premium Wagyu beef products and coordinate temperature-controlled delivery services.</li>
         
         <li><strong>To respond to user inquiries/offer support to users.</strong> We may process your information to respond to your inquiries and solve any potential issues you might have with the requested service.</li>
         
-        <li><strong>To send administrative information to you.</strong> We may process your information to send you details about our products and services, changes to our terms and policies, and other similar information.</li>
+        <li><strong>To send administrative information to you.</strong> We may process your information to send you details about our Wagyu beef products, delivery updates, changes to our terms and policies, and ranch news.</li>
         
-        <li><strong>To fulfill and manage your orders.</strong> We may process your information to fulfill and manage your orders, payments, returns, and exchanges made through the Services.</li>
+        <li><strong>To fulfill and manage your orders.</strong> We may process your information to fulfill and manage your Wagyu beef orders, coordinate cold-chain shipping, process payments, and handle returns or exchanges.</li>
         
         <li><strong>To enable user-to-user communications.</strong> We may process your information if you choose to use any of our offerings that allow for communication with another user.</li>
         

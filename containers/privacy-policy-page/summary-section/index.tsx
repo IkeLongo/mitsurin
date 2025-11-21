@@ -12,7 +12,7 @@ export async function Summary() {
       <ul className="list-none mt-2 flex flex-col gap-2">
         <li>
           <p className=" text-navy-975 text-left">
-            <strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with {LEGAL_COMPANY_NAME} and the Services, the choices you make, and the products and features you use.
+            <strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with {LEGAL_COMPANY_NAME} and the Services, the choices you make, and the Wagyu beef products and ranch services you use.
           </p>
         </li>
         <li>
@@ -27,12 +27,12 @@ export async function Summary() {
         </li>
         <li>
           <p className=" text-navy-975 text-left">
-            <strong>How do you process my information?</strong> We process your information to provide, improve, and personalize our services, comply with legal obligations, and protect our rights.
+            <strong>How do you process my information?</strong> We process your information to provide, improve, and personalize our Wagyu beef products and ranch services, comply with legal obligations, and protect our rights.
           </p>
         </li>
         <li>
           <p className=" text-navy-975 text-left">
-            <strong>In what situations and with which types of parties do we share personal information?</strong> We may share your information with service providers, business partners, and legal authorities as required by law.
+            <strong>In what situations and with which types of parties do we share personal information?</strong> We may share your information with shipping carriers, payment processors, ranch service providers, and legal authorities as required by law.
           </p>
         </li>
         <li>

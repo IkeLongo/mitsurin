@@ -7,7 +7,7 @@ const { BUSINESS_LOCATION } = process.env;
 
 export async function TermsAndConditions() {
   return (
-    <section id="terms-of-service" className="flex flex-col items-center w-full p-6 pb-20 max-w-[920px] mx-auto pt-48">
+    <section id="terms-of-service" className="flex flex-col items-center w-full p-6 pb-20 max-w-[920px] mx-auto pt-48 bg-gray-200">
       <h1 className="text-center mb-4">Terms of Service</h1>
       <p className="text-center pt-4">Last Updated: November 21, 2025</p>
 

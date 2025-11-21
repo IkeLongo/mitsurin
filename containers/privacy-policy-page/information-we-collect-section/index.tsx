@@ -8,16 +8,16 @@ export async function InfoWeCollect() {
         <strong>In Short:</strong> <span className="italic">We collect personal information that you provide to us.</span>
       </p>
       <p className="mt-4 text-navy-975 text-left">
-        We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.
+        We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our Wagyu beef products and ranch services, when you place orders, participate in activities on the Services, or otherwise when you contact us.
       </p>
       <p className="mt-4 text-navy-975 text-left">
         <strong>Personal Information Provided by You.</strong> The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:
       </p>
       <ul className="list-disc pl-6 mt-2 flex flex-col gap-2">
-        <li>Name and contact details (e.g., email address, phone number, physical address)</li>
+        <li>Name and contact details (e.g., email address, phone number, shipping address)</li>
         <li>Account credentials (e.g., username or account ID)</li>
-        <li>Demographic information (e.g., age, gender, language preference)</li>
-        <li>Technical data about your interactions with our website or app (e.g., IP address, browser type, pages visited)</li>
+        <li>Order and shipping information (e.g., delivery preferences, special handling instructions)</li>
+        <li>Technical data about your interactions with our website (e.g., IP address, browser type, pages visited)</li>
       </ul>
       <p className="mt-4 text-navy-975 text-left">
         <strong>Sensitive Information.</strong> We do not process sensitive information.
@@ -29,7 +29,7 @@ export async function InfoWeCollect() {
         <strong>Social Media Login Data.</strong> We may provide you with the option to register with us using your existing social media account details, like your Facebook, Twitter, or other social media account. If you choose to register in this way, we will collect the information described in the section called <a href="#how-do-we-handle-your-social-logins" className="text-blue-500 hover:underline">How Do We Handle Your Social Logins?</a> below.
       </p>
       <p className="mt-4 text-navy-975 text-left">
-        <strong>Application Data.</strong> If you use our application(s), we also may collect the following information if you choose to provide us with access or permission:
+        <strong>Order and Delivery Data.</strong> When you place orders for our Wagyu beef products, we may collect the following information:
       </p>
       <ul className="list-disc pl-6 mt-2 flex flex-col gap-2">
         <li><strong>Geolocation Information.</strong> We may request access or permission to track location-based information from your mobile device, either continuously or while you are using our mobile application(s), to provide certain location-based services. If you wish to change our access or permissions, you may do so in your device’s settings.</li>

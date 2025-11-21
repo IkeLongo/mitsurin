@@ -17,12 +17,12 @@ export async function LegalBasis() {
         <li><strong>Legitimate Interests.</strong> We may process your information when we believe it is reasonably necessary to achieve our legitimate business interests and those interests do not outweigh your interests and fundamental rights and freedoms. For example, we may process your personal information for some of the purposes described in order to:</li>
         {/* MORE BULLET POINTS HERE */}
         <ul className="list-disc ml-6 my-2 flex flex-col gap-2">
-          <li>Send users information about special offers and discounts on our products and services</li>
-          <li>Develop and display personalized and relevant advertising content for our users</li>
-          <li>Analyze how our services are used so we can improve them to engage and retain users</li>
+          <li>Send users information about special offers and availability updates on our Wagyu beef products</li>
+          <li>Develop and display personalized content about our Wagyu beef products and ranch operations</li>
+          <li>Analyze how our website and ordering system are used so we can improve the customer experience</li>
           <li>Support our marketing activities</li>
           <li>Diagnose problems and/or prevent fraudulent activities</li>
-          <li>Understand how our users use our products and services so we can improve user experience</li>
+          <li>Understand how our customers interact with our Wagyu beef products and services so we can improve their experience</li>
         </ul>
         
         <li><strong>Legal Obligations.</strong> We may process your information where we believe it is necessary for compliance with our legal obligations, such as to cooperate with a law enforcement body or regulatory agency, exercise or defend our legal rights, or disclose your information as evidence in litigation in which we are involved.</li>

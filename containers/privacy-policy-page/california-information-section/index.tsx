@@ -24,71 +24,71 @@ export async function CaliforniaInformation() {
         <table className="min-w-full border-collapse border border-gray-200">
           <thead>
             <tr className="bg-navy-500">
-              <th className="px-4 py-2 text-left font-medium text-gray-400 border border-gray-200">Category</th>
-              <th className="px-4 py-2 text-left font-medium text-gray-400 border border-gray-200">Description</th>
-              <th className="px-4 py-2 text-left font-medium text-gray-400 border border-gray-200">Collected</th>
+              <th className="px-4 py-2 text-left font-medium text-gray-400 border border-gray-300 bg-gray-100">Category</th>
+              <th className="px-4 py-2 text-left font-medium text-gray-400 border border-gray-300 bg-gray-100">Description</th>
+              <th className="px-4 py-2 text-left font-medium text-gray-400 border border-gray-300 bg-gray-100">Collected</th>
             </tr>
           </thead>
-          <tbody className="even:bg-gray-100">
+          <tbody className="even:bg-gray-50">
             <tr className="even:bg-white">
-              <td className="px-4 py-2 border border-gray-200">A. Identifiers</td>
-              <td className="px-4 py-2 border border-gray-200">Contact details, such as real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name</td>
-              <td className="px-4 py-2 border border-gray-200">YES</td>
+              <td className="px-4 py-2 border border-gray-300">A. Identifiers</td>
+              <td className="px-4 py-2 border border-gray-300">Contact details, such as real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name</td>
+              <td className="px-4 py-2 border border-gray-300">YES</td>
             </tr>
             <tr className="">
-              <td className="px-4 py-2 border border-gray-200">B. Personal information categories listed in the California Customer Records statute</td>
-              <td className="px-4 py-2 border border-gray-200">Name, contact information, education, employment, employment history, and financial information</td>
-              <td className="px-4 py-2 border border-gray-200">NO</td>
+              <td className="px-4 py-2 border border-gray-300">B. Personal information categories listed in the California Customer Records statute</td>
+              <td className="px-4 py-2 border border-gray-300">Name, contact information, education, employment, employment history, and financial information</td>
+              <td className="px-4 py-2 border border-gray-300">NO</td>
             </tr>
             <tr className="even:bg-gray-50">
-              <td className="px-4 py-2 border border-gray-200">C. Protected classification characteristics under California or federal law</td>
-              <td className="px-4 py-2 border border-gray-200">Gender and date of birth</td>
-              <td className="px-4 py-2 border border-gray-200">NO</td>
+              <td className="px-4 py-2 border border-gray-300">C. Protected classification characteristics under California or federal law</td>
+              <td className="px-4 py-2 border border-gray-300">Gender and date of birth</td>
+              <td className="px-4 py-2 border border-gray-300">NO</td>
             </tr>
             <tr className="">
-              <td className="px-4 py-2 border border-gray-200">D. Commercial information</td>
-              <td className="px-4 py-2 border border-gray-200">Transaction information, purchase history, financial details, and payment information</td>
-              <td className="px-4 py-2 border border-gray-200">NO</td>
+              <td className="px-4 py-2 border border-gray-300">D. Commercial information</td>
+              <td className="px-4 py-2 border border-gray-300">Transaction information, purchase history, financial details, and payment information</td>
+              <td className="px-4 py-2 border border-gray-300">NO</td>
             </tr>
             <tr className="even:bg-gray-50">
-              <td className="px-4 py-2 border border-gray-200">E. Biometric information</td>
-              <td className="px-4 py-2 border border-gray-200">Fingerprints and voiceprints</td>
-              <td className="px-4 py-2 border border-gray-200">NO</td>
+              <td className="px-4 py-2 border border-gray-300">E. Biometric information</td>
+              <td className="px-4 py-2 border border-gray-300">Fingerprints and voiceprints</td>
+              <td className="px-4 py-2 border border-gray-300">NO</td>
             </tr>
             <tr className="">
-              <td className="px-4 py-2 border border-gray-200">F. Internet or other similar network activity</td>
-              <td className="px-4 py-2 border border-gray-200">Browsing history, search history, online behavior, interest data, and interactions with our and other websites, applications, systems, and advertisements</td>
-              <td className="px-4 py-2 border border-gray-200">YES</td>
+              <td className="px-4 py-2 border border-gray-300">F. Internet or other similar network activity</td>
+              <td className="px-4 py-2 border border-gray-300">Browsing history, search history, online behavior, interest data, and interactions with our and other websites, applications, systems, and advertisements</td>
+              <td className="px-4 py-2 border border-gray-300">YES</td>
             </tr>
             <tr className="even:bg-gray-50">
-              <td className="px-4 py-2 border border-gray-200">G. Geolocation data</td>
-              <td className="px-4 py-2 border border-gray-200">Device location</td>
-              <td className="px-4 py-2 border border-gray-200">YES</td>
+              <td className="px-4 py-2 border border-gray-300">G. Geolocation data</td>
+              <td className="px-4 py-2 border border-gray-300">Device location</td>
+              <td className="px-4 py-2 border border-gray-300">YES</td>
             </tr>
             <tr className="">
-              <td className="px-4 py-2 border border-gray-200">H. Audio, electronic, visual, thermal, olfactory, or similar information</td>
-              <td className="px-4 py-2 border border-gray-200">Images and audio, video or call recordings created in connection with our business activities</td>
-              <td className="px-4 py-2 border border-gray-200">NO</td>
+              <td className="px-4 py-2 border border-gray-300">H. Audio, electronic, visual, thermal, olfactory, or similar information</td>
+              <td className="px-4 py-2 border border-gray-300">Images and audio, video or call recordings created in connection with our business activities</td>
+              <td className="px-4 py-2 border border-gray-300">NO</td>
             </tr>
             <tr className="even:bg-gray-50">
-              <td className="px-4 py-2 border border-gray-200">I. Professional or employment-related information</td>
-              <td className="px-4 py-2 border border-gray-200">Business contact details in order to provide you our services at a business level or job title, work history, and professional qualifications if you apply for a job with us</td>
-              <td className="px-4 py-2 border border-gray-200">NO</td>
+              <td className="px-4 py-2 border border-gray-300">I. Professional or employment-related information</td>
+              <td className="px-4 py-2 border border-gray-300">Business contact details in order to provide you our services at a business level or job title, work history, and professional qualifications if you apply for a job with us</td>
+              <td className="px-4 py-2 border border-gray-300">NO</td>
             </tr>
             <tr className="">
-              <td className="px-4 py-2 border border-gray-200">J. Education Information</td>
-              <td className="px-4 py-2 border border-gray-200">Student records and directory information</td>
-              <td className="px-4 py-2 border border-gray-200">NO</td>
+              <td className="px-4 py-2 border border-gray-300">J. Education Information</td>
+              <td className="px-4 py-2 border border-gray-300">Student records and directory information</td>
+              <td className="px-4 py-2 border border-gray-300">NO</td>
             </tr>
             <tr className="even:bg-gray-50">
-              <td className="px-4 py-2 border border-gray-200">K. Inferences drawn from other personal information</td>
-              <td className="px-4 py-2 border border-gray-200">Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual’s preferences and characteristics</td>
-              <td className="px-4 py-2 border border-gray-200">YES</td>
+              <td className="px-4 py-2 border border-gray-300">K. Inferences drawn from other personal information</td>
+              <td className="px-4 py-2 border border-gray-300">Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual’s preferences and characteristics</td>
+              <td className="px-4 py-2 border border-gray-300">YES</td>
             </tr>
             <tr className="">
-              <td className="px-4 py-2 border border-gray-200">L. Sensitive personal information</td>
-              <td className="px-4 py-2 border border-gray-200">Account login information, drivers’ licenses, health data, precise geolocation, racial or ethnic origin, religious or philosophical beliefs, and sex life or sexual orientation</td>
-              <td className="px-4 py-2 border border-gray-200">NO</td>
+              <td className="px-4 py-2 border border-gray-300">L. Sensitive personal information</td>
+              <td className="px-4 py-2 border border-gray-300">Account login information, drivers’ licenses, health data, precise geolocation, racial or ethnic origin, religious or philosophical beliefs, and sex life or sexual orientation</td>
+              <td className="px-4 py-2 border border-gray-300">NO</td>
             </tr>
           </tbody>
         </table>
@@ -136,7 +136,7 @@ export async function CaliforniaInformation() {
       <p className="text-center font-bold uppercase text-navy-975 mt-6">Will your information be shared with anyone else?</p>
       <p className="mt-4 text-navy-975 text-left">We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. Each service provider is a for-profit entity that processes the information on our behalf, following the same strict privacy protection obligations mandated by the CCPA.</p>
       <p className="mt-4 text-navy-975 text-left">We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be “selling” of your personal information.</p>
-      <p className="mt-4 text-navy-975 text-left">RiverCity Creatives has disclosed the following categories of personal information to third parties for a business or commercial purpose in the preceding twelve (12) months:</p>
+      <p className="mt-4 text-navy-975 text-left">{DBA_NAME} has disclosed the following categories of personal information to third parties for a business or commercial purpose in the preceding twelve (12) months:</p>
       <ul className="list-disc pl-6 mt-4 flex flex-col gap-2">
         <li>Category A. Identifiers, such as contact details like your real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name.</li>
         <li>Category B. Personal information, as defined in the California Customer Records law, such as your name, contact information, education, employment, employment history, and financial information.</li>
@@ -152,7 +152,7 @@ export async function CaliforniaInformation() {
         <li>Category L. Sensitive personal information, such as account login information, drivers’ licenses, health data, precise geolocation, racial or ethnic origin, religious or philosophical beliefs, and sex life or sexual orientation.</li>
       </ul>
       <p className="mt-4 text-navy-975 text-left">The categories of third parties to whom we disclosed personal information for a business or commercial purpose can be found under <a href="#when-and-with-whom-do-we-share-your-personal-information" className="text-blue-500 hover:underline">When and with Whom do we Share your Personal Information?</a>.</p>
-      <p className="mt-4 text-navy-975 text-left">RiverCity Creatives has not sold or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months.</p>
+      <p className="mt-4 text-navy-975 text-left">{DBA_NAME} has not sold or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months.</p>
       <ul className="list-disc pl-6 mt-4 flex flex-col gap-2">
         <li>Category A. Identifiers, such as contact details like your real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name.</li>
         <li>Category B. Personal information, as defined in the California Customer Records law, such as your name, contact information, education, employment, employment history, and financial information.</li>

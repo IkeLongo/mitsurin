@@ -109,7 +109,7 @@ function ContactFormSkeleton() {
 
 export default function Privacy() {
   return (
-    <div className="flex flex-col items-center justify-start w-full h-auto bg-gray-50">
+    <div className="flex flex-col items-center justify-start w-full h-auto bg-gray-200">
       <main className="flex flex-col w-full h-full mx-4">
         <Suspense fallback={<ContactFormSkeleton />}>
           <div className="relative h-auto w-full max-w-[1020px] mx-auto bg-cover bg-top overflow-x-hidden top-40 mb-24 px-4">

@@ -13,7 +13,7 @@ export async function Virginia() {
       <p className="mt-4 text-navy-975 text-left">“Personal data” means any information that is linked or reasonably linkable to an identified or identifiable natural person. “Personal data” does not include de-identified data or publicly available information.</p>
       <p className="mt-4 text-navy-975 text-left">“Sale of personal data” means the exchange of personal data for monetary consideration.</p>
       <p className="mt-4 text-navy-975 text-left">If this definition of “consumer” applies to you, we must adhere to certain rights and obligations regarding your personal data.</p>
-      <p className="mt-4 text-navy-975 text-left">The information we collect, use, and disclose about you will vary depending on how you interact with {DBA_NAME} and our Services. To find out more, please visit the following sections above:</p>
+      <p className="mt-4 text-navy-975 text-left">The information we collect, use, and disclose about you will vary depending on how you interact with {DBA_NAME} and our Wagyu beef products and ranch services. To find out more, please visit the following sections above:</p>
       <ol className="list-decimal pl-6 mt-4 flex flex-col gap-2">
         <li><a href="#what-information-do-we-collect" className="text-blue-500 hover:underline">What Information do we Collect?</a></li>
         <li><a href="#how-do-we-process-your-information" className="text-blue-500 hover:underline">How do we Process your Information?</a></li>
