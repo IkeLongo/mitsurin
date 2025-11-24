@@ -29,6 +29,7 @@ interface NavItemsProps {
   }[];
   className?: string;
   onItemClick?: () => void;
+  visible?: boolean;
 }
 
 interface MobileNavProps {
@@ -40,6 +41,7 @@ interface MobileNavProps {
 interface MobileNavHeaderProps {
   children: React.ReactNode;
   className?: string;
+  visible?: boolean;
 }
 
 interface MobileNavMenuProps {
@@ -69,7 +71,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("fixed inset-x-0 top-10 md:top-20 z-40 w-full", className)}
+      className={cn("fixed inset-x-0 top-4 md:top-10 z-40 w-full", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -104,23 +106,31 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        visible && "bg-white/30 dark:bg-white/30",
         className,
       )}
     >
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible }
+            )
+          : child
+      )}
     </motion.div>
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, className, onItemClick, visible }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition duration-200 lg:flex lg:space-x-2",
+        visible ? "text-stone-800 hover:text-stone-900" : "text-neutral-200 hover:text-neutral-100",
         className,
       )}
     >
@@ -128,14 +138,22 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <a
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+          className={cn(
+            "relative px-4 py-2 transition duration-200 font-semibold",
+            visible ? "text-stone-900 dark:text-stone-900" : "text-neutral-200 dark:text-neutral-200"
+          )}
           key={`link-${idx}`}
           href={item.link}
         >
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              className={cn(
+                "absolute inset-0 h-full w-full rounded-full",
+                visible 
+                  ? "bg-gray-200 dark:bg-gray-200" 
+                  : "bg-gray-100 dark:bg-neutral-800"
+              )}
             />
           )}
           <span className="relative z-20">{item.name}</span>
@@ -166,11 +184,18 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        visible && "bg-white/30 dark:bg-white/30",
         className,
       )}
     >
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible }
+            )
+          : child
+      )}
     </motion.div>
   );
 };
@@ -178,6 +203,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
 export const MobileNavHeader = ({
   children,
   className,
+  visible,
 }: MobileNavHeaderProps) => {
   return (
     <div
@@ -186,7 +212,14 @@ export const MobileNavHeader = ({
         className,
       )}
     >
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible }
+            )
+          : child
+      )}
     </div>
   );
 };
@@ -219,25 +252,39 @@ export const MobileNavMenu = ({
 export const MobileNavToggle = ({
   isOpen,
   onClick,
+  visible,
 }: {
   isOpen: boolean;
   onClick: () => void;
+  visible?: boolean;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX 
+      className={cn(
+        "transition duration-200", 
+        visible ? "text-stone-800 dark:text-stone-800" : "text-neutral-200 dark:text-neutral-200"
+      )} 
+      onClick={onClick} 
+    />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 
+      className={cn(
+        "transition duration-200", 
+        visible ? "text-stone-800 dark:text-stone-800" : "text-neutral-200 dark:text-neutral-200"
+      )} 
+      onClick={onClick} 
+    />
   );
 };
 
-export const NavbarLogo = () => {
+export const NavbarLogo = ({ visible }: { visible?: boolean }) => {
   return (
     <a
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <img
-        src="/mitsurin-horizontal-logo-white.svg"
+        src={visible ? "/mitsurin-horizontal-logo-black.png" : "/mitsurin-horizontal-logo-white.svg"}
         alt="Mitsurin Wagyu logo"
         width={120}
         height={30}

@@ -56,7 +56,7 @@ export default function MainNavbar({
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
+                className="relative text-neutral-800 dark:text-neutral-200"
               >
                 <span className="block">{item.name}</span>
               </a>
