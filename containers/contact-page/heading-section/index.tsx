@@ -50,12 +50,12 @@ export default function HeadingSection() {
                   delay={0.4 + (index * 0.15)}
                 >
                   <div className="relative group block p-2 h-full w-full">
-                    <div className="relative h-full w-full p-6 bg-white border-2 border-yellow-600 rounded-2xl group-hover:bg-yellow-600 transition duration-200">
+                    <div className="relative h-full w-full p-6 bg-white border-2 border-yellow-600 rounded-2xl group-hover:bg-neutral-200 transition duration-300">
                       {item.icon}
-                      <h4 className="text-red-900 text-center text-xl font-bold mb-4">
+                      <h4 className="text-red-900 group-hover:text-yellow-600 text-center text-xl font-bold mb-4 transition duration-300">
                         {item.title}
                       </h4>
-                      <p className="text-black text-center text-md leading-relaxed">
+                      <p className="text-black text-center text-md leading-relaxed transition duration-300">
                         {item.description}
                       </p>
                     </div>
