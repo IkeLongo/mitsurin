@@ -3,7 +3,7 @@
 export default function HeadingSection() {
   return (
     <div 
-      className="font-sans flex items-center justify-center pt-48 md:pt-48 lg:pt-52 pb-12 md:pb-16 lg:pb-24 bg-cover bg-center bg-no-repeat relative"
+      className="font-sans flex items-center justify-center pt-36 md:pt-48 lg:pt-52 pb-12 md:pb-16 lg:pb-24 bg-cover bg-center bg-no-repeat relative"
       style={{
         backgroundImage: "url('/wagyu-steak-for-dinner.webp')",
       }}
