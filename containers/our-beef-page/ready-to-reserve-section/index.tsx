@@ -1,5 +1,6 @@
 
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import Link from "next/link";
 
 export default function ReadyToReserveSection() {
   return (
@@ -32,9 +33,11 @@ export default function ReadyToReserveSection() {
 
         {/* Button */}
         <ScrollAnimationWrapper animationType="slideUp" delay={0.4}>
-          <button className="border-2 bg-white border-white hover:bg-gray-200 text-red-900 font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-            Contact Us to Reserve Your Share
-          </button>
+          <Link href="/contact">
+            <button className="border-2 bg-white border-white hover:bg-gray-200 text-red-900 font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
+              Contact Us to Reserve Your Share
+            </button>
+          </Link>
         </ScrollAnimationWrapper>
 
         {/* Description */}

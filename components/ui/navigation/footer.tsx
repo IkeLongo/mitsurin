@@ -47,7 +47,7 @@ const defaultSections: FooterSection[] = [
     title: "Contact",
     links: [
       { href: "tel:+12108270658", label: "Hondo, Texas Ranch" },
-      { href: "mailto:info@mitsurinwagyu.com", label: "info@mitsurinwagyu.com" },
+      { href: "mailto:michael@mitsurinwagyu.com", label: "michael@mitsurinwagyu.com" },
     ],
   },
 ];

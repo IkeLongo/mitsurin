@@ -1,5 +1,6 @@
 
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import Link from "next/link";
 
 export default function ExperienceTheDifferenceSection() {
   return (
@@ -32,9 +33,11 @@ export default function ExperienceTheDifferenceSection() {
 
         {/* Button */}
         <ScrollAnimationWrapper animationType="slideUp" delay={0.4}>
-          <button className="border-2 border-white hover:bg-gray-200/25 text-white font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-            Contact Us
-          </button>
+          <Link href="/contact">
+            <button className="border-2 border-white hover:bg-gray-200/25 text-white font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
+              Contact Us
+            </button>
+          </Link>
         </ScrollAnimationWrapper>
 
         <div className="w-full h-0.5 bg-yellow-600 my-20" />

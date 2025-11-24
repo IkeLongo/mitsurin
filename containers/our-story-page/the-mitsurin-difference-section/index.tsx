@@ -1,6 +1,7 @@
 
 
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import Link from "next/link";
 
 export default function TheMitsurinDifferenceSection() {
   return (
@@ -30,9 +31,11 @@ export default function TheMitsurinDifferenceSection() {
                 Discover why our Wagyu beef stands apart, learn about our available cuts, or get in touch to place your order.
               </p>
               
-              <button className="bg-gray-100 hover:bg-gray-200 text-red-900 border-yellow-600 border-2 font-semibold px-6 py-3 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:cursor-pointer">
-                Get in Touch
-              </button>
+              <Link href="/contact">
+                <button className="bg-gray-100 hover:bg-gray-200 text-red-900 border-yellow-600 border-2 font-semibold px-6 py-3 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:cursor-pointer">
+                  Get in Touch
+                </button>
+              </Link>
             </div>
           </ScrollAnimationWrapper>
           
