@@ -54,14 +54,16 @@ export default function HowItWorksSection() {
             <div
               className="
                 grid
-                grid-cols-[minmax(80px,1fr)_minmax(100px,2fr)_minmax(80px,1fr)_minmax(100px,2fr)_minmax(80px,1fr)]
-                xl:grid-cols-[100px_250px_100px_250px_100px]
+                grid-cols-[minmax(60px,1fr)_minmax(80px,1.5fr)_minmax(60px,1fr)_minmax(80px,1.5fr)_minmax(60px,1fr)]
+                xl:grid-cols-[80px_200px_80px_200px_80px]
                 items-center
                 justify-center
-                gap-x-4
+                gap-x-2
+                lg:gap-x-4
                 xl:gap-x-8
-                px-16
-                xl:px-20
+                px-4
+                lg:px-8
+                xl:px-16
               "
             >
               {/* Row 1: icon #1 */}
@@ -91,7 +93,7 @@ export default function HowItWorksSection() {
             </div>
 
             {/* Card content section - below the icon flow */}
-            <div className="mt-8 grid grid-cols-[minmax(80px,1fr)_minmax(100px,2fr)_minmax(80px,1fr)_minmax(100px,2fr)_minmax(80px,1fr)] xl:grid-cols-[100px_250px_100px_250px_100px] justify-center gap-x-4 xl:gap-x-8 px-16 xl:px-20">
+            <div className="mt-8 grid grid-cols-[minmax(60px,1fr)_minmax(80px,1.5fr)_minmax(60px,1fr)_minmax(80px,1.5fr)_minmax(60px,1fr)] xl:grid-cols-[80px_200px_80px_200px_80px] justify-center gap-x-2 lg:gap-x-4 xl:gap-x-8 px-4 lg:px-8 xl:px-16">
               <ScrollAnimationWrapper animationType="slideUp" delay={0.3}>
                 <CardContent {...steps[0]} stepNumber={1} className="col-start-1" />
               </ScrollAnimationWrapper>
@@ -211,8 +213,8 @@ function CardContent({
   // Base styles that should always be present
   const baseStyles = {
     stepNumber: "flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white",
-    title: "min-w-[200px] font-[Montserrat] text-xl font-bold text-stone-900 text-center",
-    description: "min-w-[200px] leading-relaxed text-gray-600 text-center max-w-xs",
+    title: "font-[Montserrat] text-xl font-bold text-stone-900 text-center",
+    description: "leading-relaxed text-gray-600 text-center max-w-xs mx-auto",
   };
 
   // Default colors/additional styles

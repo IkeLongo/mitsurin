@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function OurStory() {
   return (
-    <div className="font-sans min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="font-sans min-h-screen flex items-center justify-center bg-gray-50 overflow-x-hidden">
       <main className="w-full mx-auto">
         <HeadingSection />
         <OurOriginStorySection />
