@@ -26,8 +26,8 @@ export default function GrowingTheDreamSection() {
               height={528}
               containerAlignment="ml-auto"
               frameColor="yellow-600"
-              offsetRight={10}
-              offsetTop={10}
+              offsetX={5}
+              offsetY={5}
               priority
             />
           </ScrollAnimationWrapper>
