@@ -24,9 +24,6 @@ export const QualityComparisonModal = ({
   score,
   description
 }: QualityComparisonModalProps) => {
-  // Determine modal alignment based on grade
-  const isLeftAligned = grade === 'CHOICE';
-  
   return (
     <AnimatePresence>
       {isVisible && (
@@ -39,33 +36,28 @@ export const QualityComparisonModal = ({
           initial={{ opacity: 0, scale: 0.8, y: 10 }}
           animate={{ 
             opacity: 1, 
-            scale: 1
+            scale: 1,
+            y: 0
           }}
           exit={{ opacity: 0, scale: 0.8, y: 10 }}
           transition={{ 
-            duration: 0.15, 
-            ease: "easeOut",
-            x: { duration: 0.1, ease: "easeOut" },
-            y: { duration: 0.1, ease: "easeOut" }
+            duration: 0.2, 
+            ease: "easeOut"
           }}
         >
-          <div 
-            className={`bg-white border-2 border-red-900 rounded-lg p-4 shadow-2xl max-w-xs min-w-[200px] ${
-              isLeftAligned ? 'transform -translate-x-4' : 'transform -translate-x-44'
-            }`}
-          >
+          <div className="bg-black border-2 border-yellow-600 rounded-lg p-4 shadow-2xl w-[200px] transform -translate-x-1/2">
             {/* Grade Title */}
-            <h3 className="text-red-900 text-lg font-bold font-[Montserrat] mb-2">
+            <h3 className="text-yellow-600 text-lg font-bold font-[Montserrat] mb-2 text-center">
               {grade}
             </h3>
             
             {/* Description */}
-            <p className="text-gray-700 text-sm leading-relaxed mb-3">
+            <p className="text-neutral-200 text-sm leading-relaxed mb-3 text-center">
               {description || gradeDescriptions[grade]}
             </p>
             
             {/* Quality Score */}
-            <div className="text-yellow-600 text-sm font-semibold">
+            <div className="text-neutral-200 text-sm font-semibold text-center">
               Quality Score: {score}
             </div>
           </div>

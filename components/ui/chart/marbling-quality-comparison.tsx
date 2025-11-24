@@ -151,26 +151,13 @@ export default function MarblingQualityComparison() {
     
     const handleMouseEnter = (event: React.MouseEvent) => {
       const rect = event.currentTarget.getBoundingClientRect();
-      const chartContainer = chartRef.current?.getBoundingClientRect();
-      
-      if (!chartContainer) return;
       
       // Set hovered column for background highlighting
       setHoveredColumn(payload.name);
       
-      // Determine position based on grade
-      const isLeftAligned = payload.name === 'CHOICE';
-      let modalX, modalY;
-      
-      if (isLeftAligned) {
-        // Position to the left side for CHOICE only
-        modalX = rect.left - 20;
-        modalY = rect.top - 100;
-      } else {
-        // Position to the right side for SELECT, PRIME, and WAGYU
-        modalX = rect.right - 180;
-        modalY = rect.top - 100;
-      }
+      // Position modal above the center of each bar
+      const modalX = rect.left + (rect.width / 2) - 100; // Center horizontally (assuming 200px modal width)
+      const modalY = rect.top - 120; // Fixed distance above the bar
       
       setModalState({
         isVisible: true,
@@ -181,26 +168,7 @@ export default function MarblingQualityComparison() {
       });
     };
 
-    const handleMouseMove = (event: React.MouseEvent) => {
-      if (!modalState.isVisible) return;
-      
-      const rect = event.currentTarget.getBoundingClientRect();
-      const isLeftAligned = payload.name === 'CHOICE';
-      let modalX, modalY;
-      
-      if (isLeftAligned) {
-        modalX = rect.left - 20;
-        modalY = event.clientY - 80; // Follow mouse Y position
-      } else {
-        modalX = rect.right - 180;
-        modalY = event.clientY - 80; // Follow mouse Y position
-      }
-      
-      setModalState(prev => ({
-        ...prev,
-        position: { x: modalX, y: modalY }
-      }));
-    };
+
 
     const handleMouseLeave = () => {
       setHoveredColumn(null);
@@ -231,7 +199,6 @@ export default function MarblingQualityComparison() {
           height="100%"
           fill="transparent"
           onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           style={{ cursor: 'pointer' }}
         />
