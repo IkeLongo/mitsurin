@@ -53,11 +53,11 @@ export default function AboutSection() {
               delay={0.1}
               initialY={60}
             >
-              <div className="relative mx-auto lg:ml-auto">
-                {/* Back frame - positioned down and left */}
-                <div className="absolute right-4 top-4 w-full h-full border-[6px] border-yellow-600 rounded-sm z-10 max-w-[376px] max-h-[528px]" />
+              <div className="relative mx-auto lg:ml-auto right-4">
+                {/* Back frame - positioned behind and offset */}
+                <div className="absolute -right-4 bottom-4 w-[376px] h-[528px] border-[6px] border-yellow-600 rounded-sm z-0" />
                 {/* Foreground image with a 1px border */}
-                <div className="">
+                <div className="relative z-10">
                   <Image
                     src="/about-section-cow.webp"
                     alt="Marbled Wagyu beef cut"

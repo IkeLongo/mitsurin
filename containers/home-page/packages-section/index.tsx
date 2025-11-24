@@ -85,7 +85,7 @@ export const packages = [
     description:
       `A full share of premium, full-blooded Japanese Wagyu. Ideal for large families, 
       group purchases, or long-term enjoyment.`,
-    link: "https://stripe.com",
+    link: "/our-beef",
     icon: (
           <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
             <Container className="text-yellow-600" size={64} />
@@ -98,7 +98,7 @@ export const packages = [
     description:
       `Perfect for smaller households or first-time buyers looking to experience 
       the unmatched tenderness of Wagyu.`,
-    link: "https://netflix.com",
+    link: "/our-beef",
     icon: (
       <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
         <Package className="text-yellow-600" size={64} />

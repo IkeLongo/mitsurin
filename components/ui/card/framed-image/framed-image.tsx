@@ -14,8 +14,8 @@ interface FramedImageProps {
   frameBorderWidth?: number; // Border width in pixels (default: 6)
   
   // Frame offset (how much the frame is offset from the main image)
-  offsetRight?: number; // Tailwind spacing like 4, 6, 8, 10 (default: 10)
-  offsetTop?: number; // Tailwind spacing like 4, 6, 8, 10 (default: 10)
+  offsetX?: number; // Tailwind spacing like 4, 6, 8, 10 (default: 10)
+  offsetY?: number; // Tailwind spacing like 4, 6, 8, 10 (default: 10)
   
   // Container alignment and margins
   containerAlignment?: 'left' | 'center' | 'right' | 'ml-auto' | 'mr-auto'; // Container positioning
@@ -39,8 +39,8 @@ export default function FramedImage({
   frameBorderWidth = 6,
   
   // Offset props
-  offsetRight = 10,
-  offsetTop = 10,
+  offsetX = 5,
+  offsetY = 5,
   
   // Container props
   containerAlignment = "center",
@@ -51,16 +51,20 @@ export default function FramedImage({
   imageBorder = true,
 }: FramedImageProps) {
   
-  // Generate Tailwind classes for frame offset
-  const rightOffsetClass = `right-${offsetRight}`;
-  const topOffsetClass = `top-${offsetTop}`;
+  // Generate inline styles for frame and image offsets
+  const frameOffsetStyle = {
+    transform: `translateX(${offsetX * 4}px) translateY(-${offsetY * 4}px)` // Frame: +X, -Y (multiply by 4 for Tailwind spacing)
+  };
+  const imageOffsetStyle = {
+    transform: `translateX(-${offsetX * 4}px) translateY(${offsetY * 4}px)` // Image: -X, +Y
+  };
   const borderWidthClass = `border-[${frameBorderWidth}px]`;
   const frameColorClass = `border-${frameColor}`;
   
   // Generate container alignment classes with frame offset compensation
   const getContainerClasses = () => {
     const baseClasses = "relative w-full";
-    const marginLeftClass = `ml-${offsetRight}`; // Add right margin to compensate for frame offset
+    const marginLeftClass = `ml-${offsetX}`; // Add left margin to compensate for frame offset
     
     if (containerMargin) {
       return `${baseClasses} ${containerMargin}`;
@@ -86,13 +90,17 @@ export default function FramedImage({
 
   return (
     <div className={getContainerClasses()}>
-      {/* Back frame - positioned with custom offset */}
+      {/* Back frame - offset in positive X, negative Y direction */}
       <div 
-        className={`absolute ${rightOffsetClass} ${topOffsetClass} w-full h-full ${borderWidthClass} ${frameColorClass} rounded-sm z-0`}
+        className={`absolute inset-0 w-full h-full ${borderWidthClass} ${frameColorClass} rounded-sm z-0`}
+        style={frameOffsetStyle}
       />
       
-      {/* Foreground image */}
-      <div className="relative w-full z-10">
+      {/* Foreground image - offset in negative X, positive Y direction */}
+      <div 
+        className="relative w-full z-10"
+        style={imageOffsetStyle}
+      >
         <Image
           src={src}
           alt={alt}

@@ -71,10 +71,10 @@ export default function OurOriginStorySection() {
               alt="Marbled Wagyu beef cut"
               width={376}
               height={528}
-              containerAlignment="ml-auto"
+              containerAlignment="left"
               frameColor="yellow-600"
-              offsetRight={10}
-              offsetTop={10}
+              offsetX={5}
+              offsetY={5}
               priority
             />
           </ScrollAnimationWrapper>
