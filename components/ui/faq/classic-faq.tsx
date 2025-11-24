@@ -11,19 +11,34 @@ interface FAQ {
 
 const defaultFaqs: FAQ[] = [
   {
-    question: "Will I be able to get a job after completing the course?",
+    question: "What makes Mitsurin Wagyu different from other beef?",
     answer:
-      "The knowledge I teach comes from my real work experience. I've also spent 3 years mentoring interns at my company, so after finishing the course, you'll feel confident to start working in a real business environment.",
+      "Mitsurin Wagyu comes from 100% full-blooded Japanese cattle with authentic genetics, raised on our Texas ranch using traditional Japanese methods. Our cattle are pasture-raised, grain-finished, and receive stress-free handling, resulting in exceptional marbling and the signature melt-in-your-mouth texture that Wagyu is famous for.",
   },
   {
-    question: "Will you help me find a job after the course?",
+    question: "What cuts are included in a 1/2 or whole cow purchase?",
     answer:
-      "If you study well and are hardworking, I can recommend you to my current company and my brother's company. I'll also help you prepare for interviews and work with you on any questions you might face.",
+      "Both packages include premium cuts like ribeye, strip steaks, tenderloin, and ground beef, along with roasts, short ribs, and specialty cuts. You'll receive a variety that represents the entire animal, professionally butchered and vacuum-sealed. We provide a detailed cut sheet so you know exactly what to expect.",
   },
   {
-    question: "Is the study schedule flexible?",
+    question: "How long does Wagyu beef stay fresh and how should I store it?",
     answer:
-      "Yes, the schedule is very flexible since it's an online course. You can book a session whenever you're free.",
+      "Vacuum-sealed Wagyu beef stays fresh in your freezer for up to 12 months. In the refrigerator, it's best consumed within 3-5 days. We recommend thawing slowly in the refrigerator for 24-48 hours before cooking. The high fat content and marbling actually help preserve the meat's quality over time.",
+  },
+  {
+    question: "Is Mitsurin Wagyu worth the investment compared to regular beef?",
+    answer:
+      "Absolutely. Wagyu beef offers an unmatched dining experience with its rich marbling, buttery texture, and intense umami flavor. When you purchase from Mitsurin, you're getting restaurant-quality beef at a fraction of what you'd pay dining out, plus the convenience of having premium beef available whenever you want it.",
+  },
+  {
+    question: "How do I properly cook Wagyu beef to get the best results?",
+    answer:
+      "Wagyu beef cooks faster than regular beef due to its high fat content. Use medium to medium-high heat, and don't overcook - medium-rare to medium is ideal. The marbling will render beautifully, creating its own natural sauce. Season simply with salt and pepper to let the beef's natural flavor shine through.",
+  },
+  {
+    question: "Do you offer smaller quantities or individual cuts?",
+    answer:
+      "Currently, we focus on half and whole cow purchases to provide the best value and ensure our customers experience the full range of what Wagyu has to offer. This approach allows us to maintain our quality standards while making premium Wagyu more accessible than individual retail cuts. Many customers split a whole cow with friends or family members, making it even more affordable while everyone gets to enjoy authentic Wagyu beef.",
   },
 ];
 
