@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ToastContainer } from 'react-toastify';
 import ConditionalLayout from "@/components/layout/ConditionalLayout";
+import { draftMode } from 'next/headers'
+import { VisualEditing } from 'next-sanity/visual-editing'
+import { DisableDraftMode } from '@/components/sanity/disable-draft-mode'
+import { SanityLive } from '@/sanity/lib/live'
 import "./globals.css";
 import "@mux/mux-player";
 
@@ -88,7 +92,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -105,6 +109,13 @@ export default function RootLayout({
       >
         <ConditionalLayout>
           {children}
+          <SanityLive />
+          {(await draftMode()).isEnabled && (
+            <>
+              <DisableDraftMode />
+              <VisualEditing />
+            </>
+          )}
         </ConditionalLayout>
         <ToastContainer />
       </body>

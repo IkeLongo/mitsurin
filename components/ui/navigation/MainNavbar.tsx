@@ -20,6 +20,7 @@ export default function MainNavbar({
     { name: "Our Story", link: "/our-story" },
     { name: "Our Beef", link: "/our-beef" },
     { name: "Why Wagyu", link: "/why-wagyu" },
+    { name: "Availability", link: "/availability" },
   ],
 }: { items?: NavItem[] }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
