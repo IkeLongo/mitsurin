@@ -1,9 +1,7 @@
-import MainNavbar from "@/components/ui/navigation/MainNavbar";
-import FooterSection from "@/components/ui/navigation/footer";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ToastContainer, toast } from 'react-toastify';
-import CookieBanner from "@/containers/cookies/cookies-banner";
+import { ToastContainer } from 'react-toastify';
+import ConditionalLayout from "@/components/layout/ConditionalLayout";
 import "./globals.css";
 import "@mux/mux-player";
 
@@ -105,11 +103,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-        <MainNavbar />
-        {children}
-        <FooterSection />
+        <ConditionalLayout>
+          {children}
+        </ConditionalLayout>
         <ToastContainer />
-        <CookieBanner />
       </body>
     </html>
   );
