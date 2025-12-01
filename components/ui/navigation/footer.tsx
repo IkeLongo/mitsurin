@@ -28,10 +28,10 @@ interface FooterProps {
 
 const defaultSections: FooterSection[] = [
   {
-    title: "Products",
+    title: "Our Beef",
     links: [
-      { href: "/wagyu-cuts", label: "Premium Cuts" },
-      { href: "/packages", label: "Gift Packages" },
+      { href: "/our-beef", label: "Premium Cuts & Options" },
+      { href: "/why-wagyu", label: "Why Wagyu?" },
       { href: "/availability", label: "Check Availability", badge: "New" },
     ],
   },

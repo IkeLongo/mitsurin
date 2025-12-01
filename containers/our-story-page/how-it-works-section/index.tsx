@@ -54,8 +54,8 @@ export default function HowItWorksSection() {
             <div
               className="
                 grid
-                grid-cols-[minmax(60px,1fr)_minmax(80px,1.5fr)_minmax(60px,1fr)_minmax(80px,1.5fr)_minmax(60px,1fr)]
-                xl:grid-cols-[80px_200px_80px_200px_80px]
+                grid-cols-[minmax(120px,1fr)_minmax(60px,1fr)_minmax(120px,1fr)_minmax(60px,1fr)_minmax(120px,1fr)]
+                xl:grid-cols-[180px_120px_180px_120px_180px]
                 items-center
                 justify-center
                 gap-x-2
@@ -93,7 +93,7 @@ export default function HowItWorksSection() {
             </div>
 
             {/* Card content section - below the icon flow */}
-            <div className="mt-8 grid grid-cols-[minmax(60px,1fr)_minmax(80px,1.5fr)_minmax(60px,1fr)_minmax(80px,1.5fr)_minmax(60px,1fr)] xl:grid-cols-[80px_200px_80px_200px_80px] justify-center gap-x-2 lg:gap-x-4 xl:gap-x-8 px-4 lg:px-8 xl:px-16">
+            <div className="mt-8 grid grid-cols-[minmax(120px,1fr)_minmax(60px,1fr)_minmax(120px,1fr)_minmax(60px,1fr)_minmax(120px,1fr)] xl:grid-cols-[180px_120px_180px_120px_180px] justify-center gap-x-2 lg:gap-x-4 xl:gap-x-8 px-4 lg:px-8 xl:px-16">
               <ScrollAnimationWrapper animationType="slideUp" delay={0.3}>
                 <CardContent {...steps[0]} stepNumber={1} className="col-start-1" />
               </ScrollAnimationWrapper>
@@ -214,7 +214,7 @@ function CardContent({
   const baseStyles = {
     stepNumber: "flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white",
     title: "font-[Montserrat] text-xl font-bold text-stone-900 text-center",
-    description: "leading-relaxed text-gray-600 text-center max-w-xs mx-auto",
+    description: "leading-relaxed text-gray-600 text-center max-w-lg mx-auto",
   };
 
   // Default colors/additional styles
