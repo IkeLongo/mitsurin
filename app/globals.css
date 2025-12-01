@@ -8,6 +8,25 @@
 
 @theme {
   --color-red-gradient: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+  
+  /* Mitsurin Brand Colors */
+  --color-primary-500: #8C101C;
+  --color-primary-800: #630710;
+  --color-primary-900: #400101;
+  --color-accent: #D9AE5F;
+  --color-accent-dark: #BF8136;
+  --color-black: #0F0F0F;
+  --color-black-txt: #1D1D1D;
+  --color-dark-gray: #333333;
+  
+  /* White Scale */
+  --color-white-50: #FFFFFF;
+  --color-white-100: #F8F8F8;
+  --color-white-500: #F3F3F5;
+  --color-white-900: #F2EFEB;
+  
+  /* Additional Brand Gradients */
+  --color-gradient-red: linear-gradient(180deg, #630710 0%, #8C101C 100%);
 }
 
 @theme inline {

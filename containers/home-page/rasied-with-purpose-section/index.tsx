@@ -6,7 +6,7 @@ export default function RaisedWithPurposeSection() {
   return (
     <section
       aria-labelledby="raised-with-purpose-heading"
-      className="w-full bg-slate-200"
+      className="w-full bg-white-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         {/* Main container with relative positioning for layered elements */}
@@ -14,7 +14,7 @@ export default function RaisedWithPurposeSection() {
           
           {/* Red rectangle background - positioned left-top, lower z-index */}
           <div 
-            className="absolute top-0 md:left-0 lg:left-10 xl:left-20 bg-red-900 rounded-2xl z-0
+            className="absolute top-0 md:left-0 lg:left-10 xl:left-20 bg-primary-800 rounded-2xl z-0
                        w-40 h-[427px]     /* sm: 320x427 */
                        md:w-60 md:h-[512px]  /* md: 384x512 */
                        lg:w-[480px] lg:h-[640px]  /* lg: 480x640 */
@@ -29,7 +29,7 @@ export default function RaisedWithPurposeSection() {
               <div className="text-left mb-4 md:hidden">
                 <h3 
                   id="raised-with-purpose-heading"
-                  className="font-[Montserrat] text-2xl font-bold text-yellow-600 leading-tight px-4"
+                  className="font-[Montserrat] text-2xl font-bold text-accent-dark leading-tight px-4"
                 >
                   About Mitsurin Wagyu Beef Raised with Purpose in Hondo, Texas
                 </h3>
@@ -38,12 +38,12 @@ export default function RaisedWithPurposeSection() {
               {/* Split heading for md and larger screens */}
               <div className="text-left mb-4 lg:mb-8 ml-10 md:ml-10 lg:ml-32 xl:ml-60 w-full hidden md:block">
                 <h3 
-                  className="font-[Montserrat] text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-600 leading-tight pr-10 md:pr-0"
+                  className="font-[Montserrat] text-3xl md:text-4xl lg:text-5xl font-bold text-accent-dark leading-tight pr-10 md:pr-0"
                 >
                   About Mitsurin Wagyu Beef
                 </h3>
                 <h3 
-                  className="font-[Montserrat] text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-600 leading-tight ml-4 md:ml-5 lg:ml-20 pr-10 md:pr-0"
+                  className="font-[Montserrat] text-3xl md:text-4xl lg:text-5xl font-bold text-accent-dark leading-tight ml-4 md:ml-5 lg:ml-20 pr-10 md:pr-0"
                 >
                   Raised with Purpose in Hondo, Texas
                 </h3>

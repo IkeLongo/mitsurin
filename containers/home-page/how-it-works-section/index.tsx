@@ -9,7 +9,7 @@ const steps = [
     description:
       "Choose from our premium selection of Wagyu cuts, each carefully curated for exceptional quality and marbling.",
     icon: Beef,
-    iconBgColor: "bg-red-900",
+    iconBgColor: "bg-primary-500",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const steps = [
     description:
       "Our master butchers prepare your order with precision, ensuring optimal aging and presentation.",
     icon: ChefHat,
-    iconBgColor: "bg-yellow-600",
+    iconBgColor: "bg-accent-dark",
   },
   {
     id: 3,
@@ -25,19 +25,20 @@ const steps = [
     description:
       "Your Wagyu arrives fresh and perfectly packaged, ready to create an unforgettable dining experience.",
     icon: Truck,
-    iconBgColor: "bg-red-900",
+    iconBgColor: "bg-primary-500",
   },
 ];
 
 export default function HowItWorksSection() {
   return (
-    <section aria-labelledby="how-it-works-heading" className="w-full bg-red-900">
+    <section aria-labelledby="how-it-works-heading" className="w-full bg-white-50 py-12 md:py-16 lg:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-[1400px] lg:px-8">
-        <div className="bg-white p-8 lg:p-12">
+        <div className="bg-primary-500 rounded-2xl p-2">
+          <div className="bg-white-100 p-8 lg:p-12 rounded-xl">
           <ScrollAnimationWrapper animationType="slideUp">
             <h3
               id="how-it-works-heading"
-              className="mb-12 text-center font-[Montserrat] text-3xl font-bold leading-tight text-red-900 sm:text-4xl lg:text-5xl"
+              className="mb-12 text-center font-[Montserrat] text-3xl font-bold leading-tight text-primary-800 sm:text-4xl lg:text-5xl"
             >
               How it Works?
             </h3>
@@ -102,7 +103,7 @@ export default function HowItWorksSection() {
                   stepNumber={2}
                   className="col-start-3"
                   styles={{
-                    stepNumber: "bg-yellow-600"
+                    stepNumber: "bg-accent-dark"
                   }}
                 />
               </ScrollAnimationWrapper>
@@ -140,7 +141,7 @@ export default function HowItWorksSection() {
                   {...steps[1]}
                   stepNumber={2}
                   styles={{
-                    stepNumber: "bg-yellow-600"
+                    stepNumber: "bg-accent-dark"
                   }}
                 />
                 </div>
@@ -162,6 +163,7 @@ export default function HowItWorksSection() {
                 </div>
               </div>
             </ScrollAnimationWrapper>
+          </div>
           </div>
         </div>
       </div>
@@ -217,7 +219,7 @@ function CardContent({
 
   // Default colors/additional styles
   const defaultStyles = {
-    stepNumber: "bg-red-900",
+    stepNumber: "bg-primary-500",
     title: "",
     description: "",
   };

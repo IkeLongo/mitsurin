@@ -70,13 +70,13 @@ const FAQs = ({
       <div className="mx-auto max-w-4xl px-3 lg:px-8">
         {/* Eyebrow text (optional) */}
         {eyebrowText && (
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+          <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
             {eyebrowText.toUpperCase()}
           </p>
         )}
 
         {/* Main heading - matching your existing section styles */}
-        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-center text-red-900 mb-12">
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-center text-primary-800 mb-12">
           {heading}
         </h3>
 
@@ -97,7 +97,7 @@ const FAQs = ({
                       isOpen ? "rotate-180" : "rotate-0"
                     }`}
                   >
-                    {isOpen ? <MinusIcon className="size-6 text-red-900" /> : <PlusIcon className="size-6 text-yellow-600" />}
+                    {isOpen ? <MinusIcon className="size-6 text-primary-800" /> : <PlusIcon className="size-6 text-accent-dark" />}
                   </span>
                 </button>
 

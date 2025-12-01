@@ -8,7 +8,7 @@ export default function JapaneseGeneticsSection() {
   return (
     <section
       aria-labelledby="japanese-genetics-heading"
-      className="w-full bg-gray-50 overflow-x-hidden"
+      className="w-full bg-white-50 overflow-x-hidden"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         
@@ -19,18 +19,18 @@ export default function JapaneseGeneticsSection() {
             <ScrollAnimationWrapper animationType="slideUp">
               <h4 
                 id="japanese-genetics-heading"
-                className="text-2xl md:text-3xl font-bold leading-tight text-red-900 font-[Montserrat] mb-4"
+                className="text-2xl md:text-3xl font-bold leading-tight text-primary-800 font-[Montserrat] mb-4"
               >
                 At Mitsurin Wagyu Beef, we bring the excellence of Japanese genetics to Texas soil.
               </h4>
             </ScrollAnimationWrapper>
-            <div className="w-24 h-1 bg-yellow-600 rounded-full mx-auto"></div>
+            <div className="w-24 h-1 bg-accent-dark rounded-full mx-auto"></div>
           </div>
 
           {/* Video and Image - Simplified Layout */}
           <div className="flex flex-col-reverse sm:flex-row justify-center items-center mb-8">
             {/* Video Container - Smaller for mobile */}
-            <div className="border-4 border-yellow-600 rounded-2xl overflow-hidden shadow-2xl w-80 h-[480px] mr-0 sm:-mr-16">
+            <div className="border-4 border-accent-dark rounded-2xl overflow-hidden shadow-2xl w-80 h-[480px] mr-0 sm:-mr-16">
               <BackgroundVideo
                 playbackId="YNxcB1JE7B7Dy1WYoCJYwCp1k800JOl011u00EJRS01Y4TI"
                 thumbnailTime={0}
@@ -51,7 +51,7 @@ export default function JapaneseGeneticsSection() {
             </div>
 
             {/* Image - Side by side on tablet, stacked on mobile */}
-            <div className="border-4 border-yellow-600 rounded-2xl overflow-hidden shadow-2xl mt-0 sm:-mt-20 -mb-10 sm:mb-0 z-10">
+            <div className="border-4 border-accent-dark rounded-2xl overflow-hidden shadow-2xl mt-0 sm:-mt-20 -mb-10 sm:mb-0 z-10">
               <div className="w-64 h-80 relative">
                 <Image
                   src="/wagyu-cow-eating-organic-hay.webp"
@@ -76,14 +76,14 @@ export default function JapaneseGeneticsSection() {
               <p className="text-lg font-semibold text-black">The result?</p>
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper animationType="fade" delay={0.7}>
-              <p className="text-lg italic text-red-900 leading-relaxed">
+              <p className="text-lg italic font-bold text-primary-800 leading-relaxed">
                 Beef with exceptional tenderness, marbling, and flavor that redefines luxury.
               </p>
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper animationType="fade" delay={0.9}>
               <div className="pt-4">
-                <Link href="/our-story" className="inline-block bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
-                  Learn Our Story
+                <Link href="/our-story" className="inline-block bg-primary-800 hover:bg-primary-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                  Inquire Today
                 </Link>
               </div>
             </ScrollAnimationWrapper>
@@ -98,7 +98,7 @@ export default function JapaneseGeneticsSection() {
             {/* Video Container */}
             <div className="relative">
               <div 
-                className="border-4 border-yellow-600 rounded-2xl overflow-hidden shadow-2xl relative"
+                className="border-4 border-accent-dark rounded-2xl overflow-hidden shadow-2xl relative"
                 style={{
                   width: '500px',
                   height: '650px'
@@ -127,7 +127,7 @@ export default function JapaneseGeneticsSection() {
               <div 
                 className="absolute -right-2 sm:-right-8 md:-right-16 lg:-right-32 min-[1152px]:-right-40 xl:-right-52 top-1/2 transform -translate-y-2/3 z-10"
               >
-                <div className="border-4 border-yellow-600 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="border-4 border-accent-dark rounded-2xl overflow-hidden shadow-2xl">
                   <div className="w-48 h-60 sm:w-56 sm:h-70 md:w-64 md:h-80 lg:w-72 lg:h-96 xl:w-80 xl:h-[400px] relative">
                     <Image
                       src="/wagyu-cow-eating-organic-hay.webp"
@@ -148,14 +148,14 @@ export default function JapaneseGeneticsSection() {
             <ScrollAnimationWrapper animationType="slideUp">
               <h4 
                 id="japanese-genetics-heading"
-                className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-red-900 font-[Montserrat]"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-primary-800 font-[Montserrat]"
               >
                 At Mitsurin Wagyu Beef, we bring the excellence of Japanese genetics to Texas soil.
               </h4>
             </ScrollAnimationWrapper>
 
             {/* Yellow horizontal line */}
-            <div className="w-24 h-1 bg-yellow-600 rounded-full"></div>
+            <div className="w-24 h-1 bg-accent-dark rounded-full"></div>
 
             {/* Text Content - 3 rows */}
             <div className="space-y-6">
@@ -176,7 +176,7 @@ export default function JapaneseGeneticsSection() {
 
               {/* Third text block - italics and red */}
               <ScrollAnimationWrapper animationType="fade" delay={0.7}>
-                <p className="text-lg italic text-red-900 leading-relaxed">
+                <p className="text-lg italic text-primary-800 leading-relaxed">
                   Beef with exceptional tenderness, marbling, and flavor that redefines luxury.
                 </p>
               </ScrollAnimationWrapper>
@@ -185,7 +185,7 @@ export default function JapaneseGeneticsSection() {
             {/* Button */}
             <ScrollAnimationWrapper animationType="fade" delay={0.9}>
               <div className="pt-4">
-                <Link href="/our-story" className="inline-block bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                <Link href="/our-story" className="inline-block bg-primary-800 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
                   Learn Our Story
                 </Link>
               </div>

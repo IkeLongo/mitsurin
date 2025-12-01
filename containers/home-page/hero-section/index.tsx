@@ -133,7 +133,7 @@ export default function HeroSection() {
           initialY={30}
         >
           <div className="pt-4">
-              <Link href="/our-story" className="inline-block bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+              <Link href="/our-story" className="inline-block bg-primary-500 hover:bg-primary-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
                 About Mitsurin
               </Link>
             </div>

@@ -141,7 +141,7 @@ export const LadderNumber = ({
     >
       {/* Sliding red background */}
       <motion.div
-        className="absolute inset-0 bg-red-900 rounded-full"
+        className="absolute inset-0 bg-primary-800 rounded-full"
         initial={{ x: "-100%" }}
         animate={{ 
           x: isHovered ? "0%" : "-100%"

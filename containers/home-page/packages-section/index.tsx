@@ -1,12 +1,13 @@
 import { Container, Package } from "lucide-react";
 import { HoverEffect } from "@/components/ui/card/hover/card-hover-effect";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import Image from "next/image";
 
 export default function PackagesSection() {
   return (
     <section
       aria-labelledby="about-mitsurin-heading"
-      className="w-full bg-slate-200"
+      className="w-full bg-white-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <div className="text-center max-w-4xl mx-auto">
@@ -18,16 +19,16 @@ export default function PackagesSection() {
             initialY={60}
           >
             {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4">
               OUR PRODUCT
             </p>
 
             {/* Title */}
             <h3
               id="packages-section-heading"
-              className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight text-red-900 mb-8"
+              className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight text-primary-800 mb-8"
             >
-              <span className="text-yellow-600">Premium</span> Beef Packages
+              Premium Beef Packages
             </h3>
           </ScrollAnimationWrapper>
 
@@ -67,10 +68,13 @@ export default function PackagesSection() {
           delay={0.5}
           initialY={60}
         >
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12 max-w-4xl mx-auto">
             <HoverEffect 
               items={packages}
-              className="pt-0"
+              className="py-0"
+              styles={{
+                title: "text-xl lg:text-2xl"
+              }}
             />
           </div>
         </ScrollAnimationWrapper>
@@ -87,8 +91,14 @@ export const packages = [
       group purchases, or long-term enjoyment.`,
     link: "/our-beef",
     icon: (
-          <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-            <Container className="text-yellow-600" size={64} />
+          <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto">
+            <Image 
+              src="/full-cow.png" 
+              alt="Full Cow Icon" 
+              width={96} 
+              height={96}
+              className="w-24 h-24"
+            />
           </div>
         ),
     alt: "Whole Cow Package",
@@ -100,8 +110,14 @@ export const packages = [
       the unmatched tenderness of Wagyu.`,
     link: "/our-beef",
     icon: (
-      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-        <Package className="text-yellow-600" size={64} />
+      <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto">
+        <Image 
+          src="/half-cow.png" 
+          alt="Half Cow Icon" 
+          width={80} 
+          height={80}
+          className="w-20 h-20"
+        />
       </div>
     ),
     alt: "Half Cow Package",

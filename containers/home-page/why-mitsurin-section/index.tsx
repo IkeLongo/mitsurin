@@ -46,7 +46,7 @@ function FeatureIcon({
 }) {
   return (
     <div className={`flex-shrink-0 w-12 h-12 flex items-center justify-center ${className}`}>
-      <Icon className="w-8 h-8 text-yellow-600" />
+      <Icon className="w-8 h-8 text-accent-dark" />
     </div>
   );
 }
@@ -111,7 +111,7 @@ export default function WhyMitsurinSection() {
   return (
     <section
       aria-labelledby="why-mitsurin-heading"
-      className="w-full bg-red-900"
+      className="w-full bg-primary-800"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
@@ -121,7 +121,7 @@ export default function WhyMitsurinSection() {
             <ScrollAnimationWrapper animationType="slideUp">
               <div className="space-y-8">
                 {/* Eyebrow text */}
-                <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+                <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
                   WHY CHOOSE WAGYU
                 </p>
 
@@ -130,7 +130,8 @@ export default function WhyMitsurinSection() {
                   id="why-mitsurin-heading"
                   className="text-3xl md:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-white"
                 >
-                  Choose The Best Wagyu, Choose <span className="text-yellow-600">Mitsurin Wagyu</span>
+                  Choose <span className="text-accent-dark">The Best,</span><br/>
+                  Choose <span className="text-accent-dark">Mitsurin</span>
                 </h3>
               </div>
             </ScrollAnimationWrapper>

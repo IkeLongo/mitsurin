@@ -48,7 +48,7 @@ export default function AvailabilitySection() {
     <section
       ref={preloaderRef}
       aria-labelledby="availability-mitsurin-heading"
-      className="w-full bg-gray-50"
+      className="w-full bg-white-100"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -62,7 +62,7 @@ export default function AvailabilitySection() {
             <div>
               <h3
                 id="availability-mitsurin-heading"
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-red-900 mb-8"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-primary-800 mb-8"
               >
                 Product Availability
               </h3>

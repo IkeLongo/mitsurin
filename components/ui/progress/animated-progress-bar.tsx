@@ -84,7 +84,7 @@ export function AnimatedProgressBar({
       </div>
       <div className="w-full bg-white rounded-full h-2 overflow-hidden">
         <div 
-          className="bg-yellow-600 h-2 rounded-full transition-all duration-1000 ease-out"
+          className="bg-accent-dark h-2 rounded-full transition-all duration-1000 ease-out"
           style={{ width: `${animatedWidth}%` }}
         />
       </div>

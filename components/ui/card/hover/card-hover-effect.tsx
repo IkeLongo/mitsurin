@@ -35,7 +35,7 @@ export const HoverEffect = ({
   // Default styles
   const defaultStyles = {
     hover: "bg-red-900",
-    card: "bg-slate-900",
+    card: "bg-black",
     title: "text-zinc-100",
     description: "text-zinc-300",
     learnMore: "text-yellow-600",

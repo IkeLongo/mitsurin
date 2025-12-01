@@ -105,7 +105,7 @@ export default function Footer({
   className = "",
 }: FooterProps) {
   return (
-    <footer className={`bg-gray-100 mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 ${className}`}>
+    <footer className={`bg-white-50 mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 ${className}`}>
       {/* Main Footer Content */}
       <div className="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
         {/* Company Logo */}
@@ -129,7 +129,7 @@ export default function Footer({
               <Link
                 key={linkIndex}
                 href={link.href}
-                className="my-3 block text-gray-700 hover:text-red-900 transition-colors duration-200"
+                className="my-3 block text-gray-700 hover:text-primary-800 transition-colors duration-200"
               >
                 {link.label}
                 {link.badge && (
@@ -144,7 +144,7 @@ export default function Footer({
       </div>
 
       {/* Bottom Section with Social Links */}
-      <div className="bg-gray-100 pt-2">
+      <div className="pt-2">
         <div className="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col max-w-screen-lg items-center">
           {/* Social Icons */}
           <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
@@ -152,7 +152,7 @@ export default function Footer({
               <Link
                 key={index}
                 href={social.href}
-                className="w-6 mx-1 cursor-pointer text-gray-500 hover:text-red-900 transition-colors duration-200"
+                className="w-6 mx-1 cursor-pointer text-gray-500 hover:text-primary-800 transition-colors duration-200"
                 aria-label={social.label}
               >
                 {social.icon}
@@ -172,7 +172,7 @@ export default function Footer({
               href="https://rivercitycreatives.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-red-900 hover:text-yellow-600 transition-colors duration-200"
+              className="text-primary-800 hover:text-yellow-600 transition-colors duration-200"
             >
               Rivercity Creatives
             </Link>

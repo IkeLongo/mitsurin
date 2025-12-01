@@ -192,7 +192,7 @@ export const GalleryThumbnail = ({
       className={cn(
         "flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden relative cursor-pointer transition-all duration-200",
         isActive 
-          ? "ring-2 ring-red-900 opacity-100" 
+          ? "ring-2 ring-primary-800 opacity-100" 
           : "opacity-50 hover:opacity-75",
         className
       )}

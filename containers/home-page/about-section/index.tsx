@@ -12,17 +12,17 @@ const meatCards: MeatCard[] = [
   { 
     title: "Premium Genetics", 
     description: "100% Japanese bloodline ensures authentic marbling and exceptional flavor profiles.", 
-    icon: <Award className="w-10 h-10 text-yellow-600" />
+    icon: <Award className="w-10 h-10 text-accent-dark" />
   },
   { 
     title: "Limited Availability", 
     description: "Exclusive seasonal releases with only the finest cuts from our Texas ranch.", 
-    icon: <Clock className="w-10 h-10 text-yellow-600" />
+    icon: <Clock className="w-10 h-10 text-accent-dark" />
   },
   { 
     title: "Culinary Excellence", 
     description: "Experience the world's most prized beef with unmatched tenderness and taste.", 
-    icon: <Crown className="w-10 h-10 text-yellow-600" />
+    icon: <Crown className="w-10 h-10 text-accent-dark" />
   },
 ];
 
@@ -55,7 +55,7 @@ export default function AboutSection() {
             >
               <div className="relative mx-auto lg:ml-auto right-4">
                 {/* Back frame - positioned behind and offset */}
-                <div className="absolute -right-4 bottom-4 w-[376px] h-[528px] border-[6px] border-yellow-600 rounded-sm z-0" />
+                <div className="absolute -right-4 bottom-4 w-[376px] h-[528px] border-[6px] border-accent-dark rounded-sm z-0" />
                 {/* Foreground image with a 1px border */}
                 <div className="relative z-10">
                   <Image
@@ -63,7 +63,7 @@ export default function AboutSection() {
                     alt="Marbled Wagyu beef cut"
                     width={376}
                     height={528}
-                    className="object-cover border border-yellow-600 ml-auto rounded-xl"
+                    className="object-cover border border-accent-dark ml-auto rounded-xl"
                     priority
                   />
                 </div>
@@ -81,14 +81,14 @@ export default function AboutSection() {
               {meatCards.map(({ title, description, icon }) => (
                 <article
                   key={title}
-                  className="relative rounded-lg bg-red-900 text-stone-100 p-3 pl-16 min-h-24 shadow-lg xl:shadow-2xl max-w-xs"
+                  className="relative rounded-lg bg-primary-800 text-stone-100 p-3 pl-16 min-h-24 shadow-lg xl:shadow-2xl max-w-xs"
                 >
                   {/* Icon */}
                   <div className="absolute left-3 top-1/2 -translate-y-1/2">
                     {icon}
                   </div>
 
-                  <h3 className="text-yellow-600 text-lg font-semibold">{title}</h3>
+                  <h3 className="text-accent-dark text-lg font-semibold">{title}</h3>
                   <p className="text-xs leading-relaxed">{description}</p>
                 </article>
               ))}
@@ -104,7 +104,7 @@ export default function AboutSection() {
               initialY={50}
             >
               {/* Eyebrow */}
-              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+              <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
                 ABOUT MITSURIN WAGYU BEEF
               </p>
 
@@ -112,8 +112,8 @@ export default function AboutSection() {
                 id="about-mitsurin-heading"
                 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight"
               >
-                <span className="text-red-900">Wagyu is More than a Breed — It's a </span>
-                <span className="text-yellow-600">Legacy!</span>
+                <span className="text-primary-800">Wagyu is More than a Breed — It's a </span>
+                <span className="text-accent-dark">Legacy!</span>
               </h2>
             </ScrollAnimationWrapper>
 
@@ -132,7 +132,7 @@ export default function AboutSection() {
                     alt="Marbled Wagyu beef cut"
                     width={376}
                     height={528}
-                    className="object-cover object-[25%_20%] border border-yellow-600 rounded-xl w-full max-w-sm h-64 sm:h-80 md:h-auto"
+                    className="object-cover object-[25%_20%] border border-accent-dark rounded-xl w-full max-w-sm h-64 sm:h-80 md:h-auto"
                     priority
                   />
                 </div>
@@ -148,13 +148,13 @@ export default function AboutSection() {
                     delay={0.3 + (index * 0.2)}
                     initialY={40}
                   >
-                    <article className="relative rounded-lg bg-red-900 text-stone-100 p-3 pl-16 min-h-24 shadow-lg w-full max-w-sm">
+                    <article className="relative rounded-lg bg-primary-800 text-stone-100 p-3 pl-16 min-h-24 shadow-lg w-full max-w-sm">
                       {/* Icon */}
                       <div className="absolute left-3 top-1/2 -translate-y-1/2">
                         {icon}
                       </div>
 
-                      <h3 className="text-yellow-600 text-lg font-semibold">{title}</h3>
+                      <h3 className="text-accent-dark text-lg font-semibold">{title}</h3>
                       <p className="text-xs leading-relaxed">{description}</p>
                     </article>
                   </ScrollAnimationWrapper>
