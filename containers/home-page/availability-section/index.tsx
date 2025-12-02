@@ -8,24 +8,24 @@ import { useImagePreloader } from "@/hooks/use-image-preloader";
 const ladderItems = [
   { 
     number: 1, 
-    text: `Our full-blooded Japanese Wagyu are raised slowly over 30+ months 
+    text: `Our full-blooded Japanese Wagyu are raised slowly over <strong>30+ months</strong> 
     on Texas grasslands to ensure optimal marbling, tenderness, and flavor.`
   },
   { 
     number: 2, 
-    text: `Because of our slow-growth, high-quality process, availability is 
-    extremely limited and seasonal. We raise only a select number of animals 
+    text: `Because of our slow-growth, high-quality process, <strong>availability is 
+    extremely limited</strong> and seasonal. We raise only a select number of animals 
     per year to maintain our exceptional standards.`
   },
   { 
     number: 3, 
     text: `We recommend contacting us well in advance to reserve your Wagyu 
-    beef share. All orders are fulfilled on a first-come, first-served basis.`
+    beef share. All orders are fulfilled on a <strong>first-come, first-served basis.</strong>`
   },
   { 
     number: 4, 
-    text: `Once reserved, you can choose your preferred butcher or select from 
-    our available pre-processed cuts. Pickup and delivery options are available 
+    text: `Once reserved, you can <strong>choose your preferred butcher</strong> or select from 
+    our available pre-processed cuts. <strong>Pickup and delivery options</strong> are available 
     based on your location.`
   },
 ];

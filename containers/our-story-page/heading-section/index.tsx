@@ -15,7 +15,7 @@ export default function HeadingSection() {
         aria-labelledby="discover-the-difference"
         className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow */}
-        <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4">
+        <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4">
           MITSURIN WAGYU
         </p>
 
@@ -26,7 +26,7 @@ export default function HeadingSection() {
         </h1>
 
         {/* Description */}
-        <p className="mt-6 text-stone-100 text-lg max-w-3xl">
+        <p className="font-[Montserrat] mt-6 text-stone-100 text-2xl font-medium max-w-3xl">
           What started with one steak became a mission to raise the finest beef in Texas!
         </p>
       </section>

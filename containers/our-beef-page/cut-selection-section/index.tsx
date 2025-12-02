@@ -1,19 +1,16 @@
-import Image from "next/image";
-import { HoverEffect } from "@/components/ui/card/hover/card-hover-effect";
 import CutCard from "@/components/ui/card/normal/cut-card";
-import { Package, Beef, ClipboardList, Truck } from "lucide-react";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 
 export default function CutSelectionSection() {
   return (
     <section
       aria-labelledby="cut-selection-heading"
-      className="w-full bg-gray-50"
+      className="w-full bg-white-100"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <ScrollAnimationWrapper animationType="slideUp">
           {/* Eyebrow */}
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+          <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
             CUT SELECTION
           </p>
 
@@ -23,8 +20,8 @@ export default function CutSelectionSection() {
               id="cut-selection-heading"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight text-center"
             >
-              <span className="text-red-900">What's in a </span>
-              <span className="text-yellow-600">Wagyu Share?</span>
+              <span className="text-primary-800">What's in a </span>
+              <span className="text-accent-dark">Wagyu Share?</span>
             </h3>
           </div>
 

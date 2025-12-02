@@ -13,14 +13,14 @@ export default function HeadingSection() {
         aria-labelledby="discover-the-difference"
         className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow */}
-        <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4">
+        <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4">
           DISCOVER THE DIFFERENCE
         </p>
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
           <span className="text-white">Why </span>
-          <span className="text-yellow-600">Wagyu</span>
+          <span className="text-accent-dark">Wagyu</span>
           <span className="text-white"> is Worth It</span>
         </h1>
 

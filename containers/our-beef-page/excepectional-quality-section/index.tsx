@@ -70,7 +70,7 @@ export default function ExceptionalQualitySection() {
   return (
     <section
       aria-labelledby="exceptional-quality-heading"
-      className="w-full bg-gray-100"
+      className="w-full bg-white-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         {/* Desktop Layout */}
@@ -81,7 +81,7 @@ export default function ExceptionalQualitySection() {
               src="/wagyu-rib-meal.webp"
               alt="Healthy Wagyu beef showcasing nutritional benefits"
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover rounded-2xl shadow-2xl"
               style={{ borderRadius: '1rem' }}
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -92,7 +92,7 @@ export default function ExceptionalQualitySection() {
           <div>
             <ScrollAnimationWrapper animationType="slideUp">
               {/* Eyebrow */}
-              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+              <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
                 EXCEPTIONAL QUALITY
               </p>
 
@@ -101,9 +101,9 @@ export default function ExceptionalQualitySection() {
                 id="health-benefits-heading"
                 className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
               >
-                <span className="text-red-900">Crafted Over Years. </span>
+                <span className="text-primary-800">Crafted Over Years. </span>
                 <br />
-                <span className="text-yellow-600">Savored in Moments.</span>
+                <span className="text-accent-dark">Savored in Moments.</span>
               </h3>
             </ScrollAnimationWrapper>
 
@@ -111,7 +111,7 @@ export default function ExceptionalQualitySection() {
               <p className="text-stone-950 text-lg leading-relaxed">
                 Mitsurin Wagyu is full-blooded Japanese beef raised with care, science, 
                 and tradition. Every animal is pasture-raised in Hondo, Texas, grain-finished 
-                for optimal marbling, and nurtured over three years to deliver the finest beef 
+                for optimal marbling, and nurtured over <span className="font-bold">three years</span> to deliver the finest beef 
                 available.     
               </p>
             </ScrollAnimationWrapper>
@@ -127,7 +127,7 @@ export default function ExceptionalQualitySection() {
         <div className="block lg:hidden">
           <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
               EXCEPTIONAL QUALITY
             </p>
 
@@ -136,9 +136,9 @@ export default function ExceptionalQualitySection() {
               id="health-benefits-heading"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
             >
-              <span className="text-red-900">Crafted Over Years. </span>
+              <span className="text-primary-800">Crafted Over Years. </span>
               <br />
-              <span className="text-yellow-600">Savored in Moments.</span>
+              <span className="text-accent-dark">Savored in Moments.</span>
             </h3>
           </ScrollAnimationWrapper>
 
@@ -149,7 +149,7 @@ export default function ExceptionalQualitySection() {
                 src="/wagyu-rib-meal.webp"
                 alt="Healthy Wagyu beef showcasing nutritional benefits"
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover rounded-2xl shadow-lg"
                 style={{ borderRadius: '1rem' }}
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"

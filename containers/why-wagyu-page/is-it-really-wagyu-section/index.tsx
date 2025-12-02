@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { InfoHoverEffect } from "@/components/ui/card/hover/info-card-hover-effect";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import FramedImage from "@/components/ui/card/framed-image/framed-image";
 
 interface WagyuBulletPointProps {
   title: string;
@@ -13,7 +14,7 @@ function WagyuBulletPoint({ title, description }: WagyuBulletPointProps) {
       {/* Custom bullet point */}
       <div className="mt-1.5 flex-shrink-0">
         <Image
-          src="/bullet-point.svg"
+          src="/red-bullet-point.svg"
           alt=""
           width={16}
           height={16}
@@ -75,27 +76,32 @@ export default function IsItReallyWagyuSection() {
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-10 items-center">
+        <div className="hidden lg:grid lg:grid-cols-5 gap-20 items-center">
           {/* Left: Image */}
-          <ScrollAnimationWrapper animationType="slideRight" delay={0.2}>
-            <div className="relative flex items-center justify-center">
-              <Image
+          <div className="col-span-2">
+            <ScrollAnimationWrapper
+              animationType="slideRight"
+              delay={0.2}
+            >
+              <FramedImage
                 src="/meaty-wagyu-cow.webp"
                 alt="Healthy Wagyu beef showcasing nutritional benefits"
                 width={500}
                 height={600}
-                className="object-cover rounded-2xl"
-                style={{ borderRadius: '1rem' }}
+                containerAlignment="ml-auto"
+                frameColor="accent-dark"
+                offsetX={5}
+                offsetY={5}
                 priority
               />
-            </div>
-          </ScrollAnimationWrapper>
+            </ScrollAnimationWrapper>
+          </div>
 
           {/* Right: Text Content */}
-          <div>
+          <div className="col-span-3">
             <ScrollAnimationWrapper animationType="slideUp">
               {/* Eyebrow */}
-              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+              <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
                 AMERICAN WAGYU
               </p>
 
@@ -104,21 +110,21 @@ export default function IsItReallyWagyuSection() {
                 id="health-benefits-heading"
                 className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
               >
-                <span className="text-red-900">Is it Really </span>
-                <span className="text-yellow-600">Wagyu?</span>
+                <span className="text-primary-800">Is it Really </span>
+                <span className="text-accent-dark">Wagyu?</span>
               </h3>
             </ScrollAnimationWrapper>
 
             {/* Description */}
             <ScrollAnimationWrapper animationType="scale" delay={0.3}>
-              <p className="text-red-900 text-3xl font-bold font-[Montserrat] leading-relaxed">
+              <p className="text-primary-800 text-3xl font-bold font-[Montserrat] leading-relaxed">
                 YES!
               </p>
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper animationType="fade" delay={0.5}>
               <p className="text-stone-950 text-lg leading-relaxed">
-                Wagyu cattle were first imported into the United States in 1975. The United States is the only country who imports Wagyu cattle directly from Japan.
+                Wagyu cattle were first imported into the United States in 1975. In 1990 Japan declared Wagyu a national living treasure and banned any further exports.  The Mitsurin lineage can be traced back to the Japanese cattle imported prior to the ban. 
               </p>
             </ScrollAnimationWrapper>
 
@@ -133,7 +139,7 @@ export default function IsItReallyWagyuSection() {
         <div className="block lg:hidden">
           <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
               AMERICAN WAGYU
             </p>
 
@@ -142,8 +148,8 @@ export default function IsItReallyWagyuSection() {
               id="health-benefits-heading"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
             >
-              <span className="text-red-900">Is it Really </span>
-              <span className="text-yellow-600">Wagyu?</span>
+              <span className="text-primary-800">Is it Really </span>
+              <span className="text-accent-dark">Wagyu?</span>
             </h3>
           </ScrollAnimationWrapper>
 
@@ -164,14 +170,14 @@ export default function IsItReallyWagyuSection() {
 
           {/* YES! and rest of content */}
           <ScrollAnimationWrapper animationType="scale" delay={0.4}>
-            <p className="text-red-900 text-3xl font-bold font-[Montserrat] leading-relaxed">
+            <p className="text-primary-800 text-3xl font-bold font-[Montserrat] leading-relaxed">
               YES!
             </p>
           </ScrollAnimationWrapper>
 
           <ScrollAnimationWrapper animationType="fade" delay={0.6}>
             <p className="text-stone-950 text-lg leading-relaxed">
-              Wagyu cattle were first imported into the United States in 1975. The United States is the only country who imports Wagyu cattle directly from Japan.
+              Wagyu cattle were first imported into the United States in 1975. In 1990 Japan declared Wagyu a national living treasure and banned any further exports.  The Mitsurin lineage can be traced back to the Japanese cattle imported prior to the ban. 
             </p>
           </ScrollAnimationWrapper>
 

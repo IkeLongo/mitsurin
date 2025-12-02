@@ -25,12 +25,12 @@ export const CarouselCard = ({
 }: CarouselCardProps) => {
   // Default styles
   const defaultStyles = {
-    border: "border-yellow-600",
-    background: "bg-gradient-to-b from-[#630710] to-[#8C101C]",
+    border: "border-accent-dark",
+    background: "bg-gradient-to-b from-gray-800 to-black",
     paddingY: "py-16",
-    circle: "bg-yellow-600",
+    circle: "bg-accent-dark",
     titleText: "text-white",
-    numberText: "text-red-900",
+    numberText: "text-white",
     descriptionText: "text-white",
   };
 

@@ -68,8 +68,8 @@ export default function JapaneseGeneticsSection() {
           <div className="space-y-6 text-center">
             <ScrollAnimationWrapper animationType="fade" delay={0.3}>
               <p className="text-lg leading-relaxed text-black">
-                Owned and operated by Dr. Michael Selva. Our ranch is dedicated to raising 
-                full-blooded Wagyu cattle using time-honored, humane, and science-backed practices.
+                Dr. Michael Selva's ranch combines time-honored traditions with modern science 
+                to raise full-blooded Wagyu cattle through humane, sustainable practices.
               </p>
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper animationType="fade" delay={0.5}>
@@ -77,12 +77,12 @@ export default function JapaneseGeneticsSection() {
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper animationType="fade" delay={0.7}>
               <p className="text-lg italic font-bold text-primary-800 leading-relaxed">
-                Beef with exceptional tenderness, marbling, and flavor that redefines luxury.
+                Beef with exceptional tenderness, marbling, and flavor that transforms every meal into an extraordinary culinary experience.
               </p>
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper animationType="fade" delay={0.9}>
               <div className="pt-4">
-                <Link href="/our-story" className="inline-block bg-primary-800 hover:bg-primary-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                <Link href="/contact" className="inline-block bg-primary-800 hover:bg-primary-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
                   Inquire Today
                 </Link>
               </div>
@@ -161,10 +161,10 @@ export default function JapaneseGeneticsSection() {
             <div className="space-y-6">
               {/* First text block */}
               <ScrollAnimationWrapper animationType="fade" delay={0.3}>
-                <p className="text-lg leading-relaxed text-black">
-                  Owned and operated by Dr. Michael Selva. Our ranch is dedicated to raising 
-                  full-blooded Wagyu cattle using time-honored, humane, and science-backed practices.
-                </p>
+              <p className="text-lg leading-relaxed text-black">
+                Dr. Michael Selva's ranch combines time-honored traditions with modern science 
+                to raise full-blooded Wagyu cattle through humane, sustainable practices.
+              </p>
               </ScrollAnimationWrapper>
 
               {/* Second text block */}
@@ -176,8 +176,8 @@ export default function JapaneseGeneticsSection() {
 
               {/* Third text block - italics and red */}
               <ScrollAnimationWrapper animationType="fade" delay={0.7}>
-                <p className="text-lg italic text-primary-800 leading-relaxed">
-                  Beef with exceptional tenderness, marbling, and flavor that redefines luxury.
+                <p className="text-lg font-semibold italic text-primary-800 leading-relaxed">
+                  Beef with exceptional tenderness, marbling, and flavor that transforms every meal into an extraordinary culinary experience.
                 </p>
               </ScrollAnimationWrapper>
             </div>
@@ -185,8 +185,8 @@ export default function JapaneseGeneticsSection() {
             {/* Button */}
             <ScrollAnimationWrapper animationType="fade" delay={0.9}>
               <div className="pt-4">
-                <Link href="/our-story" className="inline-block bg-primary-800 hover:bg-red-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
-                  Learn Our Story
+                <Link href="/contact" className="inline-block bg-primary-800 hover:bg-primary-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                  Inquire Today
                 </Link>
               </div>
             </ScrollAnimationWrapper>

@@ -122,7 +122,7 @@ export default function Footer({
         {/* Dynamic Sections */}
         {sections.map((section, index) => (
           <div key={index} className="p-5">
-            <div className="text-sm uppercase text-yellow-600 font-bold mb-3">
+            <div className="text-sm uppercase text-accent-dark font-bold mb-3">
               {section.title}
             </div>
             {section.links.map((link, linkIndex) => (
@@ -133,7 +133,7 @@ export default function Footer({
               >
                 {link.label}
                 {link.badge && (
-                  <span className="text-yellow-600 text-xs p-1 ml-1">
+                  <span className="text-accent-dark text-xs p-1 ml-1">
                     {link.badge}
                   </span>
                 )}
@@ -162,7 +162,7 @@ export default function Footer({
 
           {/* Text Row */}
           <div className="mt-3 text-gray-600 text-center">
-            Grown in Texas soil. Told through thoughtful design.
+            Grown on Texas soil. Told through thoughtful design.
           </div>
 
           {/* Copyright Row */}

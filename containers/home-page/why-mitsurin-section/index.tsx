@@ -121,8 +121,8 @@ export default function WhyMitsurinSection() {
             <ScrollAnimationWrapper animationType="slideUp">
               <div className="space-y-8">
                 {/* Eyebrow text */}
-                <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
-                  WHY CHOOSE WAGYU
+                <p className="text-white text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+                  WHY CHOOSE MITSURIN
                 </p>
 
                 {/* Main heading */}
@@ -130,8 +130,8 @@ export default function WhyMitsurinSection() {
                   id="why-mitsurin-heading"
                   className="text-3xl md:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-white"
                 >
-                  Choose <span className="text-accent-dark">The Best,</span><br/>
-                  Choose <span className="text-accent-dark">Mitsurin</span>
+                  <span className="text-accent-dark">Choose The Best</span><br/>
+                  Choose Mitsurin<span className="text-accent-dark"></span>
                 </h3>
               </div>
             </ScrollAnimationWrapper>

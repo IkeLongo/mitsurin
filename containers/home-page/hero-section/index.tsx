@@ -121,7 +121,8 @@ export default function HeroSection() {
           className="mb-8 max-w-2xl"
         >
           <p className="text-white text-lg md:text-xl leading-relaxed">
-            Experience the finest beef in the world — full-blooded Wagyu, 
+            Experience the finest beef in the world — <br/>
+            <span className="font-bold">full-blooded Wagyu, <br/></span>
             pasture-raised with precision and care in Hondo, Texas.
           </p>
         </ScrollAnimationWrapper>

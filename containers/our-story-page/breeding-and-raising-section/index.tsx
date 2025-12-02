@@ -6,7 +6,7 @@ export default function BreedingandRaisingSection() {
   return (
     <section
       aria-labelledby="breeding-and-raising-heading"
-      className="w-full bg-gray-50"
+      className="w-full bg-white-900"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <div className="text-center max-w-4xl mx-auto">
@@ -22,7 +22,7 @@ export default function BreedingandRaisingSection() {
               id="breeding-and-raising-heading"
               className="text-4xl sm:text-4xl lg:text-5xl font-bold font-[Montserrat] leading-tight text-stone-900"
             >
-              <span className="text-red-900">Our Breeding & Raising Program</span>
+              <span className="text-primary-800">Our Breeding & Raising Program</span>
             </h3>
           </ScrollAnimationWrapper>
 

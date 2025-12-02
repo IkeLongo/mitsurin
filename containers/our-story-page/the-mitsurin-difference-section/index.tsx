@@ -7,9 +7,9 @@ export default function TheMitsurinDifferenceSection() {
   return (
     <section
       aria-labelledby="the-mitsurin-difference-heading"
-      className="w-full bg-gray-50"
+      className="w-full bg-white-100"
     >
-      <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
+      <div className="max-w-3xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <div className="text-center max-w-4xl mx-auto">
           {/* Title */}
           <ScrollAnimationWrapper
@@ -19,20 +19,20 @@ export default function TheMitsurinDifferenceSection() {
             initialY={60}
             className="mb-8"
           >
-            <div className="bg-gray-100 border-2 border-yellow-600 rounded-lg p-8 max-w-2xl mx-auto">
+            <div className="bg-gray-100 border-2 border-accent-dark rounded-lg p-8 mx-auto">
               <h4
                 id="the-mitsurin-difference-heading"
-                className="text-2xl sm:text-3xl font-bold font-[Montserrat] leading-tight text-red-900 mb-4"
+                className="text-4xl font-bold font-[Montserrat] leading-tight text-primary-800 mb-4"
               >
                 Experience the Mitsurin Difference
               </h4>
               
-              <p className="text-stone-950 text-lg leading-relaxed mb-6">
+              <p className="text-stone-950 text-lg leading-relaxed mb-6 max-w-xl mx-auto">
                 Discover why our Wagyu beef stands apart, learn about our available cuts, or get in touch to place your order.
               </p>
               
               <Link href="/contact">
-                <button className="bg-gray-100 hover:bg-gray-200 text-red-900 border-yellow-600 border-2 font-semibold px-6 py-3 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:cursor-pointer">
+                <button className="bg-primary-800 hover:bg-primary-900 text-white-50 font-semibold px-6 py-3 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:cursor-pointer">
                   Get in Touch
                 </button>
               </Link>

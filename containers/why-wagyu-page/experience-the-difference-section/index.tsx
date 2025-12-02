@@ -20,7 +20,7 @@ export default function ExperienceTheDifferenceSection() {
         {/* Main Heading */}
         <ScrollAnimationWrapper animationType="slideUp">
           <h1 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
-            Experience the Difference with <span className="text-yellow-600">Wagyu</span>
+            Experience the Difference with <span className="text-accent-dark">Wagyu</span>
           </h1>
         </ScrollAnimationWrapper>
 
@@ -40,14 +40,14 @@ export default function ExperienceTheDifferenceSection() {
           </Link>
         </ScrollAnimationWrapper>
 
-        <div className="w-full h-0.5 bg-yellow-600 my-20" />
+        <div className="w-full h-0.5 bg-accent-dark my-20" />
 
         <ScrollAnimationWrapper animationType="fade" delay={0.8}>
           <p>Learn More About Wagyu</p>
         </ScrollAnimationWrapper>
         
         <ScrollAnimationWrapper animationType="fade" delay={1.0}>
-          <p className="text-yellow-600 mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
+          <p className="text-accent-dark mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
         </ScrollAnimationWrapper>
 
       </section>

@@ -22,9 +22,9 @@ export default function DiscoverSection() {
               id="discover-mitsurin-heading"
               className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[Montserrat] leading-tight text-stone-900"
             >
-              <span className="text-white">Discover the </span>
-              <span className="text-yellow-600">Mitsurin</span>
-              <span className="text-white"> Difference</span>
+              <span className="text-white">The </span>
+              <span className="text-accent-dark">Finest</span>
+              <span className="text-white"> Beef that can be Produced!</span>
             </h3>
           </ScrollAnimationWrapper>
 
@@ -37,8 +37,8 @@ export default function DiscoverSection() {
           >
             {/* Quote */}
             <blockquote className="text-xl sm:text-2xl lg:text-3xl text-white font-light italic leading-relaxed mb-12">
-              "Every cut tells a story of tradition, passion, and uncompromising quality. 
-              Experience Wagyu beef the way it was meant to be."
+              "As a physician, I believe in doing things the right way—with care, 
+              science, and purpose. Our beef reflects that philosophy."
             </blockquote>
 
             {/* Author */}
@@ -50,13 +50,6 @@ export default function DiscoverSection() {
               {/* Button */}
               <button className="bg-white hover:bg-gray-200 text-primary-800 font-semibold px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
                 Explore Our Products
-              </button>
-
-              <button className="relative inline-flex h-12 overflow-hidden rounded-lg p-[1px] focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#B8860B_0%,#8B0000_50%,#B8860B_100%)]" />
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-primary-800 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                  Explore Our Products
-                </span>
               </button>
             </div>
           </ScrollAnimationWrapper>

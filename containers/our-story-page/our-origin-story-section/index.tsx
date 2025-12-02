@@ -7,7 +7,7 @@ export default function OurOriginStorySection() {
   return (
     <section
       aria-labelledby="our-origin-story-heading"
-      className="w-full bg-gray-100"
+      className="w-full bg-white-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         {/* Desktop Layout */}
@@ -16,7 +16,7 @@ export default function OurOriginStorySection() {
           <div>
             <ScrollAnimationWrapper animationType="slideUp">
               {/* Eyebrow */}
-              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+              <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
                 OUR ORIGIN STORY
               </p>
 
@@ -25,7 +25,7 @@ export default function OurOriginStorySection() {
                 id="our-origin-story-heading"
                 className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
               >
-                <span className="text-red-900">A Moment That Sparked a Mission</span>
+                <span className="text-primary-800">A Moment That Sparked a Mission</span>
               </h3>
             </ScrollAnimationWrapper>
 
@@ -50,7 +50,7 @@ export default function OurOriginStorySection() {
                   luxury, Dr. Selva had a different idea:
                 </p>
 
-                <p className="text-red-900 text-lg leading-relaxed italic font-bold">
+                <p className="text-primary-800 text-lg leading-relaxed italic font-bold">
                   What if I could raise my own Wagyu cattle and share this incredible experience 
                   with my friends and family?
                 </p>
@@ -72,7 +72,7 @@ export default function OurOriginStorySection() {
               width={376}
               height={528}
               containerAlignment="left"
-              frameColor="yellow-600"
+              frameColor="accent-dark"
               offsetX={5}
               offsetY={5}
               priority
@@ -84,7 +84,7 @@ export default function OurOriginStorySection() {
         <div className="block lg:hidden">
           <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
               OUR ORIGIN STORY
             </p>
 
@@ -93,7 +93,7 @@ export default function OurOriginStorySection() {
               id="our-origin-story-heading-mobile"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
             >
-              <span className="text-red-900">A Moment That Sparked a Mission</span>
+              <span className="text-primary-800">A Moment That Sparked a Mission</span>
             </h3>
           </ScrollAnimationWrapper>
 
@@ -133,7 +133,7 @@ export default function OurOriginStorySection() {
                 luxury, Dr. Selva had a different idea:
               </p>
 
-              <p className="text-red-900 text-lg leading-relaxed italic font-bold">
+              <p className="text-primary-800 text-lg leading-relaxed italic font-bold">
                 What if I could raise my own Wagyu cattle and share this incredible experience 
                 with my friends and family?
               </p>

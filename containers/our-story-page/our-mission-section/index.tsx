@@ -22,7 +22,7 @@ export default function OurMissionSection() {
               id="our-mission-heading"
               className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[Montserrat] leading-tight text-stone-900"
             >
-              <span className="text-yellow-600">Our Mission</span>
+              <span className="text-accent-dark">Our Mission</span>
             </h3>
           </ScrollAnimationWrapper>
 

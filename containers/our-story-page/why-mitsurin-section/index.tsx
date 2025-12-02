@@ -13,7 +13,7 @@ export default function WhyMitsurinSection() {
       }}
     >
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-red-900 opacity-90"></div>
+      <div className="absolute inset-0 bg-primary-800 opacity-90"></div>
       
       <section
         aria-labelledby="why-mitsurin-heading"
@@ -22,7 +22,7 @@ export default function WhyMitsurinSection() {
         {/* Main Heading */}
         <ScrollAnimationWrapper animationType="slideUp">
           <h1 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
-            Why <span className="text-yellow-600">"Mitsurin"</span>
+            Why <span className="text-accent-dark">"Mitsurin"</span>
           </h1>
         </ScrollAnimationWrapper>
 
@@ -33,7 +33,7 @@ export default function WhyMitsurinSection() {
           delay={0.5}
           initialY={60}
         >
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12 max-w-4xl mx-auto">
             <HoverEffect
               styles={{
                 hover:"bg-gray-50",
@@ -63,7 +63,8 @@ export const packages = [
   {
     title: "Mitsurin",
     description:
-      `Japanese for "jungle" or "dense forest"`,
+      `In Japanese, Mitsurin refers to a dense forest or wooded grove - 
+      a place of natural harmony, growth, and quiet strength`,
     icon: (
           <div className="rounded-full flex items-center justify-center mx-auto">
             <Image 
@@ -79,9 +80,10 @@ export const packages = [
     alt: "Japanese jungle meaning",
   },
   {
-    title: "Dr. Selva's Name",
+    title: "Selva",
     description:
-      `Spanish for "jungle"`,
+      `Selva is the Spanish word for a lush tropical rainforest or jungle 
+      evoking images of thick vegetation and thriving biodiversity. `,
     icon: (
       <div className="rounded-full flex items-center justify-center mx-auto">
             <Image 

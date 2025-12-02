@@ -1,18 +1,19 @@
 import Image from "next/image";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import FramedImage from "@/components/ui/card/framed-image/framed-image";
 
 export default function WhatIsWagyuSection() {
   return (
     <section
       aria-labelledby="what-is-wagyu-heading"
-      className="w-full bg-gray-100"
+      className="w-full bg-white-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         {/* Mobile/Tablet Layout - Title First */}
         <div className="lg:hidden">
           <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
               WHAT IS WAGYU?
             </p>
 
@@ -21,8 +22,8 @@ export default function WhatIsWagyuSection() {
               id="what-is-wagyu-heading"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6 text-center"
             >
-              <span className="text-red-900">The Pinnacle of </span><br />
-              <span className="text-yellow-600">Beef Quality</span>
+              <span className="text-primary-800">The Pinnacle of </span><br />
+              <span className="text-accent-dark">Beef Quality</span>
             </h3>
           </ScrollAnimationWrapper>
 
@@ -68,34 +69,38 @@ export default function WhatIsWagyuSection() {
         </div>
 
         {/* Desktop Layout - Two Columns */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-10 items-center">
+        <div className="hidden lg:grid lg:grid-cols-2 gap-10 pr-10 items-center">
           {/* Left: Image */}
-          <ScrollAnimationWrapper animationType="slideRight" delay={0.2}>
-            <div className="relative flex items-center justify-center">
-              <Image
-                src="/delicious-sliced-raw-wagyu.webp"
-                alt="Premium Wagyu beef cuts showcasing marbling"
-                width={600}
-                height={400}
-                className="object-cover rounded-2xl"
-                style={{ borderRadius: '1rem' }}
-                priority
-              />
-            </div>
+          <ScrollAnimationWrapper
+            animationType="slideRight"
+            delay={0.2}
+          >
+            <FramedImage
+              src="/delicious-sliced-raw-wagyu.webp"
+              alt="Marbled Wagyu beef cut"
+              width={376}
+              height={528}
+              imageWidth="w-[563px]"
+              containerAlignment="ml-auto"
+              frameColor="accent-dark"
+              offsetX={5}
+              offsetY={5}
+              priority
+            />
           </ScrollAnimationWrapper>
 
           {/* Right: Text Content */}
           <div>
             <ScrollAnimationWrapper animationType="slideUp">
               {/* Eyebrow */}
-              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+              <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
                 WHAT IS WAGYU?
               </p>
 
               {/* Main Heading */}
               <h3 className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6">
-                <span className="text-red-900">The Pinnacle of </span><br />
-                <span className="text-yellow-600">Beef Quality</span>
+                <span className="text-primary-800">The Pinnacle of </span><br />
+                <span className="text-accent-dark">Beef Quality</span>
               </h3>
             </ScrollAnimationWrapper>
 

@@ -19,12 +19,12 @@ const finalData = [
   {
     name: 'PRIME',
     score: 80,
-    fill: '#7F1D1D' // red-900
+    fill: '#630710' // red-900
   },
   {
     name: 'WAGYU',
     score: 100,
-    fill: '#D97706' // yellow-600
+    fill: '#BF8136' // accent-dark
   }
 ];
 
@@ -227,7 +227,7 @@ export default function MarblingQualityComparison() {
     <>
       <motion.div 
         ref={chartRef}
-        className="bg-black border-2 border-yellow-600 rounded-lg p-8 w-full max-w-4xl mx-auto"
+        className="bg-black border-2 border-accent-dark rounded-lg p-8 w-full max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -276,7 +276,7 @@ export default function MarblingQualityComparison() {
                   value: 'Quality Score', 
                   angle: -90, 
                   position: 'insideLeft',
-                  style: { textAnchor: 'middle', fill: '#D97706', fontSize: '14px', fontWeight: 500 }
+                  style: { textAnchor: 'middle', fill: '#BF8136', fontSize: '14px', fontWeight: 500 }
                 }}
               />
               <Bar 
@@ -299,7 +299,7 @@ export default function MarblingQualityComparison() {
           <p className="text-white text-sm">
             *Quality score based on marbling intensity and genetic predisposition
           </p>
-          <p className="text-yellow-600 text-sm">
+          <p className="text-accent-dark text-sm">
             Source: USDA Beef Grading Standards & American Wagyu Association
           </p>
         </motion.div>

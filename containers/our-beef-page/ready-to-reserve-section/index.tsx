@@ -11,7 +11,7 @@ export default function ReadyToReserveSection() {
       }}
     >
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-red-900 opacity-90"></div>
+      <div className="absolute inset-0 bg-primary-800 opacity-90"></div>
       
       <section
         aria-labelledby="ready-to-reserve-heading"
@@ -34,7 +34,7 @@ export default function ReadyToReserveSection() {
         {/* Button */}
         <ScrollAnimationWrapper animationType="slideUp" delay={0.4}>
           <Link href="/contact">
-            <button className="border-2 bg-white border-white hover:bg-gray-200 text-red-900 font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
+            <button className="border-2 bg-white border-white hover:bg-gray-200 text-primary-800 font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
               Contact Us to Reserve Your Share
             </button>
           </Link>
@@ -48,14 +48,14 @@ export default function ReadyToReserveSection() {
         </ScrollAnimationWrapper>
 
         {/* Yellow Horizontal Line */}
-        <div className="w-full h-0.5 bg-yellow-600 my-20" />
+        <div className="w-full h-0.5 bg-accent-dark my-20" />
 
         <ScrollAnimationWrapper animationType="fade" delay={1.0}>
           <p>Learn More About Wagyu</p>
         </ScrollAnimationWrapper>
         
         <ScrollAnimationWrapper animationType="fade" delay={1.2}>
-          <p className="text-yellow-600 mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
+          <p className="text-accent-dark mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
         </ScrollAnimationWrapper>
 
       </section>

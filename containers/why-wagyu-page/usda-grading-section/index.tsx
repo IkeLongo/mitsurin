@@ -12,7 +12,7 @@ export default function USDAGradingSection() {
         <div className="text-center max-w-4xl mx-auto">
           <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4">
               USDA GRADING
             </p>
 
@@ -21,8 +21,8 @@ export default function USDAGradingSection() {
               id="usda-grading-heading"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
             >
-              <span className="text-red-900">Beyond </span>
-              <span className="text-yellow-600">Prime</span>
+              <span className="text-primary-800">Beyond </span>
+              <span className="text-accent-dark">Prime</span>
             </h3>
           </ScrollAnimationWrapper>
 

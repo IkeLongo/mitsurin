@@ -1,4 +1,3 @@
-import { Container, Package } from "lucide-react";
 import { HoverEffect } from "@/components/ui/card/hover/card-hover-effect";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 import Image from "next/image";
@@ -73,7 +72,8 @@ export default function PackagesSection() {
               items={packages}
               className="py-0"
               styles={{
-                title: "text-xl lg:text-2xl"
+                title: "text-xl lg:text-2xl",
+                learnMore: "text-accent-dark"
               }}
             />
           </div>

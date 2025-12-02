@@ -5,25 +5,25 @@ import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-w
 const steps = [
   {
     id: 1,
-    title: "Select Your Cut",
+    title: "Choose Your Share",
     description:
-      "Choose from our premium selection of Wagyu cuts, each carefully curated for exceptional quality and marbling.",
+      "Select a whole or half cow for purchase, each offering premium full-blooded Wagyu with exceptional marbling and quality.",
     icon: Beef,
     iconBgColor: "bg-primary-500",
   },
   {
     id: 2,
-    title: "Expert Preparation",
+    title: "Processing Options",
     description:
-      "Our master butchers prepare your order with precision, ensuring optimal aging and presentation.",
+      "Choose your preferred butcher for custom processing or select from our pre-cut, freezer-ready inventory based on availability.",
     icon: ChefHat,
     iconBgColor: "bg-accent-dark",
   },
   {
     id: 3,
-    title: "Delivery to You",
+    title: "Pickup & Delivery",
     description:
-      "Your Wagyu arrives fresh and perfectly packaged, ready to create an unforgettable dining experience.",
+      "Local pickup or delivery arrangements are discussed upon inquiry, ensuring your premium Wagyu arrives fresh and perfectly packaged.",
     icon: Truck,
     iconBgColor: "bg-primary-500",
   },

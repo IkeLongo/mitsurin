@@ -11,14 +11,14 @@ export default function WagyuExperienceSection() {
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <ScrollAnimationWrapper animationType="slideUp">
           {/* Eyebrow */}
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+          <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
             THE WAGYU EXPERIENCE
           </p>
 
           {/* Main Heading */}
           <h3
             id="wagyu-experience-heading"
-            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
+            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-primary-800"
           >
             What to Expect with Every Bite
           </h3>

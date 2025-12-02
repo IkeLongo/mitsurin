@@ -17,9 +17,9 @@ export default function WhyWagyuStandsApartSection() {
               id="why-wagyu-stands-apart-heading"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight text-center"
             >
-              <span className="text-red-900">Why </span>
-              <span className="text-yellow-600">Wagyu </span>
-              <span className="text-red-900">Stands Apart</span>
+              <span className="text-primary-800">Why </span>
+              <span className="text-accent-dark">Wagyu </span>
+              <span className="text-primary-800">Stands Apart</span>
             </h3>
           </div>
         </ScrollAnimationWrapper>
@@ -35,9 +35,9 @@ export default function WhyWagyuStandsApartSection() {
                   delay={0.2 + (index * 0.15)}
                 >
                   <div className="relative group block p-2 h-full w-full">
-                    <div className="relative h-full w-full p-6 bg-red-900 rounded-2xl border border-transparent group-hover:bg-slate-900 transition duration-200">
+                    <div className="relative h-full w-full p-6 bg-medium-red-gradient rounded-2xl border border-transparent group-hover:bg-slate-900 transition duration-200">
                       {item.icon}
-                      <h4 className="text-yellow-600 text-center text-xl font-bold mb-4">
+                      <h4 className="text-accent-dark text-center text-xl font-bold mb-4">
                         {item.title}
                       </h4>
                       <p className="text-white text-center text-md leading-relaxed">
@@ -53,7 +53,7 @@ export default function WhyWagyuStandsApartSection() {
           {/* Bottom Row: Long rectangle with title and description */}
           <ScrollAnimationWrapper animationType="slideUp" delay={0.65}>
             <div className="w-full">
-              <div className="bg-yellow-600 rounded-2xl p-8 text-center">
+              <div className="bg-accent-dark rounded-2xl p-8 text-center">
                 <h4 className="text-black text-2xl sm:text-3xl font-bold font-[Montserrat] mb-4">
                   THE FINEST BEEF IN THE WORLD
                 </h4>
@@ -71,36 +71,36 @@ export default function WhyWagyuStandsApartSection() {
 
 const cardData = [
   {
-    title: "Rich in Healthy Fats",
-    description: "Wagyu contains 40% more monounsaturated fats than regular beef, promoting heart health and reducing bad cholesterol while maintaining beneficial nutrients.",
+    title: "Legendary Genetics",
+    description: "Centuries of selective breeding have created cattle with extraordinary marbling genes, producing beef that consistently surpasses Prime grade standards with unmatched tenderness and depth of flavor.",
     link: "#",
     icon: (
-      <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-        <Crown className="text-red-900" size={32} />
+      <div className="w-16 h-16 bg-accent-dark rounded-full flex items-center justify-center mb-6 mx-auto">
+        <Crown className="text-primary-800" size={32} />
       </div>
     ),
-    alt: "Healthy Fats Benefits",
+    alt: "Legendary Wagyu Genetics",
   },
   {
-    title: "Lower Saturated Fats",
-    description: "Despite its rich marbling, Wagyu has 30% less saturated fat than conventional beef thanks to unique Japanese cattle genetics and feeding practices.",
+    title: "Exceptional Marbling",
+    description: "Intricate networks of buttery fat are woven throughout the muscle, creating the signature melt-in-your-mouth texture that transforms every bite into a luxurious dining experience.",
     link: "#",
     icon: (
-      <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-        <Star className="text-red-900" size={32} />
+      <div className="w-16 h-16 bg-accent-dark rounded-full flex items-center justify-center mb-6 mx-auto">
+        <Star className="text-primary-800" size={32} />
       </div>
     ),
-    alt: "Lower Saturated Fat Content",
+    alt: "Exceptional Wagyu Marbling",
   },
   {
-    title: "High in Omega-3",
-    description: "Contains twice the omega-3 fatty acids of regular beef, supporting brain function, heart health, and reducing inflammation throughout the body.",
+    title: "Unrivaled Quality",
+    description: "Wagyu consistently achieves marbling scores that transcend traditional grading systems, setting a new standard for what premium beef can be—a category unto itself.",
     link: "#",
     icon: (
-      <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mb-6 mx-auto">
-        <Award className="text-red-900" size={32} />
+      <div className="w-16 h-16 bg-accent-dark rounded-full flex items-center justify-center mb-6 mx-auto">
+        <Award className="text-primary-800" size={32} />
       </div>
     ),
-    alt: "Omega-3 Fatty Acids",
+    alt: "Unrivaled Wagyu Quality",
   }
 ];

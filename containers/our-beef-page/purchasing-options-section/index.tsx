@@ -5,9 +5,9 @@ import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-w
 
 function InfoModal() {
   return (
-    <div className="bg-red-950 rounded-lg p-8 mx-auto max-w-5xl">
+    <div className="bg-primary-800 rounded-lg p-8 mx-auto max-w-5xl">
       <p className="text-white leading-relaxed pl-0 -indent-0 md:pl-[104px] md:-indent-[104px]">
-        <span className="text-yellow-600 font-bold">Please Note: </span>
+        <span className="text-accent-dark font-bold">Please Note: </span>
         All sales are handled directly. After selecting your share, you may choose to take 
         your cow to your preferred butcher or, if available, purchase pre-processed cuts 
         from our inventory.
@@ -25,17 +25,17 @@ export default function PurchasingOptionsSection() {
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <ScrollAnimationWrapper animationType="slideUp">
           {/* Eyebrow */}
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+          <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
             PURCHASING OPTIONS
           </p>
 
           {/* Main Heading */}
           <h3
             id="purchasing-options-heading"
-            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
+            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-primary-800"
           >
-            <span className="text-red-900">Choose Your Share </span>
-            <span className="text-yellow-600">of the Herd</span>
+            <span className="text-primary-800">Choose Your Share </span>
+            <span className="text-accent-dark">of the Herd</span>
           </h3>
         </ScrollAnimationWrapper>
 
@@ -45,11 +45,11 @@ export default function PurchasingOptionsSection() {
             <ProductHoverEffect 
               items={packages} 
               styles={{
-                hover: "bg-red-900",            // Brand red hover
-                card: "bg-gray-50 border-2 border-yellow-600",               // Transparent card background
-                title: "text-red-900 text-center text-2xl font-bold",          // Brand red titles
+                hover: "bg-primary-800",            // Brand red hover
+                card: "bg-gray-50 border-2 border-accent-dark",               // Transparent card background
+                title: "text-primary-800 text-center text-2xl font-bold",          // Brand red titles
                 description: "text-stone-600 text-center",  // Stone gray description
-                learnMore: "text-center text-yellow-600",    // Brand yellow accent
+                learnMore: "text-center text-accent-dark",    // Brand yellow accent
                 bulletPoint: "text-stone-600"              // Bullet point color
               }}
               className="max-w-5xl"
@@ -85,8 +85,14 @@ export const packages = [
     ],
     link: "",
     icon: (
-      <div className="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
-        <Container className="text-yellow-600" size={32} />
+      <div className="w-24 h-24 bg-primary-800 rounded-full flex items-center justify-center mb-6 mx-auto">
+        <Image 
+          src="/full-cow.png" 
+          alt="Full Cow Icon" 
+          width={56} 
+          height={56}
+          className="w-14 h-14"
+        />
       </div>
     ),
     alt: "Whole Cow Package",
@@ -106,8 +112,14 @@ export const packages = [
     ],
     link: "",
     icon: (
-      <div className="w-16 h-16 bg-red-900 rounded-full flex items-center justify-center mb-6 mx-auto">
-        <Package className="text-yellow-600" size={32} />
+      <div className="w-24 h-24 bg-primary-800 rounded-full flex items-center justify-center mb-6 mx-auto">
+        <Image 
+          src="/half-cow.png" 
+          alt="Half Cow Icon" 
+          width={48} 
+          height={48}
+          className="w-12 h-12"
+        />
       </div>
     ),
     alt: "Half Cow Package",

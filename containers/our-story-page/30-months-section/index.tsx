@@ -4,15 +4,15 @@ export default function ThirtyMonthsSection() {
   return (
     <section
       aria-labelledby="thirty-months-heading"
-      className="w-full bg-gray-50"
+      className="w-full bg-white-900"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <ScrollAnimationWrapper animationType="slideUp">
-          <div className="bg-red-900 rounded-lg p-8 mx-auto max-w-4xl">
+          <div className="bg-primary-800 rounded-lg p-8 mx-auto max-w-4xl">
             {/* Title */}
             <h3
               id="thirty-months-heading"
-              className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6 text-center text-yellow-600"
+              className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6 text-center text-accent-dark"
             >
               30 Months!
             </h3>

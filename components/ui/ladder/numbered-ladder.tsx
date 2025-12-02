@@ -174,6 +174,9 @@ export const LadderText = ({
   children: React.ReactNode;
   isHovered?: boolean;
 }) => {
+  // Check if children is a string that contains HTML tags
+  const isHTMLString = typeof children === 'string' && children.includes('<');
+  
   return (
     <motion.div
       className={cn(
@@ -186,7 +189,11 @@ export const LadderText = ({
       }}
       transition={{ duration: 0.2 }}
     >
-      {children}
+      {isHTMLString ? (
+        <span dangerouslySetInnerHTML={{ __html: children as string }} />
+      ) : (
+        children
+      )}
     </motion.div>
   );
 };

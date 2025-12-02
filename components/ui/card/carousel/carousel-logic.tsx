@@ -80,7 +80,7 @@ export const Carousel = ({
     active: {
       width: 32,
       height: 12,
-      backgroundColor: "#D97706", // yellow-600
+      backgroundColor: "#BF8136", // accent-dark
     },
   };
 
@@ -140,7 +140,7 @@ export const Carousel = ({
         {autoPlay && cards.length > 1 && (
           <div className="absolute bottom-0 left-0 w-full h-1 bg-white/30">
             <motion.div
-              className="h-full bg-yellow-600"
+              className="h-full bg-accent-dark"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               key={currentIndex}
@@ -167,7 +167,7 @@ export const Carousel = ({
             <motion.button
               key={index}
               onClick={() => goToSlide(index)}
-              className="rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-offset-2"
+              className="rounded-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent-dark focus:ring-offset-2"
               variants={dotVariants}
               animate={index === currentIndex ? "active" : "inactive"}
               transition={{ duration: 0.3, ease: "easeInOut" }}

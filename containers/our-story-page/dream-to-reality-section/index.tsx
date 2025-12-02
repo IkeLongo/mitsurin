@@ -6,7 +6,7 @@ export default function GrowingTheDreamSection() {
   return (
     <section
       aria-labelledby="growing-the-dream-heading"
-      className="w-full bg-gray-100"
+      className="w-full bg-white-50"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         {/* Desktop Layout */}
@@ -20,12 +20,13 @@ export default function GrowingTheDreamSection() {
             initialY={60}
           >
             <FramedImage
-              src="/beefy-wagyu-smiling-at-camera.webp"
+              src="/wagyu-cattle-with-calf-on-texas-grassland.webp"
               alt="Marbled Wagyu beef cut"
               width={376}
-              height={528}
+              height={320}
+              imageHeight="h-[424px]"
               containerAlignment="ml-auto"
-              frameColor="yellow-600"
+              frameColor="accent-dark"
               offsetX={5}
               offsetY={5}
               priority
@@ -36,7 +37,7 @@ export default function GrowingTheDreamSection() {
           <div className="ml-10">
             <ScrollAnimationWrapper animationType="slideUp">
               {/* Eyebrow */}
-              <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+              <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
                 GROWING THE DREAM
               </p>
 
@@ -45,7 +46,7 @@ export default function GrowingTheDreamSection() {
                 id="growing-the-dream-heading"
                 className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
               >
-                <span className="text-red-900">From Dream to Reality</span>
+                <span className="text-primary-800">From Dream to Reality</span>
               </h3>
             </ScrollAnimationWrapper>
 
@@ -60,7 +61,7 @@ export default function GrowingTheDreamSection() {
                 
                 <p className="text-stone-950 text-lg leading-relaxed">
                   Through dedication, research, and a commitment to quality, the herd has grown 
-                  to <span className="font-bold text-red-900">50 Cows</span> —all born and raised 
+                  to <span className="font-bold text-primary-800">50 Cows</span> —all born and raised 
                   right here on the ranch. Each animal receives the care and attention needed to 
                   produce the exceptional beef that first captivated Dr. Selva in Las Vegas.
                 </p>
@@ -79,7 +80,7 @@ export default function GrowingTheDreamSection() {
         <div className="block lg:hidden">
           <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
               GROWING THE DREAM
             </p>
 
@@ -88,7 +89,7 @@ export default function GrowingTheDreamSection() {
               id="growing-the-dream-heading-mobile"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
             >
-              <span className="text-red-900">From Dream to Reality</span>
+              <span className="text-primary-800">From Dream to Reality</span>
             </h3>
           </ScrollAnimationWrapper>
 
@@ -96,11 +97,11 @@ export default function GrowingTheDreamSection() {
           <ScrollAnimationWrapper animationType="slideUp" delay={0.2}>
             <div className="relative w-full mb-6">
               <Image
-                src="/beefy-wagyu-smiling-at-camera.webp"
-                alt="Marbled Wagyu beef cut"
+                src="/wagyu-cattle-with-calf-on-texas-grassland.webp"
+                alt="Wagyu cattle with calf on Texas grassland"
                 width={500}
                 height={600}
-                className="w-full h-auto object-cover rounded-2xl"
+                className="w-full h-[424px] object-cover rounded-2xl"
                 style={{ borderRadius: '1rem' }}
                 priority
               />
@@ -118,7 +119,7 @@ export default function GrowingTheDreamSection() {
               
               <p className="text-stone-950 text-lg leading-relaxed">
                 Through dedication, research, and a commitment to quality, the herd has grown 
-                to <span className="font-bold text-red-900">50 Cows</span> —all born and raised 
+                to <span className="font-bold text-primary-800">50 Cows</span> —all born and raised 
                 right here on the ranch. Each animal receives the care and attention needed to 
                 produce the exceptional beef that first captivated Dr. Selva in Las Vegas.
               </p>
