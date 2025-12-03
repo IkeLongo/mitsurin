@@ -208,9 +208,12 @@ export default function PremiumCutModal({ cut, isOpen, onClose }: PremiumCutModa
             <div className="bg-primary-800 rounded-lg p-6 text-center">
               <h3 className="text-lg font-semibold text-white mb-2">Interested in this cut?</h3>
               <p className="text-gray-200 mb-4">Contact us to place your order or ask any questions</p>
-              <button className="bg-white text-primary-800 font-semibold px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+              <a 
+                href="/contact" 
+                className="bg-white text-primary-800 font-semibold px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer inline-block"
+              >
                 Contact Us
-              </button>
+              </a>
             </div>
           </div>
         </div>

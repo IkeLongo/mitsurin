@@ -11,17 +11,17 @@ export default function HowItWorksSection() {
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         <ScrollAnimationWrapper animationType="slideUp">
           {/* Eyebrow */}
-          <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
+          <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-center">
             HOW IT WORKS
           </p>
 
           {/* Main Heading */}
           <h3
             id="wagyu-experience-heading"
-            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-red-900"
+            className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-12 text-center text-primary-800"
           >
             Our
-            <span className="text-yellow-600"> Ordering Process</span>
+            <span className="text-accent-dark"> Ordering Process</span>
           </h3>
         </ScrollAnimationWrapper>
 
@@ -41,9 +41,9 @@ export default function HowItWorksSection() {
                   border: "border-none",
                   background: "bg-transparent",
                   paddingY: "py-6",
-                  circle: "bg-red-900",
-                  titleText: "text-red-900",
-                  numberText: "text-yellow-600",
+                  circle: "bg-primary-800",
+                  titleText: "text-primary-800",
+                  numberText: "text-accent-dark",
                   descriptionText: "text-stone-950",
                 }}
               />
@@ -64,7 +64,7 @@ const cardInfo = [
   {
     number: "2",
     title: "Place Your Order",
-    description: "Choose from 1/2 cow or whole cow options. We'll schedule processing and delivery at your convenience.",
+    description: "Choose from 1/2 cow or whole cow options. We also offer selected cuts depending on season and availability. We'll schedule processing and delivery at your convenience.",
   },
   {
     number: "3",

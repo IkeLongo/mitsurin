@@ -27,7 +27,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const { firstName, lastName, email, phone, message, company } = parsed.data;
+    const { firstName, lastName, email, phone, message, interestedCuts, company } = parsed.data;
 
     // Honeypot: if filled, silently accept but do nothing (or return 200 to avoid probing)
     if (company && company.trim().length > 0) {
@@ -55,6 +55,7 @@ export async function POST(req: Request) {
       `Name: ${firstName} ${lastName}`,
       `Email: ${email}`,
       `Phone: ${phone || "N/A"}`,
+      ...(interestedCuts && interestedCuts.length > 0 ? [`Interested Cuts: ${interestedCuts.join(", ")}`] : []),
       ``,
       `Message:`,
       message,
@@ -90,7 +91,7 @@ export async function POST(req: Request) {
             <p style="margin: 8px 0 0;
                       color: #ffffff;
                       opacity: 0.92;
-                      font-size: 16px;
+                      font-size: 20px;
                       font-family: Arial, sans-serif;">
               New Contact Form Submission
             </p>
@@ -100,35 +101,41 @@ export async function POST(req: Request) {
           <div style="padding:32px 24px;">
             <!-- Contact Info -->
             <div style="margin-bottom:28px;">
-              <h2 style="color:#7f1d1d; margin:0 0 14px 0; font-size:18px; border-bottom:2px solid #ca8a04; padding-bottom:8px; font-weight:600;">
+              <h2 style="color:#7f1d1d; margin:0 0 14px 0; font-size:22px; border-bottom:2px solid #ca8a04; padding-bottom:8px; font-weight:600;">
                 Contact Information
               </h2>
               <table style="width:100%; border-collapse:collapse;">
                 <tr>
-                  <td style="padding:8px 0; font-weight:600; color:#111; width:90px;">Name:</td>
-                  <td style="padding:8px 0; color:#222;">${firstName} ${lastName}</td>
+                  <td style="padding:8px 0; font-weight:600; color:#111; width:90px; font-size:16px;">Name:</td>
+                  <td style="padding:8px 0; color:#222; font-size:16px;">${firstName} ${lastName}</td>
                 </tr>
                 <tr>
-                  <td style="padding:8px 0; font-weight:600; color:#111;">Email:</td>
-                  <td style="padding:8px 0;">
-                    <a href="mailto:${email}" style="color:#ca8a04; text-decoration:none;">${email}</a>
+                  <td style="padding:8px 0; font-weight:600; color:#111; font-size:16px;">Email:</td>
+                  <td style="padding:8px 0; font-size:16px;">
+                    <a href="mailto:${email}" style="color:#ca8a04; text-decoration:none; font-size:16px;">${email}</a>
                   </td>
                 </tr>
                 <tr>
-                  <td style="padding:8px 0; font-weight:600; color:#111;">Phone:</td>
-                  <td style="padding:8px 0;">
-                    <a href="tel:${phone}" style="color:#ca8a04; text-decoration:none;">${phone || "N/A"}</a>
+                  <td style="padding:8px 0; font-weight:600; color:#111; font-size:16px;">Phone:</td>
+                  <td style="padding:8px 0; font-size:16px;">
+                    <a href="tel:${phone}" style="color:#ca8a04; text-decoration:none; font-size:16px;">${phone || "N/A"}</a>
                   </td>
                 </tr>
+                ${interestedCuts && interestedCuts.length > 0 ? `
+                <tr>
+                  <td style="padding:8px 0; font-weight:600; color:#111; font-size:16px;">Interested Cuts:</td>
+                  <td style="padding:8px 0; color:#222; font-size:16px;">${interestedCuts.join(", ")}</td>
+                </tr>
+                ` : ''}
               </table>
             </div>
 
             <!-- Message -->
             <div style="margin-bottom:28px;">
-              <h2 style="color:#7f1d1d; margin:0 0 14px 0; font-size:18px; border-bottom:2px solid #ca8a04; padding-bottom:8px; font-weight:600;">
+              <h2 style="color:#7f1d1d; margin:0 0 14px 0; font-size:22px; border-bottom:2px solid #ca8a04; padding-bottom:8px; font-weight:600;">
                 Message
               </h2>
-              <div style="background-color:#f9f6f2; padding:18px; border-radius:6px; border-left:4px solid #ca8a04; line-height:1.7; color:#222;">
+              <div style="background-color:#f9f6f2; padding:18px; border-radius:6px; border-left:4px solid #ca8a04; line-height:1.7; color:#222; font-size:16px;">
                 ${message.replace(/\n/g, '<br>')}
               </div>
             </div>
@@ -136,10 +143,10 @@ export async function POST(req: Request) {
 
           <!-- Footer -->
           <div style="background-color:#f8f8f8; padding:18px; text-align:center; border-top:1px solid #eee;">
-            <p style="margin:0; color:#b91c1c; font-size:12px;">
+            <p style="margin:0; color:#b91c1c; font-size:14px;">
               This email was sent from your Mitsurin Wagyu website contact form.
             </p>
-            <p style="margin:5px 0 0 0; color:#666; font-size:12px;">
+            <p style="margin:5px 0 0 0; color:#666; font-size:14px;">
               Received: ${new Date().toLocaleString("en-US", { timeZone: "America/Chicago" })}
             </p>
           </div>

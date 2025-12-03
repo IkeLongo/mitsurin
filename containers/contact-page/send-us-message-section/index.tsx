@@ -7,28 +7,27 @@ export default function SendUsMessageSection() {
   return (
     <section
       aria-labelledby="send-us-message-heading"
-      className="w-full bg-gray-100"
+      className="w-full bg-white-100"
     >
       <div className="max-w-2xl mx-auto lg:max-w-[1400px] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-10 items-center">
           {/* Left: Text Content */}
-          <div>
+          <div className="pl-20">
             {/* Right: Image */}
-            <div className="relative w-full mb-6">
+            <div className="relative w-full mb-6 h-96 overflow-hidden rounded-2xl shadow-2xl">
               <Image
-                src="/fatty-juicy-wagyu.webp"
+                src="/juicy-mitsurin-wagyu-steak-hondo-texas.webp"
                 alt="Healthy Wagyu beef showcasing nutritional benefits"
-                width={500}
-                height={600}
-                className="w-full h-auto object-cover rounded-2xl"
+                fill
+                className="object-cover object-center"
                 style={{ borderRadius: '1rem' }}
                 priority
               />
             </div>
 
             {/* Eyebrow */}
-            <p className="text-yellow-600 text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 text-left">
               SEND US A MESSAGE
             </p>
 
@@ -37,8 +36,8 @@ export default function SendUsMessageSection() {
               id="health-benefits-heading"
               className="text-3xl sm:text-4xl font-bold font-[Montserrat] leading-tight mb-6"
             >
-              <span className="text-red-900">Let's Start a </span>
-              <span className="text-yellow-600">Conversation</span>
+              <span className="text-primary-800">Let's Start a </span>
+              <span className="text-accent-dark">Conversation</span>
             </h3>
 
             {/* Description */}
@@ -70,11 +69,10 @@ export default function SendUsMessageSection() {
                 <HoverEffect 
                   items={cardData}
                   showLearnMore={false}
-                  enableLinks={false}
                   styles={{
-                    hover: "bg-yellow-600",
-                    card: "bg-white border-2 border-yellow-600",
-                    title: "text-red-900 text-center text-xl",
+                    hover: "bg-accent-dark",
+                    card: "bg-white border-2 border-accent-dark",
+                    title: "text-primary-800 text-center text-xl",
                     description: "text-black text-center text-md",
                   }}
                   className="grid md:grid-cols-1 gap-4 sm:gap-6 max-w-md w-full"
@@ -92,34 +90,34 @@ const cardData = [
   {
     title: "Location",
     description: "1396 CR 646, Hondo, Tx 78861",
-    link: "#",
+    link: "https://maps.google.com/?q=1396+CR+646,+Hondo,+TX+78861",
     icon: (
       <div className="w-16 h-16 bg-[#630710] rounded-full mx-auto mb-4 flex items-center justify-center">
         <MapPin className="text-[#bf8136]" size={32} />
       </div>
     ),
-    alt: "Healthy Fats Benefits",
+    alt: "Mitsurin Wagyu Ranch Location in Hondo, Texas",
   },
   {
     title: "Email",
     description: "michael@mitsurinwagyu.com",
-    link: "#",
+    link: "mailto:michael@mitsurinwagyu.com",
     icon: (
       <div className="w-16 h-16 bg-[#630710] rounded-full mx-auto mb-4 flex items-center justify-center">
         <Mail className="text-[#bf8136]" size={32} />
       </div>
     ),
-    alt: "Lower Saturated Fat Content",
+    alt: "Contact Mitsurin Wagyu via Email",
   },
   {
     title: "Phone",
     description: "210-827-0658",
-    link: "#",
+    link: "tel:+12108270658",
     icon: (
       <div className="w-16 h-16 bg-[#630710] rounded-full mx-auto mb-4 flex items-center justify-center">
         <Phone className="text-[#bf8136]" size={32} />
       </div>
     ),
-    alt: "Omega-3 Fatty Acids",
+    alt: "Call Mitsurin Wagyu Phone Number",
   }
 ];

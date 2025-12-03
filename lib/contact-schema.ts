@@ -49,6 +49,7 @@ export const ContactSchema = z.object({
       { message: "Please enter a valid phone number" }
     ),
   message: z.string().min(10, "Message must be at least 10 characters").max(2000),
+  interestedCuts: z.array(z.string()),
   // Honeypot: should stay empty; bots often fill it
   company: z.string().max(0).optional(), 
 });

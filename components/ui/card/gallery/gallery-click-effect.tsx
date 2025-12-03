@@ -70,7 +70,7 @@ export const GalleryMainCard = ({
   return (
     <div
       className={cn(
-        "relative w-full h-full rounded-2xl overflow-hidden bg-gray-100 shadow-lg",
+        "relative w-full h-full rounded-2xl overflow-hidden bg-white-900 shadow-lg",
         className
       )}
     >
@@ -102,7 +102,7 @@ export const GalleryImage = ({
           src={src}
           alt={alt}
           fill
-          className="object-cover"
+          className="object-cover rounded-2xl"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </motion.div>
