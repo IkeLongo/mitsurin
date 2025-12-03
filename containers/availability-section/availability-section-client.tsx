@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { stegaClean, createDataAttribute } from 'next-sanity'
 import { useOptimistic } from 'next-sanity/hooks'
 import PremiumCutModal from '@/components/ui/modal/premium-cut-modal'
+import CowPurchaseOptionModal from '@/components/ui/modal/cow-purchase-option-modal'
 import { client } from '@/sanity/lib/client'
 import type { PremiumCut } from '@/types/premium-cuts'
 
@@ -14,19 +15,54 @@ export const createDataAttributeConfig = {
   baseUrl: typeof stega.studioUrl === 'string' ? stega.studioUrl : '',
 }
 
+interface CowPurchase {
+  _id: string
+  name: string
+  description: string
+  availability: string
+  basePrice: number
+  priceUnit: string
+  processingState: string
+  estimatedWeight: string
+  estimatedYield: string
+  freezerSpaceRequired: string
+  deliveryZone?: {
+    within100Miles: boolean
+    beyond100Miles: boolean
+    deliveryFeePerMile: number
+  }
+  butcherRequirements?: {
+    required: boolean
+    maxDistanceFromHondo: number
+    requirements: string[]
+    additionalNotes: string
+  }
+  processingTime: string
+  depositRequired: number
+  processingIncluded: boolean
+  processingCost: number
+  includes: string[]
+  notes: string
+  minimumNotice: string
+}
+
 interface AvailabilitySectionClientProps {
   premiumCuts: PremiumCut[]
+  cowPurchases?: CowPurchase[]
   documentId: string
   documentType: string
 }
 
 export default function AvailabilitySectionClient({ 
-  premiumCuts: initialPremiumCuts, 
+  premiumCuts: initialPremiumCuts,
+  cowPurchases: initialCowPurchases = [],
   documentId, 
   documentType 
 }: AvailabilitySectionClientProps) {
   const [selectedCut, setSelectedCut] = useState<PremiumCut | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedCowPurchase, setSelectedCowPurchase] = useState<CowPurchase | null>(null)
+  const [isPremiumCutModalOpen, setIsPremiumCutModalOpen] = useState(false)
+  const [isCowPurchaseModalOpen, setIsCowPurchaseModalOpen] = useState(false)
 
   const premiumCuts = useOptimistic<PremiumCut[] | undefined, any>(
     initialPremiumCuts,
@@ -43,12 +79,22 @@ export default function AvailabilitySectionClient({
 
   const handleCutClick = (cut: PremiumCut) => {
     setSelectedCut(cut)
-    setIsModalOpen(true)
+    setIsPremiumCutModalOpen(true)
   }
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
+  const handleCowPurchaseClick = (purchase: CowPurchase) => {
+    setSelectedCowPurchase(purchase)
+    setIsCowPurchaseModalOpen(true)
+  }
+
+  const handleClosePremiumCutModal = () => {
+    setIsPremiumCutModalOpen(false)
     setSelectedCut(null)
+  }
+
+  const handleCloseCowPurchaseModal = () => {
+    setIsCowPurchaseModalOpen(false)
+    setSelectedCowPurchase(null)
   }
 
   // Helper function to get default icon for cuts without images
@@ -122,8 +168,85 @@ export default function AvailabilitySectionClient({
 
   return (
     <>
-      {/* Cuts Grid */}
-      <div 
+      {/* Cow Purchase Options Section */}
+      {initialCowPurchases && initialCowPurchases.length > 0 && (
+        <div className="mt-12 pt-8 border-t border-accent-dark">
+          <h3 className="text-2xl font-bold font-[Montserrat] text-primary-800 text-center mb-2">Whole & Half Cow Options</h3>
+          <p className="text-center text-gray-600 mb-8">Premium Wagyu cattle for families and businesses</p>
+          
+          <div className="grid gap-4 md:grid-cols-3 mb-8">
+            {initialCowPurchases.map((purchase) => {
+              return (
+                <div 
+                  key={purchase._id}
+                  className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-accent-dark transition-all duration-300 hover:shadow-lg group cursor-pointer"
+                  onClick={() => handleCowPurchaseClick(purchase)}
+                >
+                  {/* Purchase Name */}
+                  <h4 
+                    className="text-xl font-bold text-primary-800 text-center mb-4"
+                    data-sanity={createDataAttribute({
+                      ...createDataAttributeConfig,
+                      id: purchase._id,
+                      type: 'cowPurchaseType',
+                      path: 'name',
+                    }).toString()}
+                  >
+                    {stegaClean(purchase.name)}
+                  </h4>
+                  
+                  {/* Price */}
+                  <div className="text-center mb-4">
+                    <span className="text-3xl font-bold text-accent-dark">${stegaClean(purchase.basePrice).toLocaleString()}</span>
+                    {stegaClean(purchase.priceUnit) !== 'flat rate' && (
+                      <span className="text-sm text-gray-600 ml-1">/{stegaClean(purchase.priceUnit)}</span>
+                    )}
+                  </div>
+
+                  {/* Processing State Badge */}
+                  <div className="flex justify-center mb-4">
+                    {(() => {
+                      const isProcessed = stegaClean(purchase.processingState) === 'processed'
+                      const isLive = stegaClean(purchase.processingState) === 'live'
+                      
+                      return (
+                        <span className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${
+                          isProcessed ? 'bg-green-100 text-green-800' : 
+                          isLive ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'
+                        }`}>
+                          {isProcessed ? '✓ Available' : 
+                            isLive ? '🚛 Live Delivery' : stegaClean(purchase.processingState)}
+                        </span>
+                      )
+                    })()}
+                  </div>
+
+                  {/* Click for Details Hint */}
+                  <div className="text-center mt-4 pt-4 border-t border-gray-100">
+                    <p className="text-xs text-gray-500 group-hover:text-accent-dark transition-colors">
+                      Click for details →
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Contact for Cow Purchases */}
+          <div className="text-center p-6 bg-primary-800 rounded-xl mt-8 mb-12">
+            <p className="text-yellow-100 text-sm mb-2">Ready to purchase a whole or half cow?</p>
+            <p className="text-white text-lg font-semibold mb-2">Contact us to discuss your needs and schedule delivery</p>
+            <p className="text-yellow-100 text-xs">Delivery available within 100 miles of Hondo • Additional fees apply beyond 100 miles</p>
+          </div>
+        </div>
+      )}
+
+      {/* Premium Cuts Section */}
+      <div className="mt-12 pt-8 border-t border-accent-dark">
+        <h3 className="text-2xl font-bold font-[Montserrat] text-primary-800 text-center mb-8">Premium Cuts Available</h3>
+        
+        {/* Cuts Grid */}
+        <div 
         className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6"
       >
         {cutsToDisplay.map((cut, index) => {
@@ -209,11 +332,25 @@ export default function AvailabilitySectionClient({
         })}
       </div>
 
+        {/* Contact for More Cuts */}
+        <div className="text-center p-6 bg-gray-50 rounded-xl border border-gray-200">
+          <p className="text-sm text-gray-600 mb-2">Looking for a specific cut?</p>
+          <p className="text-lg font-semibold text-primary-800">Contact us for custom orders and special requests</p>
+        </div>
+      </div>
+
       {/* Premium Cut Modal */}
       <PremiumCutModal 
         cut={selectedCut}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
+        isOpen={isPremiumCutModalOpen}
+        onClose={handleClosePremiumCutModal}
+      />
+
+      {/* Cow Purchase Modal */}
+      <CowPurchaseOptionModal 
+        purchase={selectedCowPurchase}
+        isOpen={isCowPurchaseModalOpen}
+        onClose={handleCloseCowPurchaseModal}
       />
     </>
   )

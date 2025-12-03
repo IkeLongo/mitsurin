@@ -127,17 +127,40 @@ export default function PremiumCutModal({ cut: initialCut, isOpen, onClose }: Pr
                   )}
                 </div>
                 
-                <div>
-                  <h2 className="text-2xl font-bold font-[Montserrat] text-primary-800" data-sanity={createDataAttribute({
-                    ...createDataAttributeConfig,
-                    id: cut._id,
-                    type: 'premiumCutsType',
-                    path: 'name',
-                  }).toString()}>
-                    {stegaClean(cut.name)}
-                  </h2>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-bold font-[Montserrat] text-primary-800" data-sanity={createDataAttribute({
+                      ...createDataAttributeConfig,
+                      id: cut._id,
+                      type: 'premiumCutsType',
+                      path: 'name',
+                    }).toString()}>
+                      {stegaClean(cut.name)}
+                    </h2>
+                    <span 
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                        cleanAvailability === 'available'
+                          ? 'bg-green-100 text-green-800' 
+                          : cleanAvailability === 'limited'
+                          ? 'bg-yellow-100 text-yellow-800'
+                          : 'bg-red-100 text-red-800'
+                      }`}
+                      data-sanity={createDataAttribute({
+                        ...createDataAttributeConfig,
+                        id: cut._id,
+                        type: 'premiumCutsType',
+                        path: 'availability',
+                      }).toString()}
+                    >
+                      {cleanAvailability === 'available'
+                        ? '✓ Available' 
+                        : cleanAvailability === 'limited'
+                        ? '◐ Limited Stock'
+                        : '✕ Sold Out'}
+                    </span>
+                  </div>
                   {cut.category && (
-                    <p className="text-sm text-gray-600 capitalize" data-sanity={createDataAttribute({
+                    <p className="text-sm text-gray-600 capitalize mt-1" data-sanity={createDataAttribute({
                       ...createDataAttributeConfig,
                       id: cut._id,
                       type: 'premiumCutsType',
@@ -152,31 +175,6 @@ export default function PremiumCutModal({ cut: initialCut, isOpen, onClose }: Pr
 
             {/* Content */}
             <div className="p-6 pt-2 space-y-6">
-              {/* Availability Status */}
-              <div className="flex justify-center">
-                <span 
-                  className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${
-                    cleanAvailability === 'available'
-                      ? 'bg-green-100 text-green-800' 
-                      : cleanAvailability === 'limited'
-                      ? 'bg-yellow-100 text-yellow-800'
-                      : 'bg-red-100 text-red-800'
-                  }`}
-                  data-sanity={createDataAttribute({
-                    ...createDataAttributeConfig,
-                    id: cut._id,
-                    type: 'premiumCutsType',
-                    path: 'availability',
-                  }).toString()}
-                >
-                  {cleanAvailability === 'available'
-                    ? '✓ Available' 
-                    : cleanAvailability === 'limited'
-                    ? '◐ Limited Stock'
-                    : '✕ Sold Out'}
-                </span>
-              </div>
-
               {/* Description */}
               {cut.description && (
                 <div>

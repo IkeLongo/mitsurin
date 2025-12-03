@@ -3,18 +3,23 @@ import { stegaClean } from 'next-sanity'
 import { sanityFetch } from '@/sanity/lib/fetch'
 import { availabilityQuery } from '@/lib/queries/availability'
 import { premiumCutsQuery } from '@/lib/queries/premium-cuts'
+import { cowPurchaseQuery } from '@/lib/queries/cow-purchase'
 import AvailabilitySectionClient from './availability-section-client'
 import type { Availability } from '@/types/availability'
 import type { PremiumCut } from '@/types/premium-cuts'
 
 export default async function SanityAvailabilitySection() {
-  const [availability, premiumCuts] = await Promise.all([
+  const [availability, premiumCuts, cowPurchases] = await Promise.all([
     sanityFetch<Availability | null>({ 
       query: availabilityQuery,
       revalidate: 10 // More balanced revalidation for visual editing
     }),
     sanityFetch<PremiumCut[]>({ 
       query: premiumCutsQuery,
+      revalidate: 10
+    }),
+    sanityFetch<any[]>({ 
+      query: cowPurchaseQuery,
       revalidate: 10
     })
   ]);
@@ -178,21 +183,18 @@ export default async function SanityAvailabilitySection() {
         </div>
       )}
 
+
+
       {/* Available Cuts Section */}
-      <div className="mt-12 pt-8 border-t border-accent-dark">
-        <h3 className="text-2xl font-bold font-[Montserrat] text-primary-800 text-center mb-8">Premium Cuts Available</h3>
+      <div className="mt-12">
         
         <AvailabilitySectionClient 
           premiumCuts={premiumCuts}
+          cowPurchases={cowPurchases}
           documentId={(availability as any)?._id || 'availability'}
           documentType="availability"
         />
-
-        {/* Contact for More Cuts */}
-        <div className="text-center p-6 bg-gray-50 rounded-xl border border-gray-200">
-          <p className="text-sm text-gray-600 mb-2">Looking for a specific cut?</p>
-          <p className="text-lg font-semibold text-primary-800">Contact us for custom orders and special requests</p>
-        </div>
+        
       </div>
     </section>
   );
