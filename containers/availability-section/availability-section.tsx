@@ -182,7 +182,11 @@ export default async function SanityAvailabilitySection() {
       <div className="mt-12 pt-8 border-t border-accent-dark">
         <h3 className="text-2xl font-bold font-[Montserrat] text-primary-800 text-center mb-8">Premium Cuts Available</h3>
         
-        <AvailabilitySectionClient premiumCuts={premiumCuts} />
+        <AvailabilitySectionClient 
+          premiumCuts={premiumCuts}
+          documentId={(availability as any)?._id || 'availability'}
+          documentType="availability"
+        />
 
         {/* Contact for More Cuts */}
         <div className="text-center p-6 bg-gray-50 rounded-xl border border-gray-200">
