@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Whole Cow - Already Processed",
+    "description": "Premium Wagyu whole cow, already processed and ready for pickup. Includes all cuts from nose to tail - steaks, roasts, ground beef, and specialty cuts. Perfect for large families or those wanting maximum value and variety.",
+    "availability": "available",
+    "basePrice": 8000,
+    "priceUnit": "flat rate",
+    "processingState": "processed",
+    "estimatedWeight": "400-500 lbs hanging weight",
+    "estimatedYield": "280-350 lbs packaged meat",
+    "freezerSpaceRequired": "16-20 cubic feet",
+    "deliveryZone": {
+      "within100Miles": true,
+      "beyond100Miles": true,
+      "deliveryFeePerMile": 2.50
+    },
+    "processingTime": "Ready for pickup",
+    "depositRequired": 2000.00,
+    "processingIncluded": true,
+    "processingCost": 0.00,
+    "includes": [
+      "All premium steaks (ribeye, filet mignon, NY strip, porterhouse)",
+      "All roasts (chuck, rump, eye of round, tri-tip)",
+      "Ground beef (80/20 and 90/10)",
+      "Short ribs and plate ribs",
+      "Brisket",
+      "Soup bones and marrow bones",
+      "Vacuum sealed and frozen",
+      "Professional butcher cuts"
+    ],
+    "notes": "Processing and packaging included in price. Ready for immediate pickup or delivery. Best value for processed beef.",
+    "featured": true,
+    "displayOrder": 1,
+    "minimumNotice": "1 week",
+    "availableSeasons": ["yearRound"]
+  },
+  {
+    "name": "Half Cow - Already Processed", 
+    "description": "Premium Wagyu half cow, already processed and ready for pickup. Provides excellent variety of cuts for families wanting quality beef year-round. Includes balanced selection of steaks, roasts, and ground beef.",
+    "availability": "available",
+    "basePrice": 4200,
+    "priceUnit": "flat rate",
+    "processingState": "processed",
+    "estimatedWeight": "200-250 lbs hanging weight",
+    "estimatedYield": "140-175 lbs packaged meat",
+    "freezerSpaceRequired": "8-10 cubic feet",
+    "deliveryZone": {
+      "within100Miles": true,
+      "beyond100Miles": true,
+      "deliveryFeePerMile": 2.50
+    },
+    "processingTime": "Ready for pickup",
+    "depositRequired": 1000.00,
+    "processingIncluded": true,
+    "processingCost": 0.00,
+    "includes": [
+      "Mix of premium steaks (ribeye, filet mignon, NY strip)",
+      "Roasts (chuck, rump, eye of round)",
+      "Ground beef (80/20 and 90/10)",
+      "Short ribs",
+      "Brisket portion",
+      "Soup bones",
+      "Vacuum sealed and frozen",
+      "Professional butcher cuts"
+    ],
+    "notes": "Perfect for families of 4-6. Processing and packaging included. Most popular option for processed beef.",
+    "featured": true,
+    "displayOrder": 2,
+    "minimumNotice": "1 week",
+    "availableSeasons": ["yearRound"]
+  },
+  {
+    "name": "Live Wagyu - Butcher Drop Off",
+    "description": "Live premium Wagyu delivered directly to your chosen butcher within 100 miles of Hondo. You coordinate processing and cuts to your exact specifications. Perfect for those wanting complete control over processing.",
+    "availability": "available",
+    "basePrice": 6000,
+    "priceUnit": "flat rate",
+    "processingState": "live",
+    "estimatedWeight": "800-1000 lbs live weight",
+    "estimatedYield": "280-350 lbs after processing",
+    "freezerSpaceRequired": "16-20 cubic feet",
+    "deliveryZone": {
+      "within100Miles": true,
+      "beyond100Miles": true,
+      "deliveryFeePerMile": 3.00
+    },
+    "butcherRequirements": {
+      "required": true,
+      "maxDistanceFromHondo": 100,
+      "requirements": [
+        "USDA certified facility",
+        "Accepts live cattle delivery", 
+        "Scheduling flexibility for delivery",
+        "Custom cut instructions capability"
+      ],
+      "additionalNotes": "Customer must arrange butcher appointment and processing. We deliver live animal to your chosen facility."
+    },
+    "processingTime": "Delivery within 1 week, processing time varies by butcher",
+    "depositRequired": 1500.00,
+    "processingIncluded": false,
+    "processingCost": 0.00,
+    "includes": [
+      "Premium live Wagyu cattle",
+      "Health certificates and paperwork",
+      "Delivery to your butcher",
+      "Coordination with facility"
+    ],
+    "notes": "Processing costs paid directly to butcher. Delivery free within 100 miles of Hondo, $3/mile beyond. Customer arranges all processing details.",
+    "featured": false,
+    "displayOrder": 3,
+    "minimumNotice": "2 weeks",
+    "availableSeasons": ["yearRound"]
+  }
+]
