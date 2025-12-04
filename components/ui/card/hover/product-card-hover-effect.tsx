@@ -209,10 +209,10 @@ export const ProductCardDescription = ({
           {description}
         </p>
 
-        {/* Bullet Points - Two Column Layout */}
+        {/* Bullet Points - Single Column Layout */}
         {bulletPoints && bulletPoints.length > 0 && (
           <div className="mt-6">
-            <ul className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-3">
+            <ul className="space-y-3">
               {bulletPoints.map((point, index) => (
                 <li key={index} className="flex items-start gap-2">
                   {/* Circular bullet point */}

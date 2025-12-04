@@ -59,7 +59,8 @@ export default function HeroSection() {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            willChange: "transform"
+            willChange: "transform",
+            filter: "blur(3px)"
           }}
           metadata={{
             videoTitle: "Mitsurin Wagyu Hero Video",

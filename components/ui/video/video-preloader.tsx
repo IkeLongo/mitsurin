@@ -80,7 +80,8 @@ export default function VideoPreloader({ playbackId, priority = false, onVideoLo
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           style={{ 
-            objectFit: "cover"
+            objectFit: "cover",
+            filter: "blur(3px)"
           }}
           priority
           onLoad={() => setThumbnailLoaded(true)}

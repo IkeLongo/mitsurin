@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function TermsAndConditionsPage() {
   return (
-    <div className="font-sans min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="font-sans min-h-screen flex items-center justify-center">
       <main className="w-full mx-auto">
         <TermsAndConditionsWrapper>
           <TermsAndConditions />

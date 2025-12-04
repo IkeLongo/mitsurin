@@ -12,10 +12,14 @@ interface ConditionalLayoutProps {
 export default function ConditionalLayout({ children }: ConditionalLayoutProps) {
   const pathname = usePathname();
   const isStudioRoute = pathname?.startsWith('/studio');
+  
+  // Pages with white backgrounds that need dark navbar styling
+  const whiteBackgroundPages = ['/privacy-policy', '/terms-and-conditions'];
+  const forceVisibleNavbar = whiteBackgroundPages.includes(pathname || '');
 
   return (
     <>
-      {!isStudioRoute && <MainNavbar />}
+      {!isStudioRoute && <MainNavbar forceVisible={forceVisibleNavbar} />}
       {children}
       {!isStudioRoute && <FooterSection />}
       {!isStudioRoute && <CookieBanner />}

@@ -2,6 +2,8 @@ import { ProductHoverEffect } from "@/components/ui/card/hover/product-card-hove
 import { Container, Package } from "lucide-react";
 import Image from "next/image";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import { sanityFetch } from "@/sanity/lib/live";
+import { cowPurchaseQuery } from "@/lib/queries/cow-purchase";
 
 function InfoModal() {
   return (
@@ -16,7 +18,101 @@ function InfoModal() {
   );
 }
 
-export default function PurchasingOptionsSection() {
+// Define the interface for cow purchase data
+interface CowPurchase {
+  _id: string;
+  name: string;
+  description: string;
+  icon?: string;
+  estimatedYield?: string;
+  estimatedWeight?: string;
+  freezerSpaceRequired?: string;
+  processingTime?: string;
+  includes?: string[];
+  minimumNotice?: string;
+  availability: string;
+  basePrice?: number;
+  priceUnit?: string;
+}
+
+export default async function PurchasingOptionsSection() {
+  // Fetch cow purchase data from Sanity
+  const { data: cowPurchases } = await sanityFetch({
+    query: cowPurchaseQuery,
+    stega: false,
+  });
+
+  // Filter to only show whole cow and half cow options (exclude live delivery)
+  const filteredCowPurchases = cowPurchases?.filter((cow: CowPurchase) => 
+    (cow.name?.toLowerCase().includes('whole') || 
+     cow.name?.toLowerCase().includes('half')) &&
+    !cow.name?.toLowerCase().includes('live')
+  );
+
+  // Convert Sanity data to the format expected by ProductHoverEffect
+  const packages = filteredCowPurchases?.map((cow: CowPurchase, index: number) => {
+    // Create dynamic bullet points from Sanity fields
+    const bulletPoints = [];
+    
+    if (cow.estimatedYield) bulletPoints.push(cow.estimatedYield);
+    if (cow.estimatedWeight) bulletPoints.push(`${cow.estimatedWeight}`);
+    if (cow.freezerSpaceRequired) bulletPoints.push(`${cow.freezerSpaceRequired} freezer space required`);
+    if (cow.processingTime) bulletPoints.push(`${cow.processingTime}`);
+    if (cow.minimumNotice) bulletPoints.push(`${cow.minimumNotice} advance notice`);
+    
+    // Add items from the includes array
+    if (cow.includes && cow.includes.length > 0) {
+      bulletPoints.push(...cow.includes.slice(0, 2)); // Add first 2 includes to avoid too many bullets
+    }
+    
+    // Fallback bullet points if no data
+    if (bulletPoints.length === 0) {
+      bulletPoints.push(
+        "Premium Wagyu cuts",
+        "Custom butcher preferences", 
+        "Best value per pound"
+      );
+    }
+
+    // Determine icon based on cow type or use fallback
+    const iconSrc = cow.name?.toLowerCase().includes('whole') 
+      ? '/full-cow.png' 
+      : cow.name?.toLowerCase().includes('half')
+      ? '/half-cow.png'
+      : '/full-cow.png';
+
+    const iconSize = cow.name?.toLowerCase().includes('half') ? 48 : 56;
+
+    return {
+      title: cow.name?.replace(/\s*-\s*Already Processed/i, '') || cow.name,
+      description: cow.description,
+      bulletPoints,
+      link: "/availability",
+      icon: (
+        <div className="w-24 h-24 bg-primary-800 rounded-full flex items-center justify-center mb-6 mx-auto">
+          {cow.icon ? (
+            <Image 
+              src={cow.icon} 
+              alt={`${cow.name} Icon`} 
+              width={iconSize} 
+              height={iconSize}
+              className={`w-${iconSize === 48 ? '12' : '14'} h-${iconSize === 48 ? '12' : '14'}`}
+            />
+          ) : (
+            <Image 
+              src={iconSrc} 
+              alt={`${cow.name} Icon`} 
+              width={iconSize} 
+              height={iconSize}
+              className={`w-${iconSize === 48 ? '12' : '14'} h-${iconSize === 48 ? '12' : '14'}`}
+            />
+          )}
+        </div>
+      ),
+      alt: `${cow.name} Package`,
+    };
+  }) || [];
+
   return (
     <section
       aria-labelledby="purchasing-options-heading"
@@ -53,8 +149,6 @@ export default function PurchasingOptionsSection() {
                 bulletPoint: "text-stone-600"              // Bullet point color
               }}
               className="max-w-5xl"
-              showLearnMore={false}
-              enableLinks={false}
             />
           </div>
         </ScrollAnimationWrapper>
@@ -67,61 +161,3 @@ export default function PurchasingOptionsSection() {
     </section>
   );
 }
-
-export const packages = [
-  {
-    title: "Whole Cow",
-    description:
-      `Ideal for large families, group shares, or long-term freezer storage. 
-      You'll receive a full variety of premium Wagyu cuts, custom butchered to 
-      your preference.`,
-    bulletPoints: [
-      "400-600 lbs of beef",
-      "Variety of cuts included",
-      "Custom butcher preferences",
-      "Best value per pound",
-      "Freezer space required",
-      "Perfect for large families"
-    ],
-    link: "",
-    icon: (
-      <div className="w-24 h-24 bg-primary-800 rounded-full flex items-center justify-center mb-6 mx-auto">
-        <Image 
-          src="/full-cow.png" 
-          alt="Full Cow Icon" 
-          width={56} 
-          height={56}
-          className="w-14 h-14"
-        />
-      </div>
-    ),
-    alt: "Whole Cow Package",
-  },
-  {
-    title: "Half Cow",
-    description:
-      `A perfect entry point for smaller households or first-time buyers. 
-      Enjoy a curated selection of rich, marbled cuts tailored to your specifications.`,
-    bulletPoints: [
-      "200-300 lbs of beef",
-      "Balanced cut selection",
-      "Easier storage",
-      "Great for small families",
-      "First-time buyer friendly",
-      "Premium quality cuts"
-    ],
-    link: "",
-    icon: (
-      <div className="w-24 h-24 bg-primary-800 rounded-full flex items-center justify-center mb-6 mx-auto">
-        <Image 
-          src="/half-cow.png" 
-          alt="Half Cow Icon" 
-          width={48} 
-          height={48}
-          className="w-12 h-12"
-        />
-      </div>
-    ),
-    alt: "Half Cow Package",
-  },
-];

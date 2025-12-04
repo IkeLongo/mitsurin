@@ -17,20 +17,20 @@ export default function HeadingSection() {
           className="flex flex-col items-center text-center max-w-[1400px] px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollAnimationWrapper animationType="slideUp">
             {/* Eyebrow */}
-            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4">
+            <p className="text-accent-dark text-sm sm:text-base font-extrabold tracking-wide mb-4 drop-shadow-lg">
               GET IN TOUCH
             </p>
 
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
-              <span className="text-white">Contact </span>
-              <span className="text-accent-dark">Mitsurin Wagyu</span>
+              <span className="text-white drop-shadow-lg">Contact </span>
+              <span className="text-accent-dark drop-shadow-lg">Mitsurin Wagyu</span>
             </h1>
           </ScrollAnimationWrapper>
 
           {/* Description */}
           <ScrollAnimationWrapper animationType="fade" delay={0.2}>
-            <p className="mt-6 text-stone-100 text-lg max-w-3xl">
+            <p className="font-[Montserrat] mt-6 text-white text-2xl font-medium max-w-3xl drop-shadow-md">
               Ready to experience the finest Wagyu beef in Texas? We're here to answer your questions.
             </p>
           </ScrollAnimationWrapper>
@@ -76,8 +76,8 @@ export default function HeadingSection() {
 const cardData = [
   {
     title: "Location",
-    description: "1396 CR 646, Hondo, Tx 78861",
-    link: "https://maps.google.com/?q=1396+CR+646,+Hondo,+TX+78861",
+    description: "CR 646, Hondo, Tx 78861",
+    link: "https://maps.google.com/?q=CR+646,+Hondo,+TX+78861",
     icon: (
       <div className="w-16 h-16 bg-[#630710] rounded-full mx-auto mb-4 flex items-center justify-center">
         <MapPin className="text-[#bf8136]" size={32} />

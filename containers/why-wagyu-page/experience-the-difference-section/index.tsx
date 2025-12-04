@@ -5,9 +5,10 @@ import Link from "next/link";
 export default function ExperienceTheDifferenceSection() {
   return (
     <div 
-      className="font-sans flex items-center justify-center bg-cover bg-center bg-no-repeat relative"
+      className="font-sans flex items-center justify-center bg-cover bg-no-repeat relative"
       style={{
-        backgroundImage: "url('/wagyu-steak-for-dinner.webp')",
+        backgroundImage: "url('/mitsurin-wagyu-beef-cuts-south-texas.webp')",
+        backgroundPosition: "center 17%",
       }}
     >
       {/* Black overlay */}
@@ -19,7 +20,7 @@ export default function ExperienceTheDifferenceSection() {
       >
         {/* Main Heading */}
         <ScrollAnimationWrapper animationType="slideUp">
-          <h1 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
+          <h1 className="text-4xl sm:text-5xl text-white font-bold font-[Montserrat] leading-tight">
             Experience the Difference with <span className="text-accent-dark">Wagyu</span>
           </h1>
         </ScrollAnimationWrapper>
@@ -40,14 +41,14 @@ export default function ExperienceTheDifferenceSection() {
           </Link>
         </ScrollAnimationWrapper>
 
-        <div className="w-full h-0.5 bg-accent-dark my-20" />
+        <div className="w-full h-0.5 bg-accent-dark my-10" />
 
         <ScrollAnimationWrapper animationType="fade" delay={0.8}>
-          <p>Learn More About Wagyu</p>
+          <p className="text-white">Learn More About Wagyu</p>
         </ScrollAnimationWrapper>
         
         <ScrollAnimationWrapper animationType="fade" delay={1.0}>
-          <p className="text-accent-dark mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
+          <p className="text-white mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
         </ScrollAnimationWrapper>
 
       </section>

@@ -23,7 +23,7 @@ export default function DiscoverSection() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[Montserrat] leading-tight text-stone-900"
             >
               <span className="text-white">The </span>
-              <span className="text-accent-dark">Finest</span>
+              <span className="text-white">Finest</span>
               <span className="text-white"> Beef that can be Produced!</span>
             </h3>
           </ScrollAnimationWrapper>

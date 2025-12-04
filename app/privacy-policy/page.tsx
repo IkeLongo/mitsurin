@@ -76,7 +76,7 @@ function ContactFormSkeleton() {
   return (
     <div className="w-full">
       <div className="md:hidden relative">
-        <div className="w-full h-[300px] bg-gray-200 animate-pulse" />
+        <div className="w-full h-[300px] bg-white animate-pulse" />
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="h-8 w-48 bg-gray-300 animate-pulse rounded" />
           <div className="h-4 w-64 bg-gray-300 animate-pulse rounded mt-4" />
@@ -85,21 +85,21 @@ function ContactFormSkeleton() {
       
       <div className="grid md:grid-cols-2 w-full min-h-screen md:min-h-0">
         <div className="hidden md:flex md:flex-col md:justify-center md:items-center w-full h-screen">
-          <div className="w-full h-full bg-gray-200 animate-pulse" />
+          <div className="w-full h-full bg-white animate-pulse" />
         </div>
         
         <div className="relative flex flex-col items-center justify-start md:justify-center bg-transparent">
           <div className="w-full max-w-[500px] p-8 space-y-4">
             <div className="flex gap-4">
-              <div className="flex-1 h-12 bg-gray-200 animate-pulse rounded-[13px]" />
-              <div className="flex-1 h-12 bg-gray-200 animate-pulse rounded-[13px]" />
+              <div className="flex-1 h-12 bg-white animate-pulse rounded-[13px]" />
+              <div className="flex-1 h-12 bg-white animate-pulse rounded-[13px]" />
             </div>
             <div className="flex gap-4">
-              <div className="flex-1 h-12 bg-gray-200 animate-pulse rounded-[13px]" />
-              <div className="flex-1 h-12 bg-gray-200 animate-pulse rounded-[13px]" />
+              <div className="flex-1 h-12 bg-white animate-pulse rounded-[13px]" />
+              <div className="flex-1 h-12 bg-white animate-pulse rounded-[13px]" />
             </div>
-            <div className="h-32 bg-gray-200 animate-pulse rounded-[13px]" />
-            <div className="h-12 bg-gray-200 animate-pulse rounded-[13px]" />
+            <div className="h-32 bg-white animate-pulse rounded-[13px]" />
+            <div className="h-12 bg-white animate-pulse rounded-[13px]" />
           </div>
         </div>
       </div>
@@ -109,16 +109,20 @@ function ContactFormSkeleton() {
 
 export default function Privacy() {
   return (
-    <div className="flex flex-col items-center justify-start w-full h-auto bg-gray-200">
+    <div className="flex flex-col items-center justify-start w-full h-auto bg-white">
       <main className="flex flex-col w-full h-full mx-4">
         <Suspense fallback={<ContactFormSkeleton />}>
-          <div className="relative h-auto w-full max-w-[1020px] mx-auto bg-cover bg-top overflow-x-hidden top-40 mb-24 px-4">
-            <div className="flex flex-col justify-center items-center">
+          {/* Privacy Policy Section */}
+          <section className="w-full pt-40 pb-16">
+            <div className="max-w-4xl mx-auto px-4 md:px-6">
               <header className="text-center py-8">
-                <h1 className="text-stone-800 text-4xl font-[montserrat] font-semibold mb-10">Mitsurin Wagyu<br />Website Privacy Policy</h1>
+                <h1 className="text-stone-800 text-4xl font-[montserrat] font-semibold mb-10">
+                  Mitsurin Wagyu<br />Website Privacy Policy
+                </h1>
                 <p className="text-stone-800">Last updated November 20, 2025</p>
               </header>
-              <main className="px-2 md:px-6 pb-8 w-full max-w-4xl">
+              
+              <main className="w-full">
                 <PrivacyPolicyWrapper>
                   <Summary />
                   <TableOfContents />
@@ -142,24 +146,40 @@ export default function Privacy() {
                 </PrivacyPolicyWrapper>
               </main>
             </div>
-          </div>
-          <div className="relative flex flex-col justify-center items-center w-full h-auto px-6 md:mx-6 py-10 bg-navy-800 overflow-visible shrink-0 md:-top-0 text-white tracking-wide">
-            <div id="cookie-policy" className="text-center py-8 max-w-[60em]">
-              <h3 className="text-stone-800 text-4xl font-[montserrat] font-semibold mb-10">Mitsurin Wagyu<br />Website Cookie Policy</h3>
-              <p className="text-stone-800">Last updated November 20, 2025</p>
+          </section>
+
+          {/* Cookie Policy Section */}
+          <section className="w-full bg-navy-800 py-16">
+            <div className="max-w-4xl mx-auto px-4 md:px-6">
+              <header id="cookie-policy" className="text-center py-8">
+                <h3 className="text-stone-800 text-4xl font-[montserrat] font-semibold mb-10">
+                  Mitsurin Wagyu<br />Website Cookie Policy
+                </h3>
+                <p className="text-stone-800">Last updated November 20, 2025</p>
+              </header>
+              
+              <main className="w-full text-white">
+                <PrivacyPolicyWrapper>
+                  <Cookies />
+                </PrivacyPolicyWrapper>
+              </main>
             </div>
-            <PrivacyPolicyWrapper>
-              <Cookies />
-            </PrivacyPolicyWrapper>
-          </div>
-          <div className="relative flex flex-col justify-center self-center w-full max-w-[60em] h-auto px-4 pb-10 overflow-visible shrink-0 md:-top-0 md:mb-20 text-white font-avenir tracking-wide">
-            <div id="data-subject-request" className="text-center py-8">
-              <h4 className="text-stone-800 text-2xl font-[montserrat] font-semibold">Data Subject Request</h4>
+          </section>
+
+          {/* Data Subject Request Section */}
+          <section className="w-full py-16">
+            <div className="max-w-4xl mx-auto px-4 md:px-6">
+              <header id="data-subject-request" className="text-center py-8">
+                <h4 className="text-stone-800 text-2xl font-[montserrat] font-semibold">
+                  Data Subject Request
+                </h4>
+              </header>
+              
+              <main id="dpo-contact-form" className="w-full">
+                <PrivacyContactForm />
+              </main>
             </div>
-            <section id="dpo-contact-form" className='px-4 md:px-10'>
-              <PrivacyContactForm />
-            </section>
-          </div>
+          </section>
         </Suspense>
       </main>
     </div>

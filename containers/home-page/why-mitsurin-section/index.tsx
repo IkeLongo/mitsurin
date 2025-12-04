@@ -157,17 +157,17 @@ export default function WhyMitsurinSection() {
           {/* Right Column: 3D Card */}
           <div className="flex items-center justify-center">
             <CardContainer className="inter-var">
-              <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-zinc-800 dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+              <CardBody className="bg-zinc-800 relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] border-white/[0.2] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
                 <CardItem
                   translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
+                  className="text-xl font-bold text-white"
                 >
                   Premium Wagyu Experience
                 </CardItem>
                 <CardItem
                   as="p"
                   translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                  className="text-neutral-300 text-sm max-w-sm mt-2"
                 >
                   Discover the exceptional quality and flavor that makes Mitsurin Wagyu the finest choice for discerning beef connoisseurs.
                 </CardItem>
@@ -217,7 +217,7 @@ export default function WhyMitsurinSection() {
                 <div className="flex justify-between items-center mt-20">
                   <CardItem
                     translateZ={20}
-                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    className="px-4 py-2 rounded-xl text-xs font-normal text-white cursor-pointer hover:bg-gray-700 transition-colors"
                   >
                     <Link href="/our-beef">
                       Learn More →
@@ -225,7 +225,7 @@ export default function WhyMitsurinSection() {
                   </CardItem>
                   <CardItem
                     translateZ={20}
-                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold cursor-pointer hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
+                    className="px-4 py-2 rounded-xl bg-white text-black text-xs font-bold cursor-pointer hover:bg-gray-200 transition-colors"
                   >
                     <Link href="/contact">
                       Order Now

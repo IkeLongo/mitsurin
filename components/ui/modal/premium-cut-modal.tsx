@@ -272,7 +272,7 @@ export default function PremiumCutModal({ cut: initialCut, isOpen, onClose }: Pr
               {cut.cookingNotes && (
                 <div>
                   <h3 className="text-lg font-semibold text-primary-800 mb-2">Cooking Notes</h3>
-                  <div className="bg-black bg-opacity-5 rounded-lg p-4 border-l-4 border-primary-500">
+                  <div className="bg-black bg-opacity-5 rounded-lg p-4">
                     <p className="text-white-100 leading-relaxed" data-sanity={createDataAttribute({
                       ...createDataAttributeConfig,
                       id: cut._id,

@@ -33,32 +33,46 @@ export const QualityComparisonModal = ({
             left: position.x,
             top: position.y,
           }}
-          initial={{ opacity: 0, scale: 0.8, y: 10 }}
+          initial={{ opacity: 0, scale: 0.9, y: 15 }}
           animate={{ 
             opacity: 1, 
             scale: 1,
             y: 0
           }}
-          exit={{ opacity: 0, scale: 0.8, y: 10 }}
+          exit={{ opacity: 0, scale: 0.9, y: 15 }}
           transition={{ 
-            duration: 0.2, 
+            duration: 0.3, 
             ease: "easeOut"
           }}
         >
-          <div className="bg-black border-2 border-yellow-600 rounded-lg p-4 shadow-2xl w-[200px] transform -translate-x-1/2">
-            {/* Grade Title */}
-            <h3 className="text-yellow-600 text-lg font-bold font-[Montserrat] mb-2 text-center">
-              {grade}
-            </h3>
+          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-xl w-[240px] transform -translate-x-1/2 backdrop-blur-sm">
+            {/* Grade Title with Score Badge */}
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-primary-800 text-xl font-bold font-[Montserrat]">
+                {grade}
+              </h3>
+              <div className="bg-accent-dark text-white text-xs font-semibold px-2 py-1 rounded-full">
+                {score}
+              </div>
+            </div>
+            
+            {/* Divider */}
+            <div className="w-full h-px bg-gradient-to-r from-primary-800 to-accent-dark mb-3 opacity-30"></div>
             
             {/* Description */}
-            <p className="text-neutral-200 text-sm leading-relaxed mb-3 text-center">
+            <p className="text-gray-700 text-sm leading-relaxed font-medium">
               {description || gradeDescriptions[grade]}
             </p>
             
-            {/* Quality Score */}
-            <div className="text-neutral-200 text-sm font-semibold text-center">
-              Quality Score: {score}
+            {/* Quality Indicator */}
+            <div className="mt-3 flex items-center gap-2">
+              <span className="text-xs text-gray-500 font-medium">Quality Score:</span>
+              <div className="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-primary-800 to-accent-dark transition-all duration-500"
+                  style={{ width: `${score}%` }}
+                ></div>
+              </div>
             </div>
           </div>
         </motion.div>

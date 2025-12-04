@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
 interface SpinAnimationProps {
   src: string;
   alt: string;
@@ -13,14 +15,41 @@ export default function SpinAnimation({
   className = "w-10 h-10 md:w-12 md:h-12",
   delay = 0.5
 }: SpinAnimationProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once animation has triggered
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "50px"
+      }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <img 
+        ref={elementRef}
         src={src}
         alt={alt}
         className={className}
         style={{
-          animation: `spinY 2s ease-out ${delay}s forwards`,
+          animation: isVisible ? `spinY 2s ease-out ${delay}s forwards` : 'none',
           animationFillMode: 'forwards',
         }}
       />

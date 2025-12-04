@@ -180,7 +180,7 @@ export default function AboutSection() {
                     {/* Custom bullet point */}
                     <div className="mt-1.5 flex-shrink-0">
                       <Image
-                        src="/bullet-point.svg"
+                        src="/red-bullet-point.svg"
                         alt=""
                         width={16}
                         height={16}

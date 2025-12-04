@@ -161,7 +161,7 @@ export const CardImage = ({
 export const CardTitle = ({
   className,
   children,
-  textColor = "text-zinc-100",
+  textColor = "text-zinc-300",
 }: {
   className?: string;
   children: React.ReactNode;

@@ -72,7 +72,7 @@ export default function PackagesSection() {
               items={packages}
               className="py-0"
               styles={{
-                title: "text-xl lg:text-2xl",
+                title: "text-xl lg:text-2xl text-zinc-100",
                 learnMore: "text-accent-dark"
               }}
             />

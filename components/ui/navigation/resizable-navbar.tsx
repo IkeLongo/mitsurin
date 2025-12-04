@@ -8,12 +8,13 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 
 interface NavbarProps {
   children: React.ReactNode;
   className?: string;
+  forceVisible?: boolean;
 }
 
 interface NavBodyProps {
@@ -51,16 +52,22 @@ interface MobileNavMenuProps {
   onClose: () => void;
 }
 
-export const Navbar = ({ children, className }: NavbarProps) => {
+export const Navbar = ({ children, className, forceVisible = false }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
-  const [visible, setVisible] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(forceVisible);
+
+  useEffect(() => {
+    setVisible(forceVisible);
+  }, [forceVisible]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 100) {
+    if (forceVisible) {
+      setVisible(true);
+    } else if (latest > 100) {
       setVisible(true);
     } else {
       setVisible(false);
@@ -130,7 +137,7 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
       onMouseLeave={() => setHovered(null)}
       className={cn(
         "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition duration-200 lg:flex lg:space-x-2",
-        visible ? "text-stone-800 hover:text-stone-900" : "text-neutral-200 hover:text-neutral-100",
+        visible ? "text-stone-800 hover:text-stone-900" : "text-neutral-200 hover:text-stone-900",
         className,
       )}
     >
@@ -140,7 +147,7 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
           onClick={onItemClick}
           className={cn(
             "relative px-4 py-2 transition duration-200 font-semibold",
-            visible ? "text-stone-900 dark:text-stone-900" : "text-neutral-200 dark:text-neutral-200"
+            visible ? "text-stone-900 dark:text-stone-900" : "text-neutral-200"
           )}
           key={`link-${idx}`}
           href={item.link}
@@ -151,8 +158,8 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
               className={cn(
                 "absolute inset-0 h-full w-full rounded-full",
                 visible 
-                  ? "bg-gray-200 dark:bg-gray-200" 
-                  : "bg-gray-100 dark:bg-neutral-800"
+                  ? "bg-gray-200" 
+                  : "bg-neutral-800"
               )}
             />
           )}

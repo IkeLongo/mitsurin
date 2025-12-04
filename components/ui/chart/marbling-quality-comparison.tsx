@@ -8,23 +8,23 @@ import { QualityComparisonModal } from '@/components/ui/modal/quality-comparisio
 const finalData = [
   {
     name: 'SELECT',
-    score: 25,
-    fill: '#374151' // gray-700
+    score: 23,
+    fill: '#374151' // gray-700 - darkest gray
   },
   {
     name: 'CHOICE', 
-    score: 50,
-    fill: '#9CA3AF' // gray-400
+    score: 47,
+    fill: '#6B7280' // gray-500 - medium gray
   },
   {
     name: 'PRIME',
-    score: 80,
-    fill: '#630710' // red-900
+    score: 79,
+    fill: '#9CA3AF' // gray-400 - lightest gray
   },
   {
     name: 'WAGYU',
     score: 100,
-    fill: '#BF8136' // accent-dark
+    fill: '#630710' // primary-800 - Mitsurin brand red
   }
 ];
 
@@ -186,7 +186,7 @@ export default function MarblingQualityComparison() {
             y={0}
             width={width + 20}
             height="100%"
-            fill="rgba(251, 191, 36, 0.2)" // Stronger yellow background
+            fill="rgba(249, 250, 251, 0.15)" // Off-white background with low opacity
             rx={4}
             ry={4}
           />

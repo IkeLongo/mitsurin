@@ -79,8 +79,8 @@ export function AnimatedProgressBar({
   return (
     <div ref={ref} className="space-y-1">
       <div className="flex justify-between text-sm">
-        <span className="text-neutral-600 dark:text-neutral-300">{label}</span>
-        <span className="text-neutral-600 dark:text-neutral-300 font-semibold">{value}</span>
+        <span className="text-neutral-300 dark:text-neutral-300">{label}</span>
+        <span className="text-neutral-300 dark:text-neutral-300 font-semibold">{value}</span>
       </div>
       <div className="w-full bg-white rounded-full h-2 overflow-hidden">
         <div 

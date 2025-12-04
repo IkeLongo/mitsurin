@@ -19,7 +19,7 @@ export default function ReadyToReserveSection() {
       >
         {/* Main Heading */}
         <ScrollAnimationWrapper animationType="slideUp">
-          <h4 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
+          <h4 className="text-4xl sm:text-5xl text-white font-bold font-[Montserrat] leading-tight">
             Ready to Reserve?
           </h4>
         </ScrollAnimationWrapper>
@@ -48,14 +48,14 @@ export default function ReadyToReserveSection() {
         </ScrollAnimationWrapper>
 
         {/* Yellow Horizontal Line */}
-        <div className="w-full h-0.5 bg-accent-dark my-20" />
+        <div className="w-full h-0.5 bg-accent-dark my-10" />
 
         <ScrollAnimationWrapper animationType="fade" delay={1.0}>
-          <p>Learn More About Wagyu</p>
+          <p className="text-white">Learn More About Wagyu</p>
         </ScrollAnimationWrapper>
         
         <ScrollAnimationWrapper animationType="fade" delay={1.2}>
-          <p className="text-accent-dark mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
+          <p className="text-white mt-4"><a href="https://wagyu.org" target="_blank" rel="noopener noreferrer">American Wagyu Association — wagyu.org</a></p>
         </ScrollAnimationWrapper>
 
       </section>

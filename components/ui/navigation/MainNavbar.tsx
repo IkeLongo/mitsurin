@@ -22,12 +22,13 @@ export default function MainNavbar({
     { name: "Why Wagyu", link: "/why-wagyu" },
     { name: "Availability", link: "/availability" },
   ],
-}: { items?: NavItem[] }) {
+  forceVisible = false,
+}: { items?: NavItem[]; forceVisible?: boolean }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="relative w-full">
-      <Navbar>
+      <Navbar forceVisible={forceVisible}>
         {/* Desktop */}
         <NavBody>
           <NavbarLogo />

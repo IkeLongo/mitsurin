@@ -57,21 +57,6 @@ export default function HealthBenefitsSection() {
 
           </div>
 
-          {/* Right: Image */}
-          {/* <ScrollAnimationWrapper animationType="slideLeft" delay={0.2}>
-            <div className="relative flex items-center justify-center">
-              <Image
-                src="/fatty-juicy-wagyu.webp"
-                alt="Healthy Wagyu beef showcasing nutritional benefits"
-                width={500}
-                height={600}
-                className="object-cover rounded-2xl"
-                style={{ borderRadius: '1rem' }}
-                priority
-              />
-            </div>
-          </ScrollAnimationWrapper> */}
-
           {/* Image */}
           <ScrollAnimationWrapper
             animationType="slideLeft"

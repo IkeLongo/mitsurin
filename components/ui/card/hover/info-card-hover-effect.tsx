@@ -54,7 +54,7 @@ export const InfoHoverEffect = ({
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 h-full w-full bg-blue-100 block rounded-xl pointer-events-none"
+                  className="absolute inset-0 h-full w-full bg-primary-800 opacity-10 block rounded-xl pointer-events-none"
                   layoutId="infoHoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{
@@ -100,7 +100,7 @@ export const InfoCard = ({
   return (
     <div
       className={cn(
-        "rounded-xl h-full w-full p-6 overflow-hidden bg-white border-2 border-yellow-600 relative z-20 flex flex-col min-h-[140px]",
+        "rounded-xl h-full w-full p-8 overflow-hidden bg-white border-2 border-yellow-600 group-hover:border-transparent relative z-20 flex flex-col min-h-[160px]",
         className
       )}
     >
@@ -119,7 +119,7 @@ export const InfoCardPercentage = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className={cn("text-4xl font-bold text-red-900 mb-3 text-left", className)}>
+    <div className={cn("text-5xl font-bold text-red-900 mb-4 text-left", className)}>
       {children}
     </div>
   );
@@ -149,7 +149,7 @@ export const InfoCardDescription = ({
   return (
     <p
       className={cn(
-        "text-gray-700 text-sm leading-relaxed text-left flex-1 pr-4",
+        "text-gray-700 text-base leading-relaxed text-left flex-1 pr-2 font-medium",
         className
       )}
     >

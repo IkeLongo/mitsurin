@@ -22,7 +22,7 @@ export default function FAQSection() {
     },
     {
       question: "Do you offer delivery?",
-      answer: "Yes! We offer local delivery within the Hondo, Texas area. For customers outside our delivery zone, we can arrange pickup at our ranch. Contact us to discuss your specific needs."
+      answer: "Yes! We provide free delivery within 100 miles of Hondo, Texas. For customers beyond 100 miles, delivery fees apply based on distance. We can also arrange pickup at our ranch. Contact us to discuss your specific location and delivery options."
     },
     {
       question: "What payment methods do you accept?",

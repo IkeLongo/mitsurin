@@ -21,9 +21,9 @@ export default function WhyMitsurinSection() {
       >
         {/* Main Heading */}
         <ScrollAnimationWrapper animationType="slideUp">
-          <h1 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight">
+          <h3 className="text-4xl sm:text-5xl font-bold font-[Montserrat] leading-tight text-white">
             Why <span className="text-accent-dark">"Mitsurin"</span>
-          </h1>
+          </h3>
         </ScrollAnimationWrapper>
 
         {/* Cards */}
@@ -37,7 +37,7 @@ export default function WhyMitsurinSection() {
             <HoverEffect
               styles={{
                 hover:"bg-gray-50",
-                title:"text-2xl"
+                title:"text-2xl text-zinc-200"
               }}
               items={packages}
               enableLinks={false}
