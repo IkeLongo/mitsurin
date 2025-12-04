@@ -21,7 +21,7 @@ export default function ExperienceTheDifferenceSection() {
         {/* Main Heading */}
         <ScrollAnimationWrapper animationType="slideUp">
           <h1 className="text-4xl sm:text-5xl text-white font-bold font-[Montserrat] leading-tight">
-            Experience the Difference with <span className="text-accent-dark">Wagyu</span>
+            Experience the Difference with <span className="">Wagyu</span>
           </h1>
         </ScrollAnimationWrapper>
 
