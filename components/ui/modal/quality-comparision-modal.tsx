@@ -28,7 +28,7 @@ export const QualityComparisonModal = ({
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed z-50 pointer-events-none"
+          className="fixed z-50 pointer-events-none md:static"
           style={{
             left: position.x,
             top: position.y,
@@ -45,7 +45,7 @@ export const QualityComparisonModal = ({
             ease: "easeOut"
           }}
         >
-          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-xl w-[240px] transform -translate-x-1/2 backdrop-blur-sm">
+          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-xl w-[240px] transform -translate-x-1/2 backdrop-blur-sm fixed md:relative left-1/2 top-1/2 md:left-0 md:top-0 -translate-y-1/2 md:translate-y-0">
             {/* Grade Title with Score Badge */}
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-primary-800 text-xl font-bold font-[Montserrat]">

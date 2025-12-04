@@ -83,7 +83,7 @@ const cardData = [
         <MapPin className="text-[#bf8136]" size={32} />
       </div>
     ),
-    alt: "Healthy Fats Benefits",
+    alt: "Mitsurin Wagyu Ranch Location",
   },
   {
     title: "Email",
@@ -94,7 +94,7 @@ const cardData = [
         <Mail className="text-[#bf8136]" size={32} />
       </div>
     ),
-    alt: "Lower Saturated Fat Content",
+    alt: "Contact Email Address",
   },
   {
     title: "Phone",
@@ -105,6 +105,6 @@ const cardData = [
         <Phone className="text-[#bf8136]" size={32} />
       </div>
     ),
-    alt: "Omega-3 Fatty Acids",
+    alt: "Contact Phone Number",
   }
 ];
