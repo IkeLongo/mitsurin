@@ -57,7 +57,7 @@ export default function RaisedWithPurposeSection() {
                 <div className="flex-1 pl-4 md:pl-6 lg:pl-8 xl:pl-12 pr-0 xl:pr-20">
                   <p className="text-gray-700 leading-relaxed text-lg">
                     Meet the ranch and philosophy behind Mitsurin Wagyu Beef,
-                    founded by Dr. Micheal Selva to raise the world's best beef in Texas.
+                    founded by Dr. Michael Selva to raise the world's best beef in Texas.
                   </p>
                 </div>
               </div>

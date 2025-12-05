@@ -48,7 +48,7 @@ export default function WhatIsWagyuSection() {
               <p className="text-stone-950 text-lg leading-relaxed">
                 Wagyu represents centuries of selective breeding and meticulous care, 
                 resulting in beef that's renowned worldwide for its exceptional marbling, 
-                buttery texture, and rich umami flavor. The term "Wagyu" literally means 
+                buttery texture, and rich savory flavor. The term "Wagyu" literally means 
                 "Japanese cow," and these cattle are raised using traditional methods that 
                 prioritize animal welfare and stress-free environments.
               </p>
@@ -109,7 +109,7 @@ export default function WhatIsWagyuSection() {
               <p className="text-stone-950 text-lg leading-relaxed">
                 Wagyu represents centuries of selective breeding and meticulous care, 
                 resulting in beef that's renowned worldwide for its exceptional marbling, 
-                buttery texture, and rich umami flavor. The term "Wagyu" literally means 
+                buttery texture, and rich savory flavor. The term "Wagyu" literally means 
                 "Japanese cow," and these cattle are raised using traditional methods that 
                 prioritize animal welfare and stress-free environments.
               </p>

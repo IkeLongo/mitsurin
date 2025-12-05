@@ -28,7 +28,7 @@ const defaultFaqs: FAQ[] = [
   {
     question: "Is Mitsurin Wagyu worth the investment compared to regular beef?",
     answer:
-      "Absolutely. Wagyu beef offers an unmatched dining experience with its rich marbling, buttery texture, and intense umami flavor. When you purchase from Mitsurin, you're getting restaurant-quality beef at a fraction of what you'd pay dining out, plus the convenience of having premium beef available whenever you want it.",
+      "Absolutely. Wagyu beef offers an unmatched dining experience with its rich marbling, buttery texture, and incredibly deep, savory flavor. When you purchase from Mitsurin, you're getting restaurant-quality beef at a fraction of what you'd pay dining out, plus the convenience of having premium beef available whenever you want it.",
   },
   {
     question: "How do I properly cook Wagyu beef to get the best results?",

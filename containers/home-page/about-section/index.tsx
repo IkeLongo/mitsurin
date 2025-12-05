@@ -169,7 +169,7 @@ export default function AboutSection() {
               initialY={40}
             >
               <p className="mt-6 text-stone-950 text-lg">
-                Known for its superior marbling, velvety texture, and rich umami flavor.{" "}
+                Known for its superior marbling, velvety texture, and rich savory flavor.{" "}
                 <strong>Wagyu beef is prized worldwide.</strong> At Mitsurin, we raise
                 full-blooded Japanese Wagyu, ensuring purity, consistency, and distinction.
               </p>

@@ -31,7 +31,7 @@ const features: FeatureCard[] = [
   },
   {
     title: "Unmatched Flavor Profile",
-    description: "Rich umami taste and buttery texture that melts in your mouth - a true culinary experience.",
+    description: "Rich savory taste and buttery texture that melts in your mouth - a true culinary experience.",
     icon: ChefHat,
   },
 ];
