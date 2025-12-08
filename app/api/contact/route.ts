@@ -76,7 +76,7 @@ export async function POST(req: Request) {
                       padding: 32px 24px 24px;
                       text-align: center;">
             <img
-              src="https://mitsurinwagyu.com/mitsurin-horizontal-logo-white.png"
+              src="https://mitsurinwagyu.com/mitsurin-horizontal-logo-white.svg"
               alt="Mitsurin Wagyu Beef"
               width="120"
               height="auto"
