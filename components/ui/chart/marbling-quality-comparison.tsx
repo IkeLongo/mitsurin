@@ -151,21 +151,24 @@ export default function MarblingQualityComparison() {
     
     const handleMouseEnter = (event: React.MouseEvent) => {
       const rect = event.currentTarget.getBoundingClientRect();
+      const chartContainer = chartRef.current?.getBoundingClientRect();
       
       // Set hovered column for background highlighting
       setHoveredColumn(payload.name);
       
-      // Position modal above the center of each bar
-      const modalX = rect.left + (rect.width / 2) - 100; // Center horizontally (assuming 200px modal width)
-      const modalY = rect.top - 120; // Fixed distance above the bar
+      if (chartContainer) {
+        // Position modal in the middle of the chart, aligned with the hovered column
+        const modalX = rect.left + (rect.width / 2); // Align with center of hovered column
+        const modalY = chartContainer.top + (chartContainer.height / 2); // Center vertically in chart
       
-      setModalState({
-        isVisible: true,
-        position: { x: modalX, y: modalY },
-        grade: payload.name,
-        score: payload.score,
-        description: ''
-      });
+        setModalState({
+          isVisible: true,
+          position: { x: modalX, y: modalY },
+          grade: payload.name,
+          score: payload.score,
+          description: ''
+        });
+      }
     };
 
 
