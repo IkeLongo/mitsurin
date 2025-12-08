@@ -27,7 +27,7 @@ const meatCards: MeatCard[] = [
 ];
 
 const bullets = [
-  "100% Organic Meat",
+  "100% Full-Blooded Wagyu",
   "No Hormones or Antibiotics",
   "Pasture-Raised on Texas Grasslands",
   "Pure Japanese Genetics",
