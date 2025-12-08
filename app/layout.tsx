@@ -100,6 +100,13 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon Links */}
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* DNS and Video Preloads */}
         <link rel="dns-prefetch" href="https://stream.mux.com" />
         <link rel="preconnect" href="https://stream.mux.com" crossOrigin="anonymous" />
         <link rel="preload" as="video" href="https://stream.mux.com/cB7VJ1hTqPrBTmnpDTRV2hMbUom4aPaqPHJXIhIcTps.m3u8" />
