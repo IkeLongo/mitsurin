@@ -48,9 +48,12 @@ export default function DiscoverSection() {
 
             <div className="flex flex-col items-center justify-center gap-6">
               {/* Button */}
-              <button className="bg-white hover:bg-gray-200 text-primary-800 font-semibold px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-                Explore Our Products
-              </button>
+              <a
+                href="/our-beef"
+                className="bg-white hover:bg-gray-200 text-primary-800 font-semibold px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+              >
+                Learn About Our Beef
+              </a>
             </div>
           </ScrollAnimationWrapper>
           
