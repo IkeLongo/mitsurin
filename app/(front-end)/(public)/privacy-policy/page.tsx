@@ -1,27 +1,27 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 // Privacy Policy Components
-import { PrivacyPolicyWrapper } from '../../containers/privacy-policy-page/privacy-policy-wrapper';
-import { Summary } from '../../containers/privacy-policy-page/summary-section';
-import { TableOfContents } from '../../containers/privacy-policy-page/table-of-contents-section';
-import { InfoWeCollect } from '../../containers/privacy-policy-page/information-we-collect-section';
-import { ProcessYourInfo } from '../../containers/privacy-policy-page/processing-your-information-section';
-import { LegalBasis } from '../../containers/privacy-policy-page/legal-basis-section';
-import { SharePersonalInfo } from '../../containers/privacy-policy-page/share-your-personal-information-section';
-import { ThirdPartyWebsites } from '../../containers/privacy-policy-page/third-party-websites-section';
-import { CookieTrackingTechnology } from '../../containers/privacy-policy-page/cookie-tracking-technology-section';
-import { SocailLogins } from '../../containers/privacy-policy-page/social-logins-section';
-import { InfoTranIntl } from '../../containers/privacy-policy-page/information-transferred-internationally-section';
-import { KeepInfo } from '../../containers/privacy-policy-page/how-long-we-keep-information-section';
-import { KeepInfoSafe } from '../../containers/privacy-policy-page/keeping-your-information-safe-section';
-import { MinorInfo } from '../../containers/privacy-policy-page/minor-information-section';
-import { PrivacyRights } from '../../containers/privacy-policy-page/privacy-rights-section';
-import { DoNotTrack } from '../../containers/privacy-policy-page/do-not-track-section';
-import { CaliforniaInformation } from '../../containers/privacy-policy-page/california-information-section';
-import { Virginia } from '../../containers/privacy-policy-page/virginia-information-section';
-import { UpdatesToNotice } from '../../containers/privacy-policy-page/updates-to-notice-section';
-import { ContactAboutNotice } from '../../containers/privacy-policy-page/contact-about';
-import Cookies from '../../containers/privacy-policy-page/cookie-section';
+import { PrivacyPolicyWrapper } from '../../../../containers/privacy-policy-page/privacy-policy-wrapper';
+import { Summary } from '../../../../containers/privacy-policy-page/summary-section';
+import { TableOfContents } from '../../../../containers/privacy-policy-page/table-of-contents-section';
+import { InfoWeCollect } from '../../../../containers/privacy-policy-page/information-we-collect-section';
+import { ProcessYourInfo } from '../../../../containers/privacy-policy-page/processing-your-information-section';
+import { LegalBasis } from '../../../../containers/privacy-policy-page/legal-basis-section';
+import { SharePersonalInfo } from '../../../../containers/privacy-policy-page/share-your-personal-information-section';
+import { ThirdPartyWebsites } from '../../../../containers/privacy-policy-page/third-party-websites-section';
+import { CookieTrackingTechnology } from '../../../../containers/privacy-policy-page/cookie-tracking-technology-section';
+import { SocailLogins } from '../../../../containers/privacy-policy-page/social-logins-section';
+import { InfoTranIntl } from '../../../../containers/privacy-policy-page/information-transferred-internationally-section';
+import { KeepInfo } from '../../../../containers/privacy-policy-page/how-long-we-keep-information-section';
+import { KeepInfoSafe } from '../../../../containers/privacy-policy-page/keeping-your-information-safe-section';
+import { MinorInfo } from '../../../../containers/privacy-policy-page/minor-information-section';
+import { PrivacyRights } from '../../../../containers/privacy-policy-page/privacy-rights-section';
+import { DoNotTrack } from '../../../../containers/privacy-policy-page/do-not-track-section';
+import { CaliforniaInformation } from '../../../../containers/privacy-policy-page/california-information-section';
+import { Virginia } from '../../../../containers/privacy-policy-page/virginia-information-section';
+import { UpdatesToNotice } from '../../../../containers/privacy-policy-page/updates-to-notice-section';
+import { ContactAboutNotice } from '../../../../containers/privacy-policy-page/contact-about';
+import Cookies from '../../../../containers/privacy-policy-page/cookie-section';
 import PrivacyContactForm from '@/containers/privacy-policy-page/privacy-contact-form';
 
 // These components need to be created or imported from elsewhere

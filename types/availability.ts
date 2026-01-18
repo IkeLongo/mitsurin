@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "next-sanity"
+
 export type Availability = {
   title: string
   pageTitle?: string
@@ -8,5 +10,5 @@ export type Availability = {
   status: 'available' | 'limited' | 'soldOut'
   estimatedRestockDate?: string
   lastUpdated?: string
-  publicMessage?: string
+  publicMessage?: PortableTextBlock[]
 }

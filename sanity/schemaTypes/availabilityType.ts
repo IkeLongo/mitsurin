@@ -74,23 +74,14 @@ export const availabilityType = defineType({
       },
     }),
 
-    // You *can* create your own lastUpdated field, but Sanity already gives `_updatedAt`.
-    // Here we set an initial value on create; later updates are typically handled with `_updatedAt`.
-    defineField({
-      name: 'lastUpdated',
-      title: 'Last Updated',
-      type: 'datetime',
-      readOnly: true,
-      description: 'System timestamp when this doc was last changed. Consider using `_updatedAt` from Sanity instead.',
-      initialValue: () => new Date().toISOString(),
-    }),
+    // Use Sanity's built-in _updatedAt field for last updated timestamp.
 
     defineField({
       name: 'publicMessage',
       title: 'Public Message',
-      type: 'text',
-      rows: 3,
-      description: 'Custom note your customers will see (e.g., “Next shipment arriving mid-March”).',
+      type: 'array',
+      of: [{ type: 'block' }],
+      description: 'Custom note your customers will see (e.g., “Next shipment arriving mid-March”). Supports rich text formatting.',
     }),
   ],
 })

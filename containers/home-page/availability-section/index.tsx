@@ -31,7 +31,7 @@ const ladderItems = [
 ];
 
 const galleryImages = [
-  { src: "/steak-gallery-8.webp", alt: "Wagyu beef cut 8", className: "rounded-xl" },
+  { src: "/steak-gallery-9.webp", alt: "Wagyu beef cut 8", className: "rounded-xl" },
   { src: "/steak-gallery-1.webp", alt: "Wagyu beef cut 1", className: "rounded-xl" },
   { src: "/steak-gallery-2.webp", alt: "Wagyu beef cut 2", className: "rounded-xl" },
   { src: "/steak-gallery-5.webp", alt: "Wagyu beef cut 5", className: "rounded-xl" },

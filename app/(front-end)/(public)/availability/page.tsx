@@ -1,7 +1,9 @@
+
 import CurrentAvailabilityCard from "@/containers/availability-page/current-availability-card";
 import SanityAvailabilityHero from "@/containers/availability-page/heading-section";
 import ReserveYourWagyuSection from "@/containers/availability-page/reserve-your-wagyu-section";
-import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
+import { sanityFetch } from '@/sanity/lib/fetch';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'Current Availability | Mitsurin Wagyu - Check Texas Wagyu Stock',
@@ -26,6 +28,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Availability() {
+  // Fetch the _updatedAt field from Sanity
+  const data = await sanityFetch<any>({
+    query: `*[_type == "availabilityType"][0]{ _updatedAt }`,
+    revalidate: 10
+  });
+  const updatedAt = data?._updatedAt ? new Date(data._updatedAt).toLocaleString() : null;
+
   return (
     <div className="font-sans min-h-screen bg-gray-50">
       <main className="w-full mx-auto">
@@ -34,7 +43,12 @@ export default async function Availability() {
 
         {/* Availability Data Section */}
         <section className="py-16 md:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            {updatedAt && (
+              <div className="w-none lg:w-2xl max-w-2xl mx-auto text-sm text-gray-500 mb-4 text-left">
+                Last updated: {updatedAt}
+              </div>
+            )}
             <CurrentAvailabilityCard />
           </div>
         </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react'
-import { stegaClean, createDataAttribute } from 'next-sanity'
+import { stegaClean, createDataAttribute, PortableText } from 'next-sanity'
 import { useOptimistic } from 'next-sanity/hooks'
 import PremiumCutModal from '@/components/ui/modal/premium-cut-modal'
 import CowPurchaseOptionModal from '@/components/ui/modal/cow-purchase-option-modal'
@@ -331,10 +331,13 @@ export default function CurrentAvailabilityClient({ availability, premiumCuts: i
         )}
 
         {publicMessage && (
-          <div className="text-center p-4 bg-primary-800 rounded-lg">
-            <p className="whitespace-pre-wrap text-lg text-white leading-relaxed" data-sanity-edit-target>
-              {publicMessage}
-            </p>
+          <div className="text-left p-4 bg-primary-800 rounded-lg">
+            <div
+              className="whitespace-pre-wrap text-lg text-white leading-relaxed"
+              data-sanity-edit-target
+            >
+              <PortableText value={publicMessage} />
+            </div>
           </div>
         )}
 
