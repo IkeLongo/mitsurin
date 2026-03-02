@@ -58,7 +58,7 @@ export const CarouselCard = ({
       </div>
 
       {/* Row 2: Title */}
-      <div className="h-24 flex items-center justify-center mb-6">
+      <div className="h-12 md:h24 flex items-center justify-center mb-6">
         <h4 className={cn(
           `${mergedStyles.titleText} text-4xl font-bold font-[Montserrat] text-center leading-tight`
         )}>

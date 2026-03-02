@@ -2,6 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { ToastContainer } from 'react-toastify';
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 
 import "./globals.css";
 import "@mux/mux-player";
@@ -58,17 +59,9 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-        {/* <ConditionalLayout>
+        <AnalyticsProvider>
           {children}
-          <SanityLive />
-          {(await draftMode()).isEnabled && (
-            <>
-              <DisableDraftMode />
-              <VisualEditing />
-            </>
-          )}
-        </ConditionalLayout> */}
-        {children}
+        </AnalyticsProvider>
         <ToastContainer />
       </body>
     </html>

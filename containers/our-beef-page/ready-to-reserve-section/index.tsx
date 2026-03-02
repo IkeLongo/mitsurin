@@ -1,6 +1,7 @@
 
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 import Link from "next/link";
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 
 export default function ReadyToReserveSection() {
   return (
@@ -33,11 +34,14 @@ export default function ReadyToReserveSection() {
 
         {/* Button */}
         <ScrollAnimationWrapper animationType="slideUp" delay={0.4}>
-          <Link href="/contact">
-            <button className="border-2 bg-white border-white hover:bg-gray-200 text-primary-800 font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-              Contact Us to Reserve Your Share
-            </button>
-          </Link>
+          <div className="mt-10">
+            <TrackedCTA
+              href="/contact"
+              label="Contact Us to Reserve Your Share"
+              className="border-2 bg-white border-white hover:bg-gray-200 text-primary-800 font-semibold px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+              location="Our Beef - Ready to Reserve Section"
+            />
+          </div>
         </ScrollAnimationWrapper>
 
         {/* Description */}

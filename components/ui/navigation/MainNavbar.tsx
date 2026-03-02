@@ -12,6 +12,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/navigation/resizable-navbar";
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 
 type NavItem = { name: string; link: string };
 
@@ -35,7 +36,11 @@ export default function MainNavbar({
           <NavItems items={items} />
           <div className="flex items-center gap-4">
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-            <NavbarButton variant="primary" href="/contact">Contact Us</NavbarButton>
+            <TrackedCTA
+              href="/contact"
+              label="Contact Us"
+              className="px-4 py-2 rounded-md bg-white button text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset"
+            />
           </div>
         </NavBody>
 
@@ -64,21 +69,13 @@ export default function MainNavbar({
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              {/* <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton> */}
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
+              <TrackedCTA
                 href="/contact"
-              >
-                Contact Us
-              </NavbarButton>
+                label="Contact Us"
+                className="w-full px-4 py-2 rounded-md bg-white button text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset"
+                // If you want to close the menu on click:
+                onClick={() => setIsMobileMenuOpen(false)}
+              />           
             </div>
           </MobileNavMenu>
         </MobileNav>

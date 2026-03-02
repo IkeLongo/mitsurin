@@ -1,7 +1,7 @@
 
 
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
-import Link from "next/link";
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 
 export default function TheMitsurinDifferenceSection() {
   return (
@@ -31,11 +31,12 @@ export default function TheMitsurinDifferenceSection() {
                 Discover why our Wagyu beef stands apart, learn about our available cuts, or get in touch to place your order.
               </p>
               
-              <Link href="/contact">
-                <button className="bg-primary-800 hover:bg-primary-900 text-white-50 font-semibold px-6 py-3 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:cursor-pointer">
-                  Get in Touch
-                </button>
-              </Link>
+              <TrackedCTA
+                href="/contact"
+                label="Get in Touch"
+                className="bg-primary-800 hover:bg-primary-900 text-white-50 font-semibold px-6 py-3 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:cursor-pointer"
+                location="Our Story - Mitsurin Difference Section"
+              />
             </div>
           </ScrollAnimationWrapper>
           

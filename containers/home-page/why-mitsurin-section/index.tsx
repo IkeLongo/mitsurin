@@ -9,6 +9,7 @@ import { Dna, Leaf, ChefHat } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 
 // Import Aceternity UI 3D Card Components
 import {
@@ -227,9 +228,12 @@ export default function WhyMitsurinSection() {
                     translateZ={20}
                     className="px-4 py-2 rounded-xl bg-white text-black text-xs font-bold cursor-pointer hover:bg-gray-200 transition-colors"
                   >
-                    <Link href="/contact">
-                      Order Now
-                    </Link>
+                    <TrackedCTA
+                      href="/contact"
+                      label="Order Now"
+                      className="w-full h-full"
+                      location="Home - Why Choose Mitsurin Section"
+                    />
                   </CardItem>
                 </div>
               </CardBody>

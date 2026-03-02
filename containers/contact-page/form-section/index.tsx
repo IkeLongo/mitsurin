@@ -4,6 +4,7 @@ import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from 'react-toastify';
 import { cn } from "@/lib/utils";
+import { useTrack } from "@/components/analytics/AnalyticsProvider";
 
 import { ContactSchema, type ContactInput } from "@/lib/contact-schema";
 import { Label } from "@/components/ui/input/label";
@@ -16,6 +17,8 @@ export default function SignupFormDemo() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [premiumCuts, setPremiumCuts] = useState<PremiumCut[]>([]);
   const [cutsLoading, setCutsLoading] = useState(true);
+
+  const { track } = useTrack();
 
   // Fetch premium cuts on component mount
   useEffect(() => {
@@ -62,6 +65,12 @@ export default function SignupFormDemo() {
   // Fix: Use SubmitHandler type for proper typing
   const onSubmit: SubmitHandler<ContactInput> = async (values) => {
     setStatus("submitting");
+
+    // Optional: track submit attempt (NOT a conversion)
+    track("contact_form_submit_attempt", {
+      location: "Contact Page",
+    });
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -70,51 +79,26 @@ export default function SignupFormDemo() {
       });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error ?? "Failed");
-
-      toast.success('Thanks! Your message has been sent.', {
+      track("contact_form_submit", {
+        location: "Contact Page",
+      });
+      toast.success("Thanks! Your message has been sent.", {
         position: "bottom-right",
       });
       reset();
       setStatus("success");
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
-      toast.error('Something went wrong. Please try again.', {
+      track("contact_form_submit_error", {
+        location: "Contact Page",
+        message: e?.message ?? "unknown",
+      });
+      toast.error("Something went wrong. Please try again.", {
         position: "bottom-right",
       });
       setStatus("error");
     }
   };
-
-
-  // const onSubmit = async (values: ContactInput) => {
-  //   setStatus("submitting");
-  //   try {
-  //     const res = await fetch("/api/contact", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(values),
-  //     });
-  //     const json = await res.json();
-  //     if (!res.ok || !json.ok) throw new Error(json.error ?? "Failed");
-
-  //     toast.success('Thanks! Your message has been sent.', {
-  //       position: "bottom-right",
-  //     });
-  //     reset();
-  //     setStatus("success");
-  //   } catch (e) {
-  //     console.error(e);
-  //     toast.error('Something went wrong. Please try again.', {
-  //       position: "bottom-right",
-  //     });
-  //     setStatus("error");
-  //   }
-  // };
-
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   console.log("Form submitted");
-  // };
 
   return (
     <div className="shadow-input mx-auto w-full max-w-md bg-white p-4 rounded-2xl md:p-8 dark:bg-white">

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
 import BackgroundVideo from 'next-video/background-video';
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 
 export default function JapaneseGeneticsSection() {
   return (
@@ -82,9 +83,12 @@ export default function JapaneseGeneticsSection() {
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper animationType="fade" delay={0.9}>
               <div className="pt-4">
-                <Link href="/contact" className="inline-block bg-primary-800 hover:bg-primary-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
-                  Inquire Today
-                </Link>
+                <TrackedCTA
+                  href="/contact"
+                  label="Inquire Today"
+                  className="inline-block bg-primary-800 hover:bg-primary-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  location="Home - Japanese Genetics Section (mobile)"
+                />
               </div>
             </ScrollAnimationWrapper>
           </div>
@@ -185,9 +189,12 @@ export default function JapaneseGeneticsSection() {
             {/* Button */}
             <ScrollAnimationWrapper animationType="fade" delay={0.9}>
               <div className="pt-4">
-                <Link href="/contact" className="inline-block bg-primary-800 hover:bg-primary-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
-                  Inquire Today
-                </Link>
+                <TrackedCTA
+                  href="/contact"
+                  label="Inquire Today"
+                  className="inline-block bg-primary-800 hover:bg-primary-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  location="Home - Japanese Genetics Section (desktop)"
+                />
               </div>
             </ScrollAnimationWrapper>
           </div>

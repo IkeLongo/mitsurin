@@ -1,6 +1,6 @@
 
 import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-wrapper";
-import Link from "next/link";
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 
 export default function ExperienceTheDifferenceSection() {
   return (
@@ -34,11 +34,14 @@ export default function ExperienceTheDifferenceSection() {
 
         {/* Button */}
         <ScrollAnimationWrapper animationType="slideUp" delay={0.4}>
-          <Link href="/contact">
-            <button className="border-2 border-white hover:bg-gray-200/25 text-white font-semibold mt-10 px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer">
-              Contact Us
-            </button>
-          </Link>
+          <div className="mt-10">
+            <TrackedCTA
+              href="/contact"
+              label="Contact Us"
+              className="border-2 border-white hover:bg-gray-200/25 text-white font-semibold px-6 py-3 rounded-lg text-md lg:text-lg transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+              location="Why Wagyu - Experience the Difference Section"
+            />
+          </div>
         </ScrollAnimationWrapper>
 
         <div className="w-full h-0.5 bg-accent-dark my-10" />

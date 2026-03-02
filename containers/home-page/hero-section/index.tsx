@@ -7,6 +7,7 @@ import ScrollAnimationWrapper from "@/components/ui/animation/scroll-animation-w
 import BackgroundVideo from 'next-video/background-video';
 import VideoPreloader from '@/components/ui/video/video-preloader';
 import { VideoOptimizer } from '@/lib/video-optimizer';
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 
 export default function HeroSection() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -134,11 +135,14 @@ export default function HeroSection() {
           delay={0.9}
           initialY={30}
         >
-          <div className="pt-4">
-              <Link href="/our-story" className="inline-block bg-primary-500 hover:bg-primary-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
-                About Mitsurin
-              </Link>
-            </div>
+        <div className="pt-4">
+          <TrackedCTA
+            href="/contact"
+            label="Order Yours Today"
+            location="Hero"
+            className="inline-block bg-primary-500 hover:bg-primary-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+          />
+        </div>
         </ScrollAnimationWrapper>
       </section>
     </div>

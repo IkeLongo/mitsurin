@@ -1,3 +1,5 @@
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
+
 export default function ReserveYourWagyuSection() {
   return (
     <section className="py-12 bg-white">
@@ -19,12 +21,12 @@ export default function ReserveYourWagyuSection() {
           <p className="text-gray-600 mb-6">
             Contact us today to secure your premium Wagyu beef and learn about our available cuts.
           </p>
-          <a 
+          <TrackedCTA
             href="/contact"
+            label="Contact Us to Reserve"
             className="inline-block bg-red-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-800 transition-colors duration-300"
-          >
-            Contact Us to Reserve
-          </a>
+            location="Availability - Reserve Your Wagyu Section"
+          />
         </div>
       </div>
     </section>

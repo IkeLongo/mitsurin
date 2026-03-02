@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 
 interface FooterLink {
   href: string;
@@ -120,25 +121,35 @@ export default function Footer({
         </div>
 
         {/* Dynamic Sections */}
-        {sections.map((section, index) => (
-          <div key={index} className="p-5">
+        {sections.map((section, sectionIndex) => (
+          <div key={sectionIndex} className="p-5">
             <div className="text-sm uppercase text-accent-dark font-bold mb-3">
               {section.title}
             </div>
-            {section.links.map((link, linkIndex) => (
-              <Link
-                key={linkIndex}
-                href={link.href}
-                className="my-3 block text-gray-700 hover:text-primary-800 transition-colors duration-200"
-              >
-                {link.label}
-                {link.badge && (
-                  <span className="text-accent-dark text-xs p-1 ml-1">
-                    {link.badge}
-                  </span>
-                )}
-              </Link>
-            ))}
+            {section.links.map((link, linkIndex) =>
+              link.label === "Contact Us" ? (
+                <TrackedCTA
+                  key={linkIndex}
+                  href={link.href}
+                  label={link.label}
+                  className="my-3 block text-gray-700 hover:text-primary-800 transition-colors duration-200"
+                  location="Footer"
+                />
+              ) : (
+                <Link
+                  key={linkIndex}
+                  href={link.href}
+                  className="my-3 block text-gray-700 hover:text-primary-800 transition-colors duration-200"
+                >
+                  {link.label}
+                  {link.badge && (
+                    <span className="text-accent-dark text-xs p-1 ml-1">
+                      {link.badge}
+                    </span>
+                  )}
+                </Link>
+              )
+            )}
           </div>
         ))}
       </div>
