@@ -4,7 +4,7 @@
 
 import Script from "next/script";
 
-const CLARITY_ID = "vrnr0vjw3i";
+const CLARITY_ID = "vtpkuvgcyx";
 
 export default function ClarityScript() {
   return (
