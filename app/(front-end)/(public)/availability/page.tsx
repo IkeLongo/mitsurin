@@ -1,7 +1,7 @@
 
-import CurrentAvailabilityCard from "@/containers/availability-page/current-availability-card";
-import SanityAvailabilityHero from "@/containers/availability-page/heading-section";
-import ReserveYourWagyuSection from "@/containers/availability-page/reserve-your-wagyu-section";
+import CurrentAvailabilityCard from "@/app/components/layout/availability/availability-card";
+import SanityAvailabilityHero from "@/app/components/layout/availability/heading";
+import ReserveYourWagyuSection from "@/app/components/layout/availability/reserve-your-wagyu";
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { Metadata } from "next";
 

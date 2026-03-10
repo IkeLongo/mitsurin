@@ -10,7 +10,7 @@ import {
   ModalFooter,
   Button,
 } from "@heroui/react";
-import ToggleSwitch from '@/components/ui/switch/toggle-switch';
+import ToggleSwitch from '@/app/components/switch/toggle-switch';
 
 interface PreferencesModalProps {
   isOpen: boolean; // ✅ Indicates if the modal is open

@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { ToastContainer } from 'react-toastify';
-import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { AnalyticsProvider } from "@/app/components/analytics/analytics-provider";
 
 import "./globals.css";
 import "@mux/mux-player";

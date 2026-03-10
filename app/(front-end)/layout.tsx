@@ -2,7 +2,7 @@
 import { SanityLive } from "@/sanity/lib/live";
 import { VisualEditing } from "next-sanity/visual-editing";
 import { draftMode } from "next/headers";
-import { DisableDraftMode } from "@/components/sanity/disable-draft-mode";
+import { DisableDraftMode } from "@/app/components/sanity/disable-draft-mode";
 
 export default async function FrontendLayout({ children }: { children: React.ReactNode }) {
 

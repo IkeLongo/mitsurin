@@ -1,7 +1,7 @@
-import HeadingSection from "@/containers/contact-page/heading-section";
-import SendUsMessageSection from "@/containers/contact-page/send-us-message-section";
-import HowItWorksSection from "@/containers/contact-page/how-it-works-section";
-import FAQSection from "@/containers/contact-page/faq-section";
+import HeadingSection from "@/app/components/layout/contact/heading";
+import SendUsMessageSection from "@/app/components/layout/contact/send-us-message";
+import HowItWorksSection from "@/app/components/layout/contact/how-it-works";
+import FAQSection from "@/app/components/layout/contact/faqs";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {

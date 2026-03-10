@@ -1,13 +1,13 @@
-import HeadingSection from "@/containers/our-story-page/heading-section";
-import OurOriginStorySection from "@/containers/our-story-page/our-origin-story-section";
-import BreedingExcellenceSection from "@/containers/our-story-page/understanding-our-heard";
-import WhyMitsurinSection from "@/containers/our-story-page/why-mitsurin-section";
-import BreedingandRaisingSection from "@/containers/our-story-page/breeding-and-raising-section";
-import HowItWorksSection from "@/containers/our-story-page/how-it-works-section";
-import ThirtyMonthsSection from "@/containers/our-story-page/30-months-section";
-import GrowingTheDreamSection from "@/containers/our-story-page/dream-to-reality-section";
-import OurMissionSection from "@/containers/our-story-page/our-mission-section";
-import TheMitsurinDifferenceSection from "@/containers/our-story-page/the-mitsurin-difference-section";
+import HeadingSection from "@/app/components/layout/our-story/heading";
+import OurOriginStorySection from "@/app/components/layout/our-story/origin-story";
+import BreedingExcellenceSection from "@/app/components/layout/our-story/understanding";
+import WhyMitsurinSection from "@/app/components/layout/our-story/why-mitsurin";
+import BreedingandRaisingSection from "@/app/components/layout/our-story/breeding";
+import HowItWorksSection from "@/app/components/layout/our-story/how-it-works";
+import ThirtyMonthsSection from "@/app/components/layout/our-story/thirty-months";
+import GrowingTheDreamSection from "@/app/components/layout/our-story/growing-the-dream";
+import OurMissionSection from "@/app/components/layout/our-story/mission";
+import TheMitsurinDifferenceSection from "@/app/components/layout/our-story/miturin-difference";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {

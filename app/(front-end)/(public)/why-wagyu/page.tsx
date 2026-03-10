@@ -1,13 +1,13 @@
-import HeadingSection from "@/containers/why-wagyu-page/heading-section";
-import WhatIsWagyuSection from "@/containers/why-wagyu-page/what-is-wagyu-section";
-import WagyuDifferenceSection from "@/containers/why-wagyu-page/wagyu-difference-section";
-import HealthBenefitsSection from "@/containers/why-wagyu-page/health-benefits-section";
-import DrSelvaSection from "@/containers/why-wagyu-page/dr-selva-section";
-import USDAGradingSection from "@/containers/why-wagyu-page/usda-grading-section";
-import WhyWagyuStandsApartSection from "@/containers/why-wagyu-page/why-wagyu-stands-apart-section";
-import IsItReallyWagyuSection from "@/containers/why-wagyu-page/is-it-really-wagyu-section";
-import WagyuExperienceSection from "@/containers/why-wagyu-page/wagyu-experience-section";
-import ExperienceTheDifferenceSection from "@/containers/why-wagyu-page/experience-the-difference-section";
+import HeadingSection from "@/app/components/layout/why-wagyu/heading";
+import WhatIsWagyuSection from "@/app/components/layout/why-wagyu/what-is-wagyu";
+import WagyuDifferenceSection from "@/app/components/layout/why-wagyu/wagyu-difference";
+import HealthBenefitsSection from "@/app/components/layout/why-wagyu/health-benefits";
+import DrSelvaSection from "@/app/components/layout/why-wagyu/dr-selva";
+import USDAGradingSection from "@/app/components/layout/why-wagyu/usda-grading";
+import WhyWagyuStandsApartSection from "@/app/components/layout/why-wagyu/stands-apart";
+import IsItReallyWagyuSection from "@/app/components/layout/why-wagyu/is-it-really-wagyu";
+import WagyuExperienceSection from "@/app/components/layout/why-wagyu/wagyu-experience";
+import ExperienceTheDifferenceSection from "@/app/components/layout/why-wagyu/experience-the-difference";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {

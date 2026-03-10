@@ -1,9 +1,7 @@
 // app/(front-end)/(public)/layout.tsx
 
 import type { Metadata } from "next";
-import MainNavbar from "@/components/ui/navigation/MainNavbar";
-import Footer from "@/components/ui/navigation/footer";
-import ConditionalLayout from "@/components/layout/ConditionalLayout";
+import ConditionalLayout from "@/app/components/layout/ConditionalLayout";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mitsurinwagyu.com"),

@@ -1,9 +1,9 @@
-import HeadingSection from "@/containers/our-beef-page/heading-section";
-import ExceptionalQualitySection from "@/containers/our-beef-page/excepectional-quality-section";
-import PurchasingOptionsSection from "@/containers/our-beef-page/purchasing-options-section";
-import TheProcessSection from "@/containers/our-beef-page/the-process-section";
-import CutSelectionSection from "@/containers/our-beef-page/cut-selection-section";
-import ReadyToReserveSection from "@/containers/our-beef-page/ready-to-reserve-section";
+import HeadingSection from "@/app/components/layout/our-beef/heading";
+import ExceptionalQualitySection from "@/app/components/layout/our-beef/exceptional-quality";
+import PurchasingOptionsSection from "@/app/components/layout/our-beef/purchase-options";
+import TheProcessSection from "@/app/components/layout/our-beef/process";
+import CutSelectionSection from "@/app/components/layout/our-beef/cut-selection";
+import ReadyToReserveSection from "@/app/components/layout/our-beef/reserve";
 import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
 
 export const metadata: Metadata = {

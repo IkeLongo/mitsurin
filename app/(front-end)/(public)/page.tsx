@@ -1,13 +1,13 @@
-import HeroSection from "@/containers/home-page/hero-section";
-import AboutSection from "@/containers/home-page/about-section";
-import DiscoverSection from "@/containers/home-page/discover-section";
-import PackagesSection from "@/containers/home-page/packages-section";
-import AvailabilitySection from "@/containers/home-page/availability-section";
-import HowItWorksSection from "@/containers/home-page/how-it-works-section";
-import RaisedWithPurposeSection from "@/containers/home-page/rasied-with-purpose-section";
-import WhyMitsurinSection from "@/containers/home-page/why-mitsurin-section";
-import JapaneseGeneticsSection from "@/containers/home-page/japanese-genetics-section";
-import FAQSection from "@/containers/home-page/faq-section";
+import HeroSection from "@/app/components/layout/home/hero";
+import AboutSection from "@/app/components/layout/home/about";
+import DiscoverSection from "@/app/components/layout/home/discover";
+import PackagesSection from "@/app/components/layout/home/packages";
+import AvailabilitySection from "@/app/components/layout/home/availability";
+import HowItWorksSection from "@/app/components/layout/home/how-it-works";
+import RaisedWithPurposeSection from "@/app/components/layout/home/raised-with-purpose";
+import WhyMitsurinSection from "@/app/components/layout/home/why-mitsurin";
+import JapaneseGeneticsSection from "@/app/components/layout/home/japanese-genetics";
+import FAQSection from "@/app/components/layout/home/faqs";
 
 export default function Home() {
   return (
