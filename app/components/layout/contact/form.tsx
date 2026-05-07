@@ -55,6 +55,7 @@ export default function SignupFormDemo() {
       email: "",
       phone: "",
       message: "",
+      customerType: undefined,
       interestedCuts: [] as string[],
       company: "", // honeypot
     },
@@ -176,6 +177,31 @@ export default function SignupFormDemo() {
             <span className="text-red-500 text-xs mt-1">{errors.phone.message}</span>
           )}
         </LabelInputContainer>
+        <LabelInputContainer className="mb-4">
+          <Label className="text-primary-800 dark:text-primary-800 font-bold">
+            Customer Type
+          </Label>
+          <p className="text-xs text-neutral-500 -mt-1">
+            Helps us tailor pricing, cuts, and availability for you
+          </p>
+          <div className="flex flex-col space-y-2 pt-1">
+            {(["Personal (Home Cooking)", "Business (Restaurant / Retail)", "Not Sure"] as const).map((option) => (
+              <label key={option} className="flex items-center gap-3 cursor-pointer">
+                <input
+                  {...register("customerType")}
+                  type="radio"
+                  value={option}
+                  className="h-4 w-4 accent-primary-800 cursor-pointer"
+                />
+                <span className="text-sm text-neutral-700 dark:text-neutral-800">{option}</span>
+              </label>
+            ))}
+          </div>
+          {errors.customerType && (
+            <span className="text-red-500 text-xs mt-1">{errors.customerType.message}</span>
+          )}
+        </LabelInputContainer>
+
         <LabelInputContainer className="mb-4">
           <Label className="text-primary-800 dark:text-primary-800 font-bold" htmlFor="interestedCuts">
             Interested Cuts (Optional)
